@@ -8,7 +8,6 @@ import Skills from './components/skills.jsx'
 function App() {
   return (
     <React.StrictMode>
-      <Navbar/>
       <Intro/>
       <Skills/>
     </React.StrictMode>

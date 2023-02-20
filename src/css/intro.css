@@ -1,49 +1,48 @@
 :root {
-    --purple: rgb(123, 31, 162);
+    --blue: #78c1fa;
+    --purple: #5458c2;
     --violet: rgb(103, 58, 183);
     --pink: rgb(244, 143, 177);
+    --section-size: 20em;
 }
 
 @keyframes background-pan {
-    from {
-        background-position: 0% center;
-    }
-
-    to {
-        background-position: -200% center;
-    }
-}
+	0% {
+		background-position: 0% 50%;
+        size: 100%;
+	}
+	50% {
+		background-position: 100% 50%;
+        size: 200%;
+	}
+	100% {
+		background-position: 0% 50%;
+        size: 200%;
+	}}
 
 .panel {
     height: 1000px;
 }
 
 .blue-section {
-    font-family: "Verdana", sans-serif;
+    font-family: "Prata", serif;
     place-items: center;
-    background-color: #78c1fa;
-    height: 50em;
+    background-color: var(--blue);
+    height: var(--section-size);
 }
 
 .white-section {
-    font-family: "Verdana", sans-serif;
-    place-items: center;
-    background-color: #FFF;
-    color: #78c1fa;
-    height: 50em;
-}
-
-h3 {
-    font-family: "Verdana", sans-serif;
-    color: white;
+    font-family: "Prata", serif;
+    background-color: #36393F;
+    color: var(--blue);
+    height: var(--section-size);
+    position: relative;
     font-size: clamp(2em, 2vw, 4em);
     font-weight: 400;
-    margin: 0px;
-    padding: 20px;
     text-align: center;
 }
 
-.magic {
+.magic-txt {
     animation: background-pan 3s linear infinite;
     background: linear-gradient(
         to right,
@@ -57,4 +56,70 @@ h3 {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     white-space: nowrap;
+}
+
+.magic:hover {
+	background: linear-gradient(-45deg, 
+    var(--purple), var(--blue));
+	background-size: 400% 400%;
+	animation: background-pan 2s ease infinite;
+    
+}
+
+.header-txt {
+    position: relative;
+    size: 20px;
+}
+
+.alexandre {
+    color: var(--blue);
+    position: absolute;
+    left: 50px;
+    top: 50px;
+}
+
+.simon {
+    color: var(--purple);
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.btn-container {
+    max-width: 200px;
+    margin: 7vw;
+    position: absolute;
+    border: none;
+    border-radius: 50%;
+}
+
+.about-btn {
+    left: 100px;
+    bottom: 50px;
+}
+
+.skills-btn {
+    bottom: 0px;
+}
+
+.projects-btn {
+    right: 100px;
+    bottom: 50px;
+}
+
+.circle-btn {
+    cursor: pointer;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    background-color: var(--blue);
+}
+.circle-btn:hover {
+    background-color: transparent;
 }
