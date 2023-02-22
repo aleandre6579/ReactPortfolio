@@ -7,26 +7,21 @@ class Intro extends Component {
 
     } 
     render() { 
-        console.log(document.querySelectorAll(".magic"));
+
         function circleBtnClicked(btnNum) {
             console.log(btnNum);
         }
 
-        const handleOnMouseMove = e => {
-            console.log("A");
+        function handleOnMouseMove(e) {
+            
             const { currentTarget: target } = e;
 
             const rect = target.getBoundingClientRect(),
                 x = e.clientX - rect.left,
                 y = e.clientY - rect.top;
-
-            target.style.setProperty("--mouse-x", '${x}px');
-            target.style.setProperty("--mouse-y", '${y}px');
-        }
-
-        for(const magic of document.querySelectorAll(".magic")) {
-            console.log("B");
-            magic.onmousemove = e => handleOnMouseMove(e);
+            
+            target.style.setProperty("--mouse-x", x + 'px');
+            target.style.setProperty("--mouse-y", y + 'px');
         }
 
         return (
@@ -37,7 +32,7 @@ class Intro extends Component {
                     </div>
 
                     <div className="btns">
-                        <div onClick={() => circleBtnClicked(0)} className="magic btn-container about-btn">
+                        <div onMouseMove={(e) => handleOnMouseMove(e)} onClick={() => circleBtnClicked(0)} className="magic btn-container about-btn">
                             <div className="circle-btn-txt">About</div>
                         </div>
                         <div onClick={() => circleBtnClicked(1)} className="magic btn-container skills-btn">
