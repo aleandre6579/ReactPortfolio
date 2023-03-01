@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { motion as m } from "framer-motion";
+import { Link } from "react-router-dom";
+
 import '../css/intro.css'
 import '../css/w3.css'
 
@@ -25,24 +28,50 @@ class Intro extends Component {
         }
 
         return (
-            <div className="w3-display-container w3-center white-section">
-                    <div className="title w3-container w3-padding-32 w3-hide-small">
+            <m.div>
+                <div className="title-section">
+                    <div className="title">
                         <div className="name">Alexandre Simon</div>
+                    </div>
+                    <div className="subtitle">
                         <div className="software-dev">Software Developer</div>
                     </div>
+                </div>
 
-                    <div className="btns">
-                        <div onMouseMove={(e) => handleOnMouseMove(e)} onClick={() => circleBtnClicked(0)} className="magic btn-container about-btn">
-                            <div className="circle-btn-txt">About</div>
+                <div className="section about-section">
+                    <Link to='/about'>
+                        <div onMouseMove={(e) => handleOnMouseMove(e)} onClick={() => circleBtnClicked(0)} className="about-btn btn-container">
+                            <div className="btn-content">About</div>
                         </div>
-                        <div onClick={() => circleBtnClicked(1)} className="magic btn-container skills-btn">
-                            <div className="circle-btn-txt">Skills</div>
-                        </div>
-                        <div onClick={() => circleBtnClicked(2)} className="magic btn-container projects-btn">
-                            <div className="circle-btn-txt">Projects</div>
-                        </div>
+                    </Link>
+                    <div className="description">
+                        Hello, my name is Alexandre Simon. I am currently
+                        studying at Mahidol University in Bangkok, Thailand.
                     </div>
-            </div>
+                </div>
+                <div className="section skills-section">
+                <div className="description">
+                        Hello, my name is Alexandre Simon. I am currently
+                        studying at Mahidol University in Bangkok, Thailand.
+                    </div>
+                    <Link to='/skills'>
+                        <div onMouseMove={(e) => handleOnMouseMove(e)} onClick={() => circleBtnClicked(0)} className="skills-btn btn-container">
+                            <div className="btn-content">Skills</div>
+                        </div>
+                    </Link>
+                </div>
+                <div className="section projects-section">
+                    <Link to='/projects'>
+                        <div onMouseMove={(e) => handleOnMouseMove(e)} onClick={() => circleBtnClicked(0)} className="projects-btn btn-container">
+                            <div className="btn-content">Projects</div>
+                        </div>
+                    </Link>
+                    <div className="description">
+                        Hello, my name is Alexandre Simon. I am currently
+                        studying at Mahidol University in Bangkok, Thailand.
+                    </div>
+                </div>
+            </m.div>
         
         );
     }

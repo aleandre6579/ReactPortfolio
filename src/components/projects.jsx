@@ -12,7 +12,7 @@ class Intro extends Component {
     render() { 
         return (
             <div className="">
-                <Link to="/"><h1 style={{color: "red"}}>SKILLS</h1></Link>
+                <Link to="/"><h1 style={{color: "red"}}>PROJECTS</h1></Link>
             </div>
         
         );

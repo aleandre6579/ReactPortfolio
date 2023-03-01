@@ -3,8 +3,10 @@
     --purple: #5458c2;
     --violet: rgb(103, 58, 183);
     --pink: rgb(244, 143, 177);
+    --gray: #36393F;
     --section-size: 100vh;
     --title-size: clamp(2rem, 5rem, 10rem);
+    background-color: black;
 }
 
 @keyframes btn-on-hover {
@@ -18,184 +20,190 @@
         }
 }
 
-@keyframes btn-background {
+@keyframes background-pan {
 	0% {
 		background-position: 0% 0%;
+	}
+	30% {
+		background-position: 100% 0%;
 	}
 	50% {
 		background-position: 100% 0%;
 	}
-	100% {
+	80% {
 		background-position: 0% 0%;
 	}
+    100% {
+		background-position: 0% 0%;
+    }
 }
 
 @keyframes titleFadeIn {
     0% {
         opacity: 0;
-        transform: scale(0.8);
+        transform: scale(0.4);
     }
-    60% {
-        opacity: 1;
+    80% {
         transform: scale(1);
     }
     100% {
         opacity: 1;
-        transform: scale(1.1);
+        transform: scale(1);
     }
 }
 
 @keyframes titleSlideIn {
     0% {
-        left: -10%;
+        left: -50%;
     }
     100% {
-        left:  5%;
+        left:  6%;
+    }
+}
+@keyframes subtitleSlideIn {
+    0% {
+        left: -50%;
+    }
+    40% {
+        left: -40%;
+    }
+    100% {
+        left:  6%;
     }
 }
 
-.panel {
-    height: 1000px;
-}
-
-.blue-section {
-    font-family: "Prata", serif;
-    place-items: center;
-    background-color: var(--blue);
-    height: var(--section-size);
-}
-
-.white-section {
-    font-family: "Prata", serif;
-    background-color: #36393F;
-    color: var(--blue);
-    height: var(--section-size);
-    position: relative;
-    font-weight: 400;
-    text-align: center;
-}
-
-.software-dev {
-    font-size: clamp(2rem, 3rem, 3rem);
-    text-align: left;
-    margin-top: -2rem;
-}
-
-.name {
-    font-size: var(--title-size);
-    font-weight: 1000;
-}
-
-.btns {
+.section {
+    width: 100%;
+    height: 51rem;
     display: flex;
-    justify-content: center;
-}
-.btn-container {
-    margin: 7rem;
-    position: absolute;
-    width: clamp(5rem, 20rem, 20rem);
-    height: clamp(5rem, 20rem, 20rem);
-    display: flex;
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: center;
-    border-style: solid;
-    border-width: 3px;
-    border-color: var(--blue);
-    border-radius: 50%;
-    transition: 500ms;
-    cursor: pointer;
-}
-.btn-container:hover {
-    border-color: rgb(0,0,0,0);
+
 }
 
-.magic {
-    z-index: 1;
-}
-
-.magic::before {
-    content: "";
-/*     background: linear-gradient(-45deg, 
-    var(--purple), var(--blue));
- */    opacity: 0;
-    transition: 300ms;
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
+.title-section {
     width: 100%;
-    height: 100%;
-    border-radius: 50%;
+    position: relative;
+    background-color: var(--blue);
+    height: 35rem;
 }
 
-.magic::after {
-    background: radial-gradient(
-        800px circle at var(--mouse-x) var(--mouse-y),
-        rgba(255, 255, 255, 0.6),
-        transparent 40%
-    );
-    background-size: 1000%;
-    border-radius: 50%;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
+.about-section {
+    background-color: white;
+    position: relative;
+    vertical-align: middle;
 }
 
-.magic:hover::before {
-    opacity: 1;
-	background-size: 400% 400%;
-	animation: btn-background 2s ease infinite;
-    
+.skills-section {
+    background-color: var(--blue);
+    position: relative;
+}
+.projects-section {
+    background-color: white;
+    position: relative;
 }
 
 .about-btn {
-    left: 0%;
-    bottom: 20%;
+    border-radius: 50%;
+    border-color: var(--blue);
+    border-style: solid;
+    border-width: 5px;
+    background-color: transparent;
+}
+.about-btn:hover {
+    background-color: var(--blue);
 }
 .skills-btn {
-    bottom: 0%;
+    border-radius: 50%;
+    border-color: white;
+    border-style: solid;
+    border-width: 5px;
+    background-color: transparent;
+}
+.skills-btn:hover {
+    background-color: white;
 }
 .projects-btn {
-    right: 5%;
-    bottom: 20%;
-}
-
-.circle-btn-txt {
-    cursor: pointer;
-    font-size: 50px;
-    color: var(--purple);
-}
-.circle-btn-txt:hover {
+    border-radius: 50%;
+    border-color: var(--blue);
+    border-style: solid;
+    border-width: 5px;
     background-color: transparent;
+}
+.projects-btn:hover {
+    background-color: var(--blue);
 }
 
 .title {
-    position: absolute;
-    animation: titleSlideIn 1s ease forwards, titleFadeIn 1s ease forwards, background-pan 50s linear infinite;
+    text-align: left;
+    position: relative;
+    top: 2rem;
+    animation: 
+        titleSlideIn 1.2s ease forwards, 
+        titleFadeIn 1s ease forwards, 
+        background-pan 10s linear infinite;
     background: linear-gradient(
         to right,
         var(--purple),
-        var(--blue),
-        var(--purple),
-        var(--blue),
-        var(--purple),
-        var(--blue),
-        var(--purple),
-        var(--blue),
-        var(--purple),
-        var(--blue),
-        var(--purple)
+        white
     );
     background-size: 15000%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     white-space: nowrap;
-    margin-top: 2%;
+}
+.subtitle {
+    text-align: left;
+    position: relative;
+    top: 4rem;
+    animation: 
+        subtitleSlideIn 1.79s ease forwards, 
+        titleFadeIn 1s ease forwards, 
+        background-pan 10s linear infinite;
+    background: linear-gradient(
+        to right,
+        var(--purple),
+        white
+    );
+    background-size: 15000%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+
+}
+.name {
+    font-size: var(--title-size);
+    font-weight: 1000;
+}
+.software-dev {
+    font-size: clamp(2rem, 3rem, 3rem);
+    margin-top: -4rem;
+}
+
+.description {
+    position: relative;
+    width: 40rem;
+}
+
+
+.btn-container {
+    width: clamp(5rem, 20rem, 20rem);
+    height: clamp(5rem, 20rem, 20rem);
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    transition: 200ms;
+}
+
+.btn-container > .btn-content {
+    font-size: 50px;
+    color: var(--purple);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
 }
 
 

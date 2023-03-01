@@ -11,10 +11,15 @@ class Intro extends Component {
     } 
     render() { 
         return (
-            <div className="">
-                <Link to="/"><h1 style={{color: "red"}}>SKILLS</h1></Link>
-            </div>
-        
+            <m.div 
+             initial={{ y: "100%" }} 
+             animate={{ y: "0%" }} 
+             transition={{ duration: 0.75, ease: "easeOut" }} 
+             exit={{ opacity:1 }}
+            >
+                <Link to="/"><h1 style={{color: "red"}}>ABOUT</h1></Link>
+            </m.div>
+
         );
     }
 }
