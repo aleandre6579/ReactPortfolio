@@ -11,9 +11,14 @@ class Intro extends Component {
     } 
     render() { 
         return (
-            <div className="">
+            <m.div 
+              initial={{opacity: 0}}
+              animate={{opacity:1}}
+              transition={{duration: 2}}
+              exit={{opacity:0}}
+            >
                 <Link to="/"><h1 style={{color: "red"}}>SKILLS</h1></Link>
-            </div>
+            </m.div>
         
         );
     }

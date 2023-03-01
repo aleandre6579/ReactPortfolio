@@ -11,8 +11,10 @@ class Intro extends Component {
     } 
     render() { 
 
-        function circleBtnClicked(btnNum) {
-            console.log(btnNum);
+        function circleBtnClicked(btnName) {
+            console.log(btnName);
+            var btn_panel = document.getElementById(btnName);
+            btn_panel.classList.add("click-anim");
         }
 
         function handleOnMouseMove(e) {
@@ -28,7 +30,12 @@ class Intro extends Component {
         }
 
         return (
-            <m.div>
+            <m.div 
+              initial={{opacity: 0}}
+              animate={{opacity:1}}
+              transition={{duration: 2}}
+              exit={{opacity:0}}
+            >
                 <div className="title-section">
                     <div className="title">
                         <div className="name">Alexandre Simon</div>
@@ -40,7 +47,8 @@ class Intro extends Component {
 
                 <div className="section about-section">
                     <Link to='/about'>
-                        <div onMouseMove={(e) => handleOnMouseMove(e)} onClick={() => circleBtnClicked(0)} className="about-btn btn-container">
+                        <div onMouseMove={(e) => handleOnMouseMove(e)} onClick={() => circleBtnClicked("btn1")} className="about-btn btn-container">
+                            <div id="btn1"></div>
                             <div className="btn-content">About</div>
                         </div>
                     </Link>
@@ -50,12 +58,13 @@ class Intro extends Component {
                     </div>
                 </div>
                 <div className="section skills-section">
-                <div className="description">
+                    <div className="description">
                         Hello, my name is Alexandre Simon. I am currently
                         studying at Mahidol University in Bangkok, Thailand.
                     </div>
                     <Link to='/skills'>
                         <div onMouseMove={(e) => handleOnMouseMove(e)} onClick={() => circleBtnClicked(0)} className="skills-btn btn-container">
+                            <div id="btn2"></div>
                             <div className="btn-content">Skills</div>
                         </div>
                     </Link>
@@ -63,6 +72,7 @@ class Intro extends Component {
                 <div className="section projects-section">
                     <Link to='/projects'>
                         <div onMouseMove={(e) => handleOnMouseMove(e)} onClick={() => circleBtnClicked(0)} className="projects-btn btn-container">
+                            <div id="btn3"></div>
                             <div className="btn-content">Projects</div>
                         </div>
                     </Link>

@@ -12,10 +12,10 @@ class Intro extends Component {
     render() { 
         return (
             <m.div 
-             initial={{ y: "100%" }} 
-             animate={{ y: "0%" }} 
-             transition={{ duration: 0.75, ease: "easeOut" }} 
-             exit={{ opacity:1 }}
+              initial={{opacity: 0}}
+              animate={{opacity:1}}
+              transition={{duration: 2}}
+              exit={{opacity:0}}
             >
                 <Link to="/"><h1 style={{color: "red"}}>ABOUT</h1></Link>
             </m.div>
