@@ -11,12 +11,12 @@ function AnimatedRoutes() {
     const location = useLocation();
 
     return (
-        <AnimatePresence initial={false} mode={"wait"}>
-            <Routes location={location} key={location.pathName}>
-                <Route exact path="/" element={<Intro/>} />
-                <Route exact path="/about" element={<About/>} />
-                <Route exact path="/skills" element={<Skills/>} />
-                <Route exact path="/projects" element={<Projects/>} />
+        <AnimatePresence mode={'wait'}>
+            <Routes key={location.pathname} location={location}>
+                <Route path="/" element={<Intro/>} />
+                <Route path="/about" element={<About/>} />
+                <Route path="/skills" element={<Skills/>} />
+                <Route path="/projects" element={<Projects/>} />
             </Routes>
         </AnimatePresence>
     );

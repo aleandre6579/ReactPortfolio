@@ -1,20 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import { motion as m } from "framer-motion";
 import { Link } from "react-router-dom";
+import { App } from "../App.js"
 
 import '../css/intro.css'
 import '../css/w3.css'
 
 class Intro extends Component {
-    state = {  
+    componentDidMount() {
+        document.documentElement.style.overflow = "auto";
+        document.documentElement.style.overflowX = "hidden";
+    }
 
-    } 
     render() { 
+
 
         function circleBtnClicked(btnName) {
             console.log(btnName);
             var btn_panel = document.getElementById(btnName);
             btn_panel.classList.add("click-anim");
+            
+            // Hide scroll bar and prevent scrolling
+            document.documentElement.style.overflow = "hidden";
         }
 
         function handleOnMouseMove(e) {
@@ -30,11 +37,11 @@ class Intro extends Component {
         }
 
         return (
-            <m.div 
-              initial={{opacity: 0}}
+            <m.div id='root'
+              initial={{opacity: 1}}
               animate={{opacity:1}}
-              transition={{duration: 2}}
-              exit={{opacity:0}}
+              transition={{duration: 2, ease: "easeOut"}}
+              exit={{opacity:1}}
             >
                 <div className="title-section">
                     <div className="title">
@@ -63,7 +70,7 @@ class Intro extends Component {
                         studying at Mahidol University in Bangkok, Thailand.
                     </div>
                     <Link to='/skills'>
-                        <div onMouseMove={(e) => handleOnMouseMove(e)} onClick={() => circleBtnClicked(0)} className="skills-btn btn-container">
+                        <div onMouseMove={(e) => handleOnMouseMove(e)} onClick={() => circleBtnClicked("btn2")} className="skills-btn btn-container">
                             <div id="btn2"></div>
                             <div className="btn-content">Skills</div>
                         </div>
@@ -71,7 +78,7 @@ class Intro extends Component {
                 </div>
                 <div className="section projects-section">
                     <Link to='/projects'>
-                        <div onMouseMove={(e) => handleOnMouseMove(e)} onClick={() => circleBtnClicked(0)} className="projects-btn btn-container">
+                        <div onMouseMove={(e) => handleOnMouseMove(e)} onClick={() => circleBtnClicked("btn3")} className="projects-btn btn-container">
                             <div id="btn3"></div>
                             <div className="btn-content">Projects</div>
                         </div>

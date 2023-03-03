@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "NavBtnTxt";
+  src: url("./fonts/NavBtnTxt.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "VarelaRound";
+  src: url("./fonts/VarelaRound.ttf") format("truetype");
+}
+
