@@ -1,15 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router } from "react-router-dom"
+import AnimatedRoutes from './components/animatedRoutes.jsx'
 import './App.css';
-import Navbar from './components/navbar.jsx';
-import Intro from './components/intro.jsx'
-import Skills from './components/skills.jsx'
+import "./fonts/NavBtnTxt.otf"
 
 function App() {
   return (
     <React.StrictMode>
-      <Intro/>
-      <Skills/>
+      <Router>
+        <AnimatedRoutes/>
+      </Router>
     </React.StrictMode>
   );
 
