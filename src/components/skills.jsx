@@ -8,12 +8,19 @@ import '../css/w3.css'
 class Intro extends Component {
     componentDidMount() {
         document.documentElement.style.overflow = "auto";
+        window.scrollTo(0,0);
     }
 
     render() { 
         const variants = {
             hidden: { opacity: 0 },
             show: { 
+                opacity: 1,
+                transition: {
+                    staggerChildren: 0.2,
+                },
+            },
+            exit: {
                 opacity: 1,
                 transition: {
                     staggerChildren: 0.2,
@@ -33,6 +40,13 @@ class Intro extends Component {
                     duration: 0.4,
                 },
             },
+            exit: {
+                opacity: 1,
+                y: -150,
+                transition: {
+                    duration: 0.2,
+                },
+            },
         };
 
         function circleBtnClicked(btnName) {
@@ -45,10 +59,10 @@ class Intro extends Component {
             <m.div
               initial={{opacity: 0}}
               animate={{opacity:1}}
-              transition={{duration: 0.5}}
+              transition={{duration: 1.5}}
               exit={{opacity:0}}
             >
-                <m.div variants={variants} initial="hidden" animate="show" className="navbar">
+                <m.div variants={variants} initial="hidden" animate="show" exit="exit" className="navbar">
                     <m.div className='navbar-btn' variants={item} ><Link style={{"text-decoration": "none"}} to='/'><div>Home</div></Link></m.div>
                     <m.div className='navbar-btn' variants={item} ><Link style={{"text-decoration": "none"}} to='/about'><div className="navbar-btn">About</div></Link></m.div>
                     <m.div className='navbar-btn' variants={item} ><Link style={{"text-decoration": "none"}} to='/skills'><div className="navbar-btn">Skills</div></Link></m.div>
