@@ -5,10 +5,6 @@
 
 
 .page {
-    border-width: 10px;
-    border-color: black;
-    border-style: solid;
-    height: 100vb;
 }
 
 .navbar {
@@ -36,6 +32,16 @@
 .navbar-btn:hover {
     color: white;
     font-size: 8vw;
+}
+
+.arrowBack {
+    width: 50px;
+    position: relative;
+    top: -10px;
+    transition: 200ms;
+    
+}
+.arrowBack:hover {
 }
 
 .aboutMainHead {
@@ -67,7 +73,6 @@
     font-size: 50px;
     font-family: 'VarelaRound';
     width: 8em;
-    background-color: rgba(0,0,0,0.3);
     padding: 5px;
     border-radius: 5px;
     color: var(--blue)
@@ -79,4 +84,6 @@
     width: 80%;
     font-size: 1.5rem;
     font-family: 'VarelaRound';
+    text-align: justify;
 }
+

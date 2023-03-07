@@ -8,20 +8,52 @@ import '../css/w3.css'
 
 class Intro extends Component {
     componentDidMount() {
-        document.documentElement.style.overflow = "auto";
+        document.documentElement.style.overflow = "hidden";
         document.documentElement.style.overflowX = "hidden";
     }
 
     render() { 
+        var root = document.querySelector(':root');
+        var rootStyles = getComputedStyle(root);
 
+        const selectedSection = {
+            hidden: {
+                top: '0px',
+            },
+            show: {
+                top: '0px',
+                transition: {
+                    duration: 1,
+                    ease: "easeIn"
+                },
+            },
+            exit: {
+                transform: 'translateY(var(--translateAmt))',
+                transition: {
+                    delay: 1,
+                    duration: 1,
+                    ease: [.5,-0.82,.48,1.7]
+                },
+            },
+        };
 
         function circleBtnClicked(btnName) {
-            console.log(btnName);
             var btn_panel = document.getElementById(btnName);
             btn_panel.classList.add("click-anim");
+
+            for (let i = 1; i < 4; i++) {
+                if('btn' + i !== btnName)
+                    document.getElementById('btn' + i).classList.add("hide");
+            }
+
+            if(btnName === 'btn1')
+                root.style.setProperty('--translateAmt', '-420px');
+            if(btnName === 'btn2')
+                root.style.setProperty('--translateAmt', '-630px');
+            if(btnName === 'btn3')
+                root.style.setProperty('--translateAmt', '-850px');
             
-            // Hide scroll bar and prevent scrolling
-            document.documentElement.style.overflow = "hidden";
+            rootStyles = getComputedStyle(root);
         }
 
         function handleOnMouseMove(e) {
@@ -37,59 +69,29 @@ class Intro extends Component {
         }
 
         return (
-            <m.div id='root'
-              initial={{opacity: 1}}
-              animate={{opacity:1}}
-              transition={{duration: 2, ease: "easeOut"}}
-              exit={{opacity:1}}
-            >
+            <m.div id='root2'
+                initial={{opacity: 1}}
+                animate={{opacity:1}}
+                transition={{duration: 3}}
+                exit={{opacity:1}}
+          >
                 <div className="title-section">
-                    <div className="title">
+                    
+                    <div className="title title-pos">
                         <div className="name">Alexandre Simon</div>
                     </div>
-                    <div className="subtitle">
+                    <div className="subtitle subtitle-pos">
                         <div className="software-dev">Software Developer</div>
                     </div>
-                </div>
 
-                <div className="section about-section">
-                    <Link to='/about'>
-                        <div onMouseMove={(e) => handleOnMouseMove(e)} onClick={() => circleBtnClicked("btn1")} className="about-btn btn-container">
-                            <div id="btn1"></div>
-                            <div className="btn-content">About</div>
-                        </div>
-                    </Link>
-                    <div className="description">
-                        Hello, my name is Alexandre Simon. I am currently
-                        studying at Mahidol University in Bangkok, Thailand.
+                    <div className='btns'>
+                        <m.div variants={selectedSection} initial="hidden" animate="show" exit="exit" id='btn1' onClick={() => circleBtnClicked('btn1')} className='btn about-btn' ><Link style={{"textDecoration": "none"}} to='/about'><div className="btn-txt">About</div></Link></m.div>
+                        <m.div variants={selectedSection} initial="hidden" animate="show" exit="exit" id='btn2' onClick={() => circleBtnClicked('btn2')} className='btn skills-btn'><Link style={{"textDecoration": "none"}} to='/skills'><div className="btn-txt">Skills</div></Link></m.div>
+                        <m.div variants={selectedSection} initial="hidden" animate="show" exit="exit" id='btn3' onClick={() => circleBtnClicked('btn3')} className='btn projects-btn'><Link style={{"textDecoration": "none"}} to='/projects'><div className="btn-txt">Projects</div></Link></m.div>
                     </div>
-                </div>
-                <div className="section skills-section">
-                    <div className="description">
-                        Hello, my name is Alexandre Simon. I am currently
-                        studying at Mahidol University in Bangkok, Thailand.
-                    </div>
-                    <Link to='/skills'>
-                        <div onMouseMove={(e) => handleOnMouseMove(e)} onClick={() => circleBtnClicked("btn2")} className="skills-btn btn-container">
-                            <div id="btn2"></div>
-                            <div className="btn-content">Skills</div>
-                        </div>
-                    </Link>
-                </div>
-                <div className="section projects-section">
-                    <Link to='/projects'>
-                        <div onMouseMove={(e) => handleOnMouseMove(e)} onClick={() => circleBtnClicked("btn3")} className="projects-btn btn-container">
-                            <div id="btn3"></div>
-                            <div className="btn-content">Projects</div>
-                        </div>
-                    </Link>
-                    <div className="description">
-                        Hello, my name is Alexandre Simon. I am currently
-                        studying at Mahidol University in Bangkok, Thailand.
-                    </div>
+
                 </div>
             </m.div>
-        
         );
     }
 }
