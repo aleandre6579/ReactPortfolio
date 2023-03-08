@@ -9,7 +9,17 @@
         opacity: 0;
     }
     100% {
-        box-shadow: 0 0 120px 120px white;
+        box-shadow: 0 0 calc(50px + 1em) calc(50px + 1em) white;
+        opacity: 0.2;
+    }
+}
+@keyframes arrowBtnHoverGlow {
+    0% {
+        box-shadow: 0 0 0px 0px white;
+        opacity: 0;
+    }
+    100% {
+        box-shadow: 0 0 calc(50px + 5em) calc(50px + 3em) white;
         opacity: 0.2;
     }
 }
@@ -26,8 +36,6 @@
     display: flex;
     background-color: transparent;
     justify-content: center;
-    align-items: center;
-    margin-left: 6%;
     height: 10rem;
     gap: 5em;
 }
@@ -38,7 +46,7 @@
     align-items: center;
     height: 100%;
     font-family: "NavBtnTxt";
-    font-size: clamp(0rem, calc(1rem + 6vw), 5rem);
+    font-size: clamp(0rem, calc(1rem + 3vw), 5rem);
     text-decoration: none;
     transition: 200ms;
     cursor: pointer;
@@ -56,23 +64,37 @@
 }
 .navbar-btn:hover {
     color: white;
-    font-size: 8vw;
+    font-size: clamp(0rem, calc(3rem + 3vw), 7rem);
 }
 
 .arrowBack {
     width: 50px;
     position: relative;
-    top: -10px;
     transition: 200ms;
 }
 
 .arrow-btn {
     width: 50px;
     position: relative;
-    top: 100px;
+    top: 95px;
     left: 50px;
     transition: 200ms;
 }
+@media (max-width: 748px) {
+    .arrow-btn {
+        width: 20px;
+        position: relative;
+        top: 43px;
+        left: 30px;
+        transition: 200ms;
+    }
+    .arrowBack {
+        width: 30px;
+        position: relative;
+        transition: 200ms;
+    }    
+}
+
 .arrow-btn:hover {
     left: 45px;
 }
@@ -87,7 +109,7 @@
     width: 10px;
 }
 .arrow-btn:hover::before {
-    animation: navBtnHoverGlow  0.25s ease forwards;
+    animation: arrowBtnHoverGlow  0.25s ease forwards;
 }
 
 .aboutMainHead {

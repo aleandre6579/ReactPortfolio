@@ -9,7 +9,7 @@ import backArrowBlack from '../imgs/backArrowBlack.png';
 
 class About extends Component {
     componentDidMount() {
-        document.documentElement.style.overflow = "auto";
+        document.documentElement.style.overflow = "hidden";
         window.scrollTo(0,0);
     }
 
