@@ -4,6 +4,8 @@
     --violet: rgb(103, 58, 183);
     --pink: rgb(244, 143, 177);
     --gray: #36393F;
+    --darkBlue: #6289E3;
+    --darkerBlue: #4C6AB0;
     --section-size: 100vh;
     --title-size: clamp(2rem, 5rem, 10rem);
     --small-screen: 768px;

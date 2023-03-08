@@ -81,6 +81,13 @@
     transition: 200ms;
 }
 @media (max-width: 748px) {
+    .sections-navbar {
+        display: flex;
+        background-color: transparent;
+        justify-content: center;
+        height: 10rem;
+        gap: 2em;
+    }
     .arrow-btn {
         width: 20px;
         position: relative;

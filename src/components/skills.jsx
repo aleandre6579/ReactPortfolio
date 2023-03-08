@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { motion as m } from "framer-motion";
 import { Link } from "react-router-dom";
 import { AnimatePresence } from 'framer-motion';
-import '../css/intro.css'
-import '../css/w3.css'
+import '../css/about.css';
+import '../css/skills.css';
+import '../css/w3.css';
 import backArrowWhite from '../imgs/backArrowWhite.png';
 import backArrowBlack from '../imgs/backArrowBlack.png';
 
-class Skills extends Component {
+class About extends Component {
     componentDidMount() {
-        document.documentElement.style.overflow = "auto";
         window.scrollTo(0,0);
     }
 
@@ -71,55 +71,67 @@ class Skills extends Component {
             },
         };
 
-
-        function circleBtnClicked(btnName) {
-            console.log(btnName);
-            var btn_panel = document.getElementById(btnName);
-            btn_panel.classList.add("click-anim");
-        }
-
         function changeArrowToBlack() {
             document.getElementById('backArrow').src = backArrowBlack;
         }
         function changeArrowToWhite() {
             document.getElementById('backArrow').src = backArrowWhite;
         }
+
+        function hasClass(element, className) {
+            return (' ' + element.className + ' ').indexOf(' ' + className+ ' ') > -1;
+        }     
+
+        function openContainer(containerNum) {
+            var container = document.getElementById(containerNum);
+            if(hasClass(container, 'openContainer')) {
+                container.classList.add("container");
+                container.classList.remove("openContainer");
+            }
+            else {
+                container.classList.add("openContainer");
+                container.classList.remove("container");
+            }
+
+        }
         
         return (
             <m.div>
-                <m.div variants={navbar} initial="hidden" animate="show" exit="exit" className="navbar">
-                    <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} className='navbar-btn' variants={navItem}>
+                <div className="navbar">
+                    <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} className='arrow-btn' variants={navItem}>
                         <Link to='/'><img id='backArrow' className='arrowBack' src={backArrowBlack} alt=''></img></Link>
                     </m.div>
-                    <m.div className='navbar-btn' variants={navItem} ><Link style={{"text-decoration": "none"}} to='/about'><div>About</div></Link></m.div>
-                    <m.div className='navbar-btn' variants={navItem} ><Link style={{"text-decoration": "none"}} to='/skills'><div>Skills</div></Link></m.div>
-                    <m.div className='navbar-btn' variants={navItem} ><Link style={{"text-decoration": "none"}} to='/projects'><div>Projects</div></Link></m.div>
-                </m.div>
+                    <m.div variants={navbar} initial="hidden" animate="show" exit="exit" className="sections-navbar">
+                        <m.div className='navbar-btn' variants={navItem} ><Link style={{"textDecoration": "none"}} to='/about'><div>About</div></Link></m.div>
+                        <m.div className='navbar-btn' variants={navItem} ><Link style={{"textDecoration": "none"}} to='/skills'><div>Skills</div></Link></m.div>
+                        <m.div className='navbar-btn' variants={navItem} ><Link style={{"textDecoration": "none"}} to='/projects'><div>Projects</div></Link></m.div>
+                    </m.div>
+                </div>
 
-                <m.div variants={content} initial="hidden" animate="show" exit="exit">
-                    <h1 className='aboutMainHead'>My Skills</h1>
-                    <p className='aboutTxt'>
-                        Hey there, nice to meet you! I'm Alexandre Simon, a French Computer Science student currently in my 3rd year at
-                        Mahidol University in Bangkok, Thailand.
-                    </p>
+                <div className="containersRow">
+                    <div className="containerSpace">
+                        <div className="containerTitle">Languages</div>
+                        <div id='container1' onClick={() => openContainer('container1')} className="container box1"></div>
+                    </div>
+                    <div className="containerSpace">
+                        <div className="containerTitle">Frameworks</div>
+                        <div id='container2' onClick={() => openContainer('container2')} className="container box2"></div>
+                    </div>
+                </div>
+                <div className="containersRow">
+                <div className="containerSpace">
+                        <div className="containerTitle">Social</div>
+                        <div id='container3' onClick={() => openContainer('container3')} className="container box3"></div>
+                    </div>
+                    <div className="containerSpace">
+                        <div className="containerTitle">Personal</div>
+                        <div id='container4' onClick={() => openContainer('container4')} className="container box4"></div>
+                    </div>
+                </div>
 
-                    <h1 className='aboutHead'>My Hobbies</h1>
-                    <p className='aboutTxt'>
-                        I love anything that touches storytelling in any way, but I also love the thrill of solving complicated problems.
-                        That's why the hobby I love the most is game development!
-                        I love to dive into outstandingly creative works of art, especially well-written novels and video games, which I plan to make on my own in the future.
-                    
-                    </p>
-
-                    <h1 className='aboutHead'>My Goals</h1>
-                    <p className='aboutTxt'>
-                        Hey there, nice to meet you! I'm Alexandre Simon, a French Copmuter Science student currently in my 3rd year at
-                        Mahidol University in Bangkok, Thailand.
-                    </p>
-                </m.div>
             </m.div>
         );
     }
 }
  
-export default Skills;
+export default About;
