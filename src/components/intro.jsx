@@ -28,9 +28,8 @@ class Intro extends Component {
                 },
             },
             exit: {
-                transform: 'translateY(var(--translateAmt))',
-                transition: {
-                    delay: 1,
+/*                 transform: 'translateY(var(--translateAmt))',
+ */                transition: {
                     duration: 1,
                     ease: [.5,-0.82,.48,1.7]
                 },
@@ -84,11 +83,11 @@ class Intro extends Component {
                         <div className="software-dev">Software Developer</div>
                     </div>
 
-                    <div className='btns'>
+                    <m.div className='btns'>
                         <m.div variants={selectedSection} initial="hidden" animate="show" exit="exit" id='btn1' onClick={() => circleBtnClicked('btn1')} className='btn about-btn' ><Link style={{"textDecoration": "none"}} to='/about'><div className="btn-txt">About</div></Link></m.div>
                         <m.div variants={selectedSection} initial="hidden" animate="show" exit="exit" id='btn2' onClick={() => circleBtnClicked('btn2')} className='btn skills-btn'><Link style={{"textDecoration": "none"}} to='/skills'><div className="btn-txt">Skills</div></Link></m.div>
                         <m.div variants={selectedSection} initial="hidden" animate="show" exit="exit" id='btn3' onClick={() => circleBtnClicked('btn3')} className='btn projects-btn'><Link style={{"textDecoration": "none"}} to='/projects'><div className="btn-txt">Projects</div></Link></m.div>
-                    </div>
+                    </m.div>
 
                 </div>
             </m.div>

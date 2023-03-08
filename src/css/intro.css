@@ -84,17 +84,15 @@
         margin-top: 0px;
         font-size: calc(3rem + 1.5vw);
     }
-    50% {
+    10% {
         margin-top: 0px;
         font-size: calc(3rem + 1.5vw);
-    }
-    70% {
-        margin-top: -15px;
-        font-size: calc(4rem + 1.5vw);
+        color: white;
     }
     100% {
-        margin-top: -15px;
-        font-size: calc(4rem + 1.5vw);
+        margin-top: -25px;
+        font-size: calc(5rem + 1.5vw);
+        color: var(--purple);
     }
 }
 @keyframes pageTransitionHide {
@@ -119,9 +117,9 @@
 .title {
     position: relative;
     animation: 
-        titleSlideIn2 1.2s ease forwards, 
-        titleFadeIn2 1s ease forwards, 
-        background-pan2 10s linear infinite;
+        titleSlideIn 1.2s ease forwards, 
+        titleFadeIn 1s ease forwards, 
+        background-pan 10s linear infinite;
     background: linear-gradient(
         to right,
         var(--purple),
@@ -141,9 +139,9 @@
 .subtitle {
     position: relative;
     animation: 
-        subtitleSlideIn2 1.8s ease forwards, 
-        titleFadeIn2 1s ease forwards, 
-        background-pan2 10s linear infinite;
+        subtitleSlideIn 1.8s ease forwards, 
+        titleFadeIn 1s ease forwards, 
+        background-pan 10s linear infinite;
     background: linear-gradient(
         to right,
         var(--purple),
@@ -176,7 +174,7 @@
     align-items: center;
     flex-direction: column;
     gap: 9vh;
-    margin-top: calc(32vh + -7vw);
+    margin-top: calc(31vh + -7vw);
 }
 .btn {
     border: 5px transparent solid;
@@ -190,7 +188,7 @@
     cursor: pointer;
     top: 0px;
     font-family: 'NavBtnTxt';
-    box-shadow: 0 0px 0px var(--purple);
+    box-shadow: 0 0px 5px white;
     color: var(--purple);
     transition: 300ms;
     
