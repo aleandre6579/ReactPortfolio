@@ -80,14 +80,16 @@ class About extends Component {
         
         return (
             <m.div>
-                <m.div variants={navbar} initial="hidden" animate="show" exit="exit" className="navbar">
-                    <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} className='navbar-btn' variants={navItem}>
+                <div className="navbar">
+                    <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} className='arrow-btn' variants={navItem}>
                         <Link to='/'><img id='backArrow' className='arrowBack' src={backArrowBlack} alt=''></img></Link>
                     </m.div>
-                    <m.div className='navbar-btn' variants={navItem} ><Link style={{"text-decoration": "none"}} to='/about'><div>About</div></Link></m.div>
-                    <m.div className='navbar-btn' variants={navItem} ><Link style={{"text-decoration": "none"}} to='/skills'><div>Skills</div></Link></m.div>
-                    <m.div className='navbar-btn' variants={navItem} ><Link style={{"text-decoration": "none"}} to='/projects'><div>Projects</div></Link></m.div>
-                </m.div>
+                    <m.div variants={navbar} initial="hidden" animate="show" exit="exit" className="sections-navbar">
+                        <m.div className='navbar-btn' variants={navItem} ><Link style={{"text-decoration": "none"}} to='/about'><div>About</div></Link></m.div>
+                        <m.div className='navbar-btn' variants={navItem} ><Link style={{"text-decoration": "none"}} to='/skills'><div>Skills</div></Link></m.div>
+                        <m.div className='navbar-btn' variants={navItem} ><Link style={{"text-decoration": "none"}} to='/projects'><div>Projects</div></Link></m.div>
+                    </m.div>
+                </div>
 
                 <m.div variants={content} initial="hidden" animate="show" exit="exit">
                     <h1 className='aboutMainHead'><strong>Hey, I'm Alex!</strong></h1>

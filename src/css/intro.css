@@ -228,7 +228,7 @@
 
 .click-anim {
     color: white;
-    animation: pageTransitionTxt 2s ease forwards;
+    animation: pageTransitionTxt 1.8s ease forwards;
 }
 
 .click-anim::before {

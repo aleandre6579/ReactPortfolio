@@ -3,32 +3,57 @@
     
 }
 
+@keyframes navBtnHoverGlow {
+    0% {
+        box-shadow: 0 0 0px 0px white;
+        opacity: 0;
+    }
+    100% {
+        box-shadow: 0 0 120px 120px white;
+        opacity: 0.2;
+    }
+}
+
 
 .page {
 }
 
 .navbar {
+    margin-top: -20px;
+}
+
+.sections-navbar {
     display: flex;
     background-color: transparent;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    margin-left: 6%;
     height: 10rem;
+    gap: 5em;
 }
 
 .navbar-btn {
-    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     font-family: "NavBtnTxt";
-    font-size: 6vw;
+    font-size: clamp(0rem, calc(1rem + 6vw), 5rem);
     text-decoration: none;
     transition: 200ms;
     cursor: pointer;
     transition: 200ms;
 }
-
+.navbar-btn::before {
+    content: "";
+    position: relative;
+    left: 50%;
+    top: -3%;
+    width: 10px;
+}
+.navbar-btn:hover::before {
+    animation: navBtnHoverGlow  0.25s ease forwards;
+}
 .navbar-btn:hover {
     color: white;
     font-size: 8vw;
@@ -39,9 +64,30 @@
     position: relative;
     top: -10px;
     transition: 200ms;
-    
 }
-.arrowBack:hover {
+
+.arrow-btn {
+    width: 50px;
+    position: relative;
+    top: 100px;
+    left: 50px;
+    transition: 200ms;
+}
+.arrow-btn:hover {
+    left: 45px;
+}
+.arrow-btn:hover .arrowBack {
+    transform: scale(1.35);
+}
+.arrow-btn::before {
+    content: "";
+    position: relative;
+    left: 50%;
+    top: -3%;
+    width: 10px;
+}
+.arrow-btn:hover::before {
+    animation: navBtnHoverGlow  0.25s ease forwards;
 }
 
 .aboutMainHead {
@@ -66,6 +112,7 @@
 }
 
 .aboutHead {
+    background-color: var(--blue);
     position: relative;
     margin-top: 10%;
     margin-left: 8%;
@@ -75,7 +122,8 @@
     width: 8em;
     padding: 5px;
     border-radius: 5px;
-    color: var(--blue)
+    color: var(--purple);
+    font-weight: 600;
 }
 
 .aboutTxt {

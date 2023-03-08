@@ -71,7 +71,7 @@ class Intro extends Component {
             <m.div id='root2'
                 initial={{opacity: 1}}
                 animate={{opacity:1}}
-                transition={{duration: 3}}
+                transition={{duration: 2}}
                 exit={{opacity:1}}
           >
                 <div className="title-section">
