@@ -41,21 +41,27 @@ html {
     background-color: var(--darkerBlue);
 }
 
+.openContainer.container1 {
+    height: 710px;
+    transition: 400ms;
+}
+.openContainer.container2 {
+    height: 210px;
+}
+.openContainer.container3 {
+    height: 310px;
+}
+.openContainer.container4 {
+    height: 510px;
+}
 .openContainer {
     background-color: var(--darkerBlue);
     width: 400px;
-    height: 600px;
     position: relative;
     border-radius: 20px;
     border: 5px var(--blue) solid;
     margin-top: 100px;
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: space-evenly;
-    padding-top: 5px;
-    padding-left: 20px;
     transition: 400ms;
 }
 
@@ -65,28 +71,113 @@ html {
     top: 80px;
 }
 
-.containerImg {
-    width: 60px;
-    position: absolute;
-    transition: top 200ms, left 200ms;
-}
-
-.container > .containerImg {
-    width: 60px;
-}
-
-.openContainer > .containerImg {
+.containerRow {
+    position: relative;
     top: 0px;
     left: 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100px;
+    padding-left: 50px;
+    gap: 20px;
+    transition: 500ms;
 }
 
-.box1 {
-
+.containerImg {
+    width: 60px;
+    position: relative;
 }
 
-.box2 {
+.container > .containerRow > .containerTxt {
+    position: relative;
+    width: 200px;
+    font-size: 25px;
+    color: transparent;
+    transition: 300ms;
+}
+.openContainer > .containerRow > .containerTxt {
+    position: relative;
+    width: 200px;
+    font-size: 25px;
+    color: white;
+    transition: 300ms;
 }
 
-.box3 {
 
+/* Image positions inside the containers */
+/* Container 1 */
+.container > .row11 {
+    top: 5px;
+    left: 65px;
+}
+.container > .row12 {
+    top: -250px;
+    left: -10px;
+}
+.container > .row13 {
+    top: -350px;
+    left: 140px;
+}
+.container > .row14 {
+    top: -350px;
+    left: 145px;
+}
+.container > .row15 {
+    top: -65px;
+    left: -10px;
+}
+.container > .row16 {
+    top: -415px;
+    left: 65px;
+}
+.container > .row17 {
+    top: -5px;
+    left: 65px;
+}
+
+/* Container 2 */
+.container > .row21 {
+    top: 40px;
+    left: 30px;
+}
+.container > .row22 {
+    top: 40px;
+    left: 110px;
+}
+
+/* Container 3 */
+.container > .row31 {
+    top: 20px;
+    left: 55px;
+}
+.container > .row32 {
+    top: 30px;
+    left: 0px;
+}
+.container > .row33 {
+    top: -70px;
+    left: 110px;
+}
+
+/* Container 4 */
+.container > .row41 {
+    top: 5px;
+    left: 65px;
+}
+.container > .row42 {
+    top: -30px;
+    left: -20px;
+}
+.container > .row43 {
+    top: -30px;
+    left: 20px;
+}
+.container > .row44 {
+    top: -135px;
+    left: 115px;
+}
+.container > .row45 {
+    top: -335px;
+    left: 135px;
 }

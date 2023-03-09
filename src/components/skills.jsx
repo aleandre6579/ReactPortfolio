@@ -32,6 +32,7 @@ import communication from '../imgs/communication.png';
 
 class About extends Component {
     componentDidMount() {
+        document.documentElement.style.overflow = "auto";
         window.scrollTo(0,0);
     }
 
@@ -133,45 +134,100 @@ class About extends Component {
                 <div className="containersRow">
                     <div className="containerSpace">
                         <div className="containerTitle">Languages</div>
-                        <div id='container1' onClick={() => openContainer('container1')} className="container box1">
-                            <img style={{top: '30px', left: '80px'}} src={c} className='containerImg'/>
-                            <img style={{top: '80px', left: '200px'}} src={cSharp} className='containerImg'/>
-                            <img style={{top: '175px', left: '80px'}} src={css} className='containerImg'/>
-                            <img style={{top: '170px', left: '190px'}} src={html} className='containerImg'/>
-                            <img style={{top: '40px', left: '170px'}} src={java} className='containerImg'/>
-                            <img style={{top: '100px', left: '20px'}} src={js} className='containerImg'/>
-                            <img style={{top: '110px', left: '130px'}} src={python} className='containerImg'/>
+                        <div id='container1' onClick={() => openContainer('container1')} className="container container1">
+                            <div className="containerRow row11">
+                                <img src={c} className='containerImg'/>
+                                <div className="containerTxt">Very proficient</div>
+                            </div>
+                            <div className="containerRow row17">
+                                <img src={python} className='containerImg'/>
+                                <div className="containerTxt">Very proficient</div>
+                            </div>
+                            <div className="containerRow row15">
+                                <img src={java} className='containerImg'/>
+                                <div className="containerTxt">Proficient</div>
+                            </div>
+                            <div className="containerRow row12">
+                                <img src={cSharp} className='containerImg'/>
+                                <div className="containerTxt">Proficient</div>                       
+                            </div>
+                            <div className="containerRow row14">
+                                <img src={html} className='containerImg'/>
+                                <div className="containerTxt">Competent</div>
+                            </div>
+                            <div className="containerRow row13">
+                                <img src={css} className='containerImg'/>
+                                <div className="containerTxt">Competent</div>
+                            </div>
+                            <div className="containerRow row16">
+                                <img src={js} className='containerImg'/>
+                                <div className="containerTxt">Competent</div>
+                            </div>
                         </div>
                     </div>
+
                     <div className="containerSpace">
                         <div className="containerTitle">Frameworks</div>
-                        <div id='container2' onClick={() => openContainer('container2')} className="container box2">
-                            <img style={{top: '70px', left: '70px'}} src={react} className='containerImg'/>
-                            <img style={{top: '140px', left: '160px'}} src={unity} className='containerImg'/>
-                        </div>
-                    </div>
-                </div>
-                <div className="containersRow">
-                <div className="containerSpace">
-                        <div className="containerTitle">Social</div>
-                        <div id='container3' onClick={() => openContainer('container3')} className="container box3">
-                            <img style={{top: '50px', left: '80px'}} src={team} className='containerImg'/>
-                            <img style={{top: '90px', left: '190px'}} src={listener} className='containerImg'/>
-                            <img style={{top: '160px', left: '100px'}} src={communication} className='containerImg'/>
-                        </div>
-                    </div>
-                    <div className="containerSpace">
-                        <div className="containerTitle">Personal</div>
-                        <div id='container4' onClick={() => openContainer('container4')} className="container box4">
-                            <img style={{top: '40px', left: '80px'}} src={ambitious} className='containerImg'/>
-                            <img style={{top: '60px', left: '180px'}} src={creative} className='containerImg'/>
-                            <img style={{top: '130px', left: '40px'}} src={determined} className='containerImg'/>
-                            <img style={{top: '190px', left: '110px'}} src={solver} className='containerImg'/>
-                            <img style={{top: '150px', left: '200px'}} src={worker} className='containerImg'/>
+                        <div id='container2' onClick={() => openContainer('container2')} className="container container2">
+                            <div className="containerRow row22">  
+                                <img src={unity} className='containerImg'/>
+                                <div className="containerTxt">Very proficient</div>
+                            </div>
+                            <div className="containerRow row21">  
+                                <img src={react} className='containerImg'/>
+                                <div className="containerTxt">Competent</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <div className="containersRow">
+                    <div className="containerSpace">
+                        <div className="containerTitle">Social</div>
+                        <div id='container3' onClick={() => openContainer('container3')} className="container container3">
+                            <div className="containerRow row31">
+                                <img style={{width:'80px'}} src={team} className='containerImg'/>
+                                <div className="containerTxt">Good Teamwork</div>
+                            </div>
+                            <div className="containerRow row32">
+                                <img style={{width:'80px'}} src={listener} className='containerImg'/>
+                                <div className="containerTxt">Good Listener</div>
+                            </div>
+                            <div className="containerRow row33">
+                                <img style={{width:'70px'}} src={communication} className='containerImg'/>
+                                <div className="containerTxt">Good Communicator</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="containerSpace">
+                        <div className="containerTitle">Personal</div>
+                        <div id='container4' onClick={() => openContainer('container4')} className="container container4">
+                            <div className="containerRow row41">
+                                <img style={{width:'70px'}} src={ambitious} className='containerImg'/>
+                                <div className="containerTxt">Ambitious</div>
+                            </div>
+                            <div className="containerRow row42">
+                                <img style={{width:'70px'}} src={creative} className='containerImg'/>
+                                <div className="containerTxt">Creative</div>
+                            </div>
+                            <div className="containerRow row43">
+                                <img src={determined} className='containerImg'/>
+                                <div className="containerTxt">Determined</div>
+                            </div>
+                            <div className="containerRow row44">
+                                <img style={{width:'70px'}} src={solver} className='containerImg'/>
+                                <div className="containerTxt">Problem-solver</div>
+                            </div>
+                            <div className="containerRow row45">
+                                <img style={{width:'80px'}} src={worker} className='containerImg'/>
+                                <div className="containerTxt">Hardworking</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style={{height: '70px'}}/>
             </m.div>
         );
     }
