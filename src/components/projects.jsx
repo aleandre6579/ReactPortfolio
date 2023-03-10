@@ -3,13 +3,14 @@ import { motion as m } from "framer-motion";
 import { Link } from "react-router-dom";
 import { AnimatePresence } from 'framer-motion';
 import '../css/about.css';
+import '../css/projects.css';
 import '../css/w3.css';
 import backArrowWhite from '../imgs/backArrowWhite.png';
 import backArrowBlack from '../imgs/backArrowBlack.png';
 
 class About extends Component {
     componentDidMount() {
-        document.documentElement.style.overflow = "hidden";
+        document.documentElement.style.overflow = "auto";
         window.scrollTo(0,0);
     }
 
@@ -71,11 +72,35 @@ class About extends Component {
             },
         };
 
+
+        let activePopupId = 0;
+
         function changeArrowToBlack() {
             document.getElementById('backArrow').src = backArrowBlack;
         }
         function changeArrowToWhite() {
             document.getElementById('backArrow').src = backArrowWhite;
+        }
+
+        function showProjectPopup(projectId) {
+            console.log(projectId);
+            if(activePopupId !== 0) return;
+            activePopupId = projectId;
+            var popup = document.getElementById('projectPopup');
+            popup.classList.remove("hideFast");
+            popup.classList.remove("behind");
+            
+            var project = document.getElementById(projectId);
+            project.classList.remove("hideFast");
+        }
+        function hideProjectPopup() {
+            var popup = document.getElementById('projectPopup');
+            popup.classList.add("hideFast");
+            popup.classList.add("behind");
+
+            var project = document.getElementById(activePopupId);
+            project.classList.add("hideFast");
+            activePopupId = 0;
         }
         
         return (
@@ -91,29 +116,32 @@ class About extends Component {
                     </m.div>
                 </div>
 
-                <m.div variants={content} initial="hidden" animate="show" exit="exit">
-                    <h1 className='aboutMainHead'><strong>Hey, I'm Alex!</strong></h1>
-                    <p className='aboutTxt'>
-                        Hey there, nice to meet you! I'm Alexandre Simon, a French Computer Science student currently in my 3rd year at
-                        Mahidol University in Bangkok, Thailand.
-                    </p>
+                <div className="projectsContent">
+                    <div onClick={() => showProjectPopup('project1')} className="project">
+                        <div className="hoverIcon">View Project</div>
+                    </div>
+                    <div onClick={() => showProjectPopup('project2')} className="project">
+                        <div className="hoverIcon">View Project</div>
+                    </div>
+                    <div onClick={() => showProjectPopup('project3')} className="project">
+                        <div className="hoverIcon">View Project</div>
+                    </div>
+                    <div onClick={() => showProjectPopup('project4')} className="project">
+                        <div className="hoverIcon">View Project</div>
+                    </div>
+                    <div onClick={() => showProjectPopup('project5')} className="project">
+                        <div className="hoverIcon">View Project</div>
+                    </div>
+                </div>
 
-                    <h1 className='aboutHead'>My Hobbies</h1>
-                    <p className='aboutTxt'>
-                        I love anything that touches storytelling in any way, but I also love the thrill of solving complicated problems.
-                        That's why the hobby I love the most is <strong>game development! </strong><br/>
-                        I love to dive into impressive and creative works of art, especially well-written novels and video games, which I 
-                        am currently learning to make, with plans of making my own novels and games in the future.
-                    
-                    </p>
+                <div id='projectPopup' className="projectPopup hideFast behind">
+                    <div onClick={hideProjectPopup} className="closeBtn">x</div>
+                    <div id='project1' className="project1 hideFast">1</div>
+                    <div id='project2' className="project2 hideFast">2</div>
+                    <div id='project3' className="project3 hideFast">3</div>
+                </div>
 
-                    <h1 className='aboutHead'>My Goals</h1>
-                    <p className='aboutTxt'>
-                        When it comes to my career, the jobs I am targetting are <strong>video game developer</strong>, 
-                        <strong> software enginner</strong> and <strong>full-stack developer</strong>.
-                        However, I keep myself open to as many job opportunities.
-                    </p>
-                </m.div>            
+
             </m.div>
         );
     }
