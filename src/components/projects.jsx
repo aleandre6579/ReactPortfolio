@@ -101,13 +101,14 @@ class About extends Component {
         }
 
         function hideProjectPopup() {
+            // Close popup
             var popup = document.getElementById('projectPopup');
             popup.classList.add("projectPopupClose");
-/*             popup.classList.add("behind");
- */
-/*             var project = document.getElementById(activePopupId);
+ 
+            // Hide the active popup content
+            var project = document.getElementById(activePopupId);
             project.classList.add("hideFast");
- */         activePopupId = 0;
+            activePopupId = 0;
         }
         
         return (
