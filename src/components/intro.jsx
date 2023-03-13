@@ -44,15 +44,6 @@ class Intro extends Component {
                 if('btn' + i !== btnName)
                     document.getElementById('btn' + i).classList.add("hide");
             }
-
-            if(btnName === 'btn1')
-                root.style.setProperty('--translateAmt', '-420px');
-            if(btnName === 'btn2')
-                root.style.setProperty('--translateAmt', '-630px');
-            if(btnName === 'btn3')
-                root.style.setProperty('--translateAmt', '-850px');
-            
-            rootStyles = getComputedStyle(root);
         }
 
         function handleOnMouseMove(e) {

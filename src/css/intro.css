@@ -84,16 +84,16 @@
 @keyframes pageTransitionTxt {
     0% {
         margin-top: 0px;
-        font-size: calc(3rem + 1.5vw);
+        font-size: calc(-1rem + 1.5vw + 5vh);        
     }
     10% {
         margin-top: 0px;
-        font-size: calc(3rem + 1.5vw);
+        font-size: calc(-1rem + 1.5vw + 5vh);        
         color: white;
     }
     100% {
         margin-top: -25px;
-        font-size: calc(5rem + 1.5vw);
+        font-size: calc(2rem + 1.5vw + 5vh);
         color: var(--purple);
     }
 }
@@ -135,7 +135,7 @@
 }
 .title-pos {
     text-align: center;
-    top: 10vh;
+    top: 10%;
 }
 
 .subtitle {
@@ -154,19 +154,18 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     white-space: nowrap;
-    margin-top: 10px;
 }
 .subtitle-pos {
     text-align: center;
-    top: 8vh;
+    top: 8.5%;
 }
 
 .name {
-    font-size: clamp(0rem, calc(1rem + 4vw), 6rem);
+    font-size: clamp(0rem, calc(-1rem + 5vw + 3vh), 6rem);
     font-weight: 1000;
 }
 .software-dev {
-    font-size: clamp(0rem, calc(.7rem + 3vw), 4rem);
+    font-size: clamp(0rem, calc(-1.5rem + 4vw + 3vh), 4rem);
 }
 
 
@@ -180,7 +179,7 @@
 }
 .btn {
     border: 5px transparent solid;
-    font-size: calc(3rem + 1.5vw);
+    font-size: calc(-1rem + 1.5vw + 5vh);
     position: relative;
     width: 5em;
     height: 1.5em;

@@ -12,7 +12,7 @@ class About extends Component {
     componentDidMount() {
         document.documentElement.style.overflow = "auto";
         window.scrollTo(0,0);
-    }
+}
 
     render() { 
         const navbar = {
@@ -83,24 +83,31 @@ class About extends Component {
         }
 
         function showProjectPopup(projectId) {
-            console.log(projectId);
             if(activePopupId !== 0) return;
             activePopupId = projectId;
+
             var popup = document.getElementById('projectPopup');
-            popup.classList.remove("hideFast");
+            popup.classList.remove("projectPopupClose");
             popup.classList.remove("behind");
-            
+            popup.style.opacity = 1;
+
+            // Reset popup open animation
+            popup.classList.remove("projectPopup");
+            void popup.offsetWidth;
+            popup.classList.add("projectPopup");
+                
             var project = document.getElementById(projectId);
             project.classList.remove("hideFast");
         }
+
         function hideProjectPopup() {
             var popup = document.getElementById('projectPopup');
-            popup.classList.add("hideFast");
-            popup.classList.add("behind");
-
-            var project = document.getElementById(activePopupId);
+            popup.classList.add("projectPopupClose");
+/*             popup.classList.add("behind");
+ */
+/*             var project = document.getElementById(activePopupId);
             project.classList.add("hideFast");
-            activePopupId = 0;
+ */         activePopupId = 0;
         }
         
         return (
@@ -134,12 +141,14 @@ class About extends Component {
                     </div>
                 </div>
 
-                <div id='projectPopup' className="projectPopup hideFast behind">
+                <m.div id='projectPopup' style={{opacity: 0}} className="projectPopup behind"
+                
+                >
                     <div onClick={hideProjectPopup} className="closeBtn">x</div>
                     <div id='project1' className="project1 hideFast">1</div>
                     <div id='project2' className="project2 hideFast">2</div>
                     <div id='project3' className="project3 hideFast">3</div>
-                </div>
+                </m.div>
 
 
             </m.div>
