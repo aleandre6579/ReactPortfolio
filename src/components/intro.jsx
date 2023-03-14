@@ -14,53 +14,18 @@ class Intro extends Component {
     componentDidMount() {
         document.documentElement.style.overflow = "hidden";
         document.documentElement.style.overflowX = "hidden";
+
+        const btnsAnimating = document.getElementsByClassName('btnAnimating');
+        btnsAnimating[0].addEventListener("animationend", () => {
+            for (let i = 0; i < btnsAnimating.length; i++) {
+                console.log(i);
+                btnsAnimating[i].classList.add("btn");
+                btnsAnimating[i].classList.remove("btnAnimating");
+            }
+        });       
     }
 
     render() { 
-        var root = document.querySelector(':root');
-        var rootStyles = getComputedStyle(root);
-
-        const btnsMotion = {
-            hidden: {
-                color: 'rgba(84, 88, 194, 0)',
-            },
-            show: {
-                color: 'rgba(84, 88, 194, 1)',
-                transition: {
-                    duration: 4,
-                    delay: 3.5,
-                }
-            },
-        };
-
-        const btnMotion = {
-            hidden: {
-                opacity: 0,
-                backgroundColor: 'white',
-                boxShadow: '0 0px 5px white',
-                color: 'var(--purple)',
-                width: '5em',
-            },
-            show: {
-                opacity: 1,
-                backgroundColor: 'white',
-                boxShadow: '0 0px 5px white',
-                color: 'var(--purple)',
-                width: '5em',
-                transition: {
-                    duration: 0.3,
-                }
-            },
-            hover: {
-                backgroundColor: 'var(--purple)',
-                boxShadow: '0 0px 50px var(--purple)',
-                color: 'white',
-                width: 'clamp(5em, 70%, 10em)',
-                transition: {
-                    duration: 0.3,
-                }
-            }
-        };
 
         const pathAppear = {
             hidden: { 
@@ -73,7 +38,7 @@ class Intro extends Component {
                 fill: 'rgba(255, 255, 255, 1)',
                 pathLength: 1,
                 transition: {
-                    delay: 1.5,
+                    delay: 1,
                     duration: 2,
                     fill: {delay: 3, duration: 2}
                 }    
@@ -86,22 +51,38 @@ class Intro extends Component {
               left: '0px',
               width: '100%',
               transition: {
-                delay: 3,
+                delay: 3.5,
                 ease: 'easeInOut',
                 duration: 2,
-                delayChildren: 5,
-                staggerChildren: 0.2
+                delayChildren: 5.25,
+                staggerChildren: 0.3
               }
             }
           }
             
-        const contactBtn = {
-            hidden: { y: 20, opacity: 0, rotate: 180 },
+          const contactBtn = {
+            hidden: { y: 50, opacity: 0, rotate: 180 },
             visible: {
               y: 0,
               opacity: 1,
               rotate: 360,
-            }
+              transition: {
+                duration: 1,
+                ease: 'backInOut',
+              }
+            }     
+        }
+        const contactTxt = {
+            hidden: { y: 50, opacity: 0, fontSize: '0rem' },
+            visible: {
+              y: 0,
+              opacity: 1,
+              fontSize: '1.5rem',
+              transition: {
+                duration: 1,
+                ease: 'backInOut',
+              }
+            }     
         }
 
         function circleBtnClicked(btnName) {
@@ -142,19 +123,18 @@ class Intro extends Component {
                         <div className="software-dev">Software Developer</div>
                     </div>
 
-                    <m.div variants={btnsMotion} initial="hidden" animate="show" className='btns'>
-                        <m.div variants={btnMotion} whileHover="hover" exit="exit" id='btn1' onClick={() => circleBtnClicked('btn1')} className='btn about-btn' ><Link style={{"textDecoration": "none"}} to='/about'><div className="btn-txt">About</div></Link>
+                    <m.div className='btns'>
+                        <div id='btn1' onClick={() => circleBtnClicked('btn1')} className='btnAnimating about-btn' ><Link style={{"textDecoration": "none"}} to='/about'><div className="btn-txt">About</div></Link>
                             <m.svg className='svg'>
                                 <m.rect
                                     variants={pathAppear} initial="hidden" animate="show"
                                     x="5"
                                     y="6"
                                     rx='50' ry='50' width='5em' height='1.48em'
-                                    
                                 ></m.rect>
                             </m.svg>
-                        </m.div>
-                        <m.div variants={btnMotion} whileHover="hover" exit="exit" id='btn2' onClick={() => circleBtnClicked('btn2')} className='btn skills-btn'><Link style={{"textDecoration": "none"}} to='/skills'><div className="btn-txt">Skills</div></Link>
+                        </div>
+                        <m.div id='btn2' onClick={() => circleBtnClicked('btn2')} className='btnAnimating skills-btn'><Link style={{"textDecoration": "none"}} to='/skills'><div className="btn-txt">Skills</div></Link>
                             <m.svg className='svg'>
                                 <m.rect
                                     variants={pathAppear} initial="hidden" animate="show"
@@ -164,7 +144,7 @@ class Intro extends Component {
                                 ></m.rect>
                             </m.svg>
                         </m.div>
-                        <m.div variants={btnMotion} whileHover="hover" exit="exit" id='btn3' onClick={() => circleBtnClicked('btn3')} className='btn projects-btn'><Link style={{"textDecoration": "none"}} to='/projects'><div className="btn-txt">Projects</div></Link>
+                        <m.div id='btn3' onClick={() => circleBtnClicked('btn3')} className='btnAnimating projects-btn'><Link style={{"textDecoration": "none"}} to='/projects'><div className="btn-txt">Projects</div></Link>
                             <m.svg className='svg'>
                                 <m.rect
                                     variants={pathAppear} initial="hidden" animate="show"
@@ -181,9 +161,10 @@ class Intro extends Component {
                         initial="hidden" animate="visible"
                     >
                         <m.div variants={contactBtn} className="contactTxt">Contact me here</m.div>
-                        <m.img id='gitBtn' variants={contactBtn} className='contactBtn' src={gitLogo}/>
-                        <m.img id='gitBtn' variants={contactBtn} className='contactBtn ' src={linkedinLogo}/>
-                        <m.img id='gitBtn' variants={contactBtn} className='contactBtn' src={gmailLogo}/>
+                        <a href='https://github.com/aleandre6579?tab=repositories' target="_blank"><m.img id='gitBtn' variants={contactBtn} className='contactBtn' src={gitLogo}/></a>
+                        <a href='https://linkedin.com/in/alexandre-simon-dev' target="_blank"><m.img id='gitBtn' variants={contactBtn} className='contactBtn ' src={linkedinLogo}/></a>
+                        <m.div variants={contactTxt} className="contactInfoTxt">aleandre6579.simon@gmail.com</m.div>
+                        <m.div variants={contactTxt} className="contactInfoTxt">+66 626060299</m.div>
                     </m.div>
 
                 </div>
@@ -191,5 +172,5 @@ class Intro extends Component {
         );
     }
 }
- 
+
 export default Intro;
