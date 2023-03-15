@@ -9,7 +9,6 @@ import backArrowBlack from '../imgs/backArrowBlack.png';
 
 class About extends Component {
     componentDidMount() {
-        document.documentElement.style.overflow = "hidden";
         window.scrollTo(0,0);
     }
 
@@ -19,13 +18,34 @@ class About extends Component {
             show: { 
                 opacity: 1,
                 transition: {
-                    staggerChildren: 0.2,
+                    staggerChildren: 0.3,
                 },
             },
             exit: {
                 opacity: 1,
                 transition: {
                     staggerChildren: 0.2,
+                },
+            },
+        };
+
+        const navArrow = {
+            hidden: {
+                opacity: 0,
+                x: -50,
+            },
+            show: {
+                opacity: 1,
+                x: 0,
+                transition: {
+                    duration: 0.2,
+                },
+            },
+            exit: {
+                opacity: 1,
+                x: -150,
+                transition: {
+                    duration: 0.2,
                 },
             },
         };
@@ -39,7 +59,7 @@ class About extends Component {
                 opacity: 1,
                 y: 0,
                 transition: {
-                    duration: 0.4,
+                    duration: 0.5,
                 },
             },
             exit: {
@@ -58,7 +78,8 @@ class About extends Component {
             show: {
                 opacity: 1,
                 transition: {
-                    duration: 1,
+                    duration: 0.5,
+                    delay: 0.75,
                     ease: "easeIn"
                 },
             },
@@ -79,16 +100,26 @@ class About extends Component {
         }
         
         return (
-            <m.div>
+            <m.div
+                initial={{
+
+                }}
+                animate={{
+
+                }}
+                exit={{
+
+                }}
+            >
                 <div className="navbar">
-                    <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} className='arrow-btn' variants={navItem}>
+                    <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} className='arrow-btn' variants={navArrow} initial="hidden" animate="show" exit="exit" >
                         <Link to='/'><img id='backArrow' className='arrowBack' src={backArrowBlack} alt=''></img></Link>
                     </m.div>
                     <m.div variants={navbar} initial="hidden" animate="show" exit="exit" className="sections-navbar">
                         <m.div className='navbar-btn' variants={navItem} ><Link style={{"text-decoration": "none"}} to='/about'><div>About</div></Link></m.div>
                         <m.div className='navbar-btn' variants={navItem} ><Link style={{"text-decoration": "none"}} to='/skills'><div>Skills</div></Link></m.div>
                         <m.div className='navbar-btn' variants={navItem} ><Link style={{"text-decoration": "none"}} to='/projects'><div>Projects</div></Link></m.div>
-                    </m.div>
+                      </m.div>
                 </div>
 
                 <m.div variants={content} initial="hidden" animate="show" exit="exit">

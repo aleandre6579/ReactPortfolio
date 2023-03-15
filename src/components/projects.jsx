@@ -31,6 +31,27 @@ class About extends Component {
             },
         };
 
+        const navArrow = {
+            hidden: {
+                opacity: 0,
+                x: -50,
+            },
+            show: {
+                opacity: 1,
+                x: 0,
+                transition: {
+                    duration: 0.2,
+                },
+            },
+            exit: {
+                opacity: 1,
+                x: -150,
+                transition: {
+                    duration: 0.2,
+                },
+            },
+        };
+
         const navItem = {
             hidden: {
                 opacity: 0,
@@ -40,7 +61,7 @@ class About extends Component {
                 opacity: 1,
                 y: 0,
                 transition: {
-                    duration: 0.4,
+                    duration: 0.5,
                 },
             },
             exit: {
@@ -59,7 +80,8 @@ class About extends Component {
             show: {
                 opacity: 1,
                 transition: {
-                    duration: 1,
+                    duration: 0.5,
+                    delay: 0.75,
                     ease: "easeIn"
                 },
             },
@@ -114,7 +136,7 @@ class About extends Component {
         return (
             <m.div>
                 <div className="navbar">
-                    <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} className='arrow-btn' variants={navItem}>
+                    <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} className='arrow-btn' variants={navArrow}initial="hidden" animate="show" exit="exit">
                         <Link to='/'><img id='backArrow' className='arrowBack' src={backArrowBlack} alt=''></img></Link>
                     </m.div>
                     <m.div variants={navbar} initial="hidden" animate="show" exit="exit" className="sections-navbar">
@@ -124,7 +146,7 @@ class About extends Component {
                     </m.div>
                 </div>
 
-                <div className="projectsContent">
+                <m.div variants={content} initial="hidden" animate="show" exit="exit" className="projectsContent">
                     <div onClick={() => showProjectPopup('project1')} className="project">
                         <div className="hoverIcon">View Project</div>
                     </div>
@@ -140,7 +162,7 @@ class About extends Component {
                     <div onClick={() => showProjectPopup('project5')} className="project">
                         <div className="hoverIcon">View Project</div>
                     </div>
-                </div>
+                </m.div>
 
                 <m.div id='projectPopup' style={{opacity: 0}} className="projectPopup behind"
                 

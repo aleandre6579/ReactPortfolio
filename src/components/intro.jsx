@@ -160,7 +160,7 @@ class Intro extends Component {
                         variants={contactBar}
                         initial="hidden" animate="visible"
                     >
-                        <m.div variants={contactBtn} className="contactTxt">Contact me here</m.div>
+                        <m.div variants={contactTxt} className="contactTxt">Contact me here</m.div>
                         <a href='https://github.com/aleandre6579?tab=repositories' target="_blank"><m.img id='gitBtn' variants={contactBtn} className='contactBtn' src={gitLogo}/></a>
                         <a href='https://linkedin.com/in/alexandre-simon-dev' target="_blank"><m.img id='gitBtn' variants={contactBtn} className='contactBtn ' src={linkedinLogo}/></a>
                         <m.div variants={contactTxt} className="contactInfoTxt">aleandre6579.simon@gmail.com</m.div>

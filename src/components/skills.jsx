@@ -53,6 +53,27 @@ class About extends Component {
             },
         };
 
+        const navArrow = {
+            hidden: {
+                opacity: 0,
+                x: -50,
+            },
+            show: {
+                opacity: 1,
+                x: 0,
+                transition: {
+                    duration: 0.2,
+                },
+            },
+            exit: {
+                opacity: 1,
+                x: -150,
+                transition: {
+                    duration: 0.2,
+                },
+            },
+        };
+
         const navItem = {
             hidden: {
                 opacity: 0,
@@ -62,7 +83,7 @@ class About extends Component {
                 opacity: 1,
                 y: 0,
                 transition: {
-                    duration: 0.4,
+                    duration: 0.5,
                 },
             },
             exit: {
@@ -81,7 +102,8 @@ class About extends Component {
             show: {
                 opacity: 1,
                 transition: {
-                    duration: 1,
+                    duration: 0.5,
+                    delay: 0.75,
                     ease: "easeIn"
                 },
             },
@@ -121,7 +143,7 @@ class About extends Component {
         return (
             <m.div>
                 <div className="navbar">
-                    <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} className='arrow-btn' variants={navItem}>
+                    <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} className='arrow-btn' variants={navArrow} initial="hidden" animate="show" exit="exit">
                         <Link to='/'><img id='backArrow' className='arrowBack' src={backArrowBlack} alt=''></img></Link>
                     </m.div>
                     <m.div variants={navbar} initial="hidden" animate="show" exit="exit" className="sections-navbar">
@@ -131,7 +153,7 @@ class About extends Component {
                     </m.div>
                 </div>
 
-                <div className="containersRow">
+                <m.div variants={content} initial="hidden" animate="show" exit="exit" className="containersRow" >
                     <div className="containerSpace">
                         <div className="containerTitle">Languages</div>
                         <div id='container1' onClick={() => openContainer('container1')} className="container container1">
@@ -179,9 +201,9 @@ class About extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                </m.div>
 
-                <div className="containersRow">
+                <m.div variants={content} initial="hidden" animate="show" exit="exit" className="containersRow">
                     <div className="containerSpace">
                         <div className="containerTitle">Social</div>
                         <div id='container3' onClick={() => openContainer('container3')} className="container container3">
@@ -225,7 +247,7 @@ class About extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                </m.div>
 
                 <div style={{height: '70px'}}/>
             </m.div>
