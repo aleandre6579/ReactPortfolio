@@ -94,6 +94,8 @@ html {
     width: 200px;
     font-size: 25px;
     color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
     transition: 300ms;
 }
 .openContainer > .containerRow > .containerTxt {
