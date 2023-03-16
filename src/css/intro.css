@@ -84,15 +84,18 @@
 @keyframes pageTransitionTxt {
     0% {
         margin-top: 0px;
+        margin-left: 0px;
         font-size: calc(-1rem + 1.5vw + 5vh);        
     }
     10% {
         margin-top: 0px;
+        margin-left: 0px;
         font-size: calc(-1rem + 1.5vw + 5vh);        
         color: white;
     }
     100% {
-        margin-top: -25px;
+        margin-top: -30px;
+        margin-left: -12px;
         font-size: calc(2rem + 1.5vw + 5vh);
         color: var(--purple);
     }
@@ -347,7 +350,6 @@
     position: relative;
     top: 3px;
 }
-
 
 .svg {
     opacity: 1;

@@ -44,6 +44,7 @@ html {
     height: 300px;
     background-color: var(--darkBlue);
     border: 2px var(--darkerBlue) solid;
+    z-index: 1;
 }
 .project:hover {
     background-color: var(--darkerBlue);

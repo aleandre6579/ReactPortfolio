@@ -9,6 +9,7 @@ import backArrowBlack from '../imgs/backArrowBlack.png';
 
 class About extends Component {
     componentDidMount() {
+        document.documentElement.style.overflow = "auto";
         window.scrollTo(0,0);
     }
 
@@ -86,7 +87,7 @@ class About extends Component {
             exit: {
                 opacity: 0,
                 transition: {
-                    duration: 1,
+                    duration: 0.5,
                     ease: "easeOut"
                 },
             },
@@ -100,17 +101,13 @@ class About extends Component {
         }
         
         return (
-            <m.div
-                initial={{
-
-                }}
-                animate={{
-
-                }}
-                exit={{
-
-                }}
-            >
+            <m.div> 
+                <m.div className="page"
+                    initial={{backgroundPosition: '0% 0%'}}
+                    animate={{backgroundPosition: '0% 60%'}}
+                    transition={{duration: 1}}
+                    exit={{backgroundPosition: '0% 0%'}}
+                />
                 <div className="navbar">
                     <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} className='arrow-btn' variants={navArrow} initial="hidden" animate="show" exit="exit" >
                         <Link to='/'><img id='backArrow' className='arrowBack' src={backArrowBlack} alt=''></img></Link>

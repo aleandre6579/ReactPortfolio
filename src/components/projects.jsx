@@ -10,7 +10,7 @@ import backArrowBlack from '../imgs/backArrowBlack.png';
 
 class About extends Component {
     componentDidMount() {
-        document.documentElement.style.overflow = "auto";
+        document.documentElement.style.overflow = "hidden";
         window.scrollTo(0,0);
 }
 
@@ -88,7 +88,7 @@ class About extends Component {
             exit: {
                 opacity: 0,
                 transition: {
-                    duration: 1,
+                    duration: 0.5,
                     ease: "easeOut"
                 },
             },
@@ -135,6 +135,12 @@ class About extends Component {
         
         return (
             <m.div>
+                <m.div className="page"
+                    initial={{backgroundPosition: '0% 0%'}}
+                    animate={{backgroundPosition: '0% 60%'}}
+                    transition={{duration: 1}}
+                    exit={{backgroundPosition: '0% 0%'}}
+                />
                 <div className="navbar">
                     <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} className='arrow-btn' variants={navArrow}initial="hidden" animate="show" exit="exit">
                         <Link to='/'><img id='backArrow' className='arrowBack' src={backArrowBlack} alt=''></img></Link>
@@ -168,9 +174,21 @@ class About extends Component {
                 
                 >
                     <div onClick={hideProjectPopup} className="closeBtn">x</div>
-                    <div id='project1' className="project1 hideFast">1</div>
-                    <div id='project2' className="project2 hideFast">2</div>
-                    <div id='project3' className="project3 hideFast">3</div>
+                    <div id='project1' className="project1 hideFast">
+                    
+                    </div>
+                    <div id='project2' className="project2 hideFast">
+                    
+                    </div>
+                    <div id='project3' className="project3 hideFast">
+                    
+                    </div>
+                    <div id='project4' className="project4 hideFast">
+                    
+                    </div>
+                    <div id='project5' className="project5 hideFast">
+                    
+                    </div>
                 </m.div>
 
 
