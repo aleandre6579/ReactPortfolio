@@ -120,27 +120,37 @@ class About extends Component {
                 </div>
 
                 <m.div variants={content} initial="hidden" animate="show" exit="exit">
-                    <h1 className='aboutMainHead'><strong>Hey, I'm Alex!</strong></h1>
+                    <h1 className='aboutMainHead bigHead'><strong>Hey, I'm Alex!</strong></h1>
                     <p className='aboutTxt'>
-                        Hey there, nice to meet you! I'm Alexandre Simon, a French Computer Science student currently in my 3rd year at
-                        Mahidol University in Bangkok, Thailand.
+                        A French <strong>Computer Science</strong> student currently in my 3rd year at
+                        MUIC ("Mahidol University International College") in Bangkok, Thailand.
                     </p>
 
-                    <h1 className='aboutHead'>My Hobbies</h1>
+                    <h1 className='aboutHead bigHead'>My Accomplishments</h1>
                     <p className='aboutTxt'>
-                        I love anything that touches storytelling in any way, but I also love the thrill of solving complicated problems.
-                        That's why the hobby I love the most is <strong>game development! </strong><br/>
-                        I love to dive into impressive and creative works of art, especially well-written novels and video games, which I 
+                        I graduated from LFIB ("Lycee Francais International de Bangkok"), a French highschool in Bangkok, with <strong>18.2/20</strong>. <br/>
+                        I taught myself <strong>Unity and C#</strong> at the age of 16 and I've been making small games with Unity since then.<br/>
+                        I am now working towards a Computer Science bachelors degree at MUIC ("Mahidol University International College"), one of the most
+                        prestigious universities in Thailand, with a current GPA of  <strong>3.78/4</strong>.<br/>
+                        I am also undertaking a <strong>Film Arts</strong> minor at MUIC.<br/>
+                    </p>
+
+                    <h1 className='aboutHead smallHead'>My Goals</h1>
+                    <p className='aboutTxt'>
+                        When it comes to my career, the jobs I am interested in are <strong>video game developer</strong>, 
+                        <strong> software enginner</strong> and <strong>full-stack developer</strong>.
+                        However I am captivated by most things in computer science so I am open to many job opportunities.
+                    </p>
+
+                    <h1 className='aboutHead smallHead'>My Hobbies</h1>
+                    <p className='aboutTxt'>
+                        I love anything that touches <strong>storytelling</strong> in any way, but I also love the thrill of <strong>solving complicated problems</strong>.
+                        <br/>
+                        I love to dive into impressive and creative works of art, especially well-written <strong>novels</strong> and <strong>video games</strong>, which I 
                         am currently learning to make, with plans of making my own novels and games in the future.
                     
                     </p>
 
-                    <h1 className='aboutHead'>My Goals</h1>
-                    <p className='aboutTxt'>
-                        When it comes to my career, the jobs I am targetting are <strong>video game developer</strong>, 
-                        <strong> software enginner</strong> and <strong>full-stack developer</strong>.
-                        However, I keep myself open to as many job opportunities.
-                    </p>
                 </m.div>            
             </m.div>
         );
