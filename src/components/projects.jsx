@@ -8,6 +8,9 @@ import '../css/w3.css';
 import backArrowWhite from '../imgs/backArrowWhite.png';
 import backArrowBlack from '../imgs/backArrowBlack.png';
 
+// Project imgs
+import freebotMenu from '../imgs/projects/freebotMenu.png';
+
 class About extends Component {
     componentDidMount() {
         document.documentElement.style.overflow = "hidden";
@@ -153,19 +156,20 @@ class About extends Component {
                 </div>
 
                 <m.div variants={content} initial="hidden" animate="show" exit="exit" className="projectsContent">
-                    <div onClick={() => showProjectPopup('project1')} className="project">
+                    <div onClick={() => showProjectPopup('project1')} className="project project1">
+                        <img src={freebotMenu} className='projectImg'></img>
                         <div className="hoverIcon">View Project</div>
                     </div>
-                    <div onClick={() => showProjectPopup('project2')} className="project">
+                    <div onClick={() => showProjectPopup('project2')} className="project project2">
                         <div className="hoverIcon">View Project</div>
                     </div>
-                    <div onClick={() => showProjectPopup('project3')} className="project">
+                    <div onClick={() => showProjectPopup('project3')} className="project project3">
                         <div className="hoverIcon">View Project</div>
                     </div>
-                    <div onClick={() => showProjectPopup('project4')} className="project">
+                    <div onClick={() => showProjectPopup('project4')} className="project project4">
                         <div className="hoverIcon">View Project</div>
                     </div>
-                    <div onClick={() => showProjectPopup('project5')} className="project">
+                    <div onClick={() => showProjectPopup('project5')} className="project project5">
                         <div className="hoverIcon">View Project</div>
                     </div>
                 </m.div>
@@ -174,19 +178,58 @@ class About extends Component {
                 
                 >
                     <div onClick={hideProjectPopup} className="closeBtn">x</div>
-                    <div id='project1' className="project1 hideFast">
+                    <div id='project1' className="popup1 hideFast popupContent">
+                        <img className='popupImg' src={freebotMenu}/>
+                        <h2>Freebot: Escape the Factory!</h2>
+                        <p>A 2D platformer game I made as a university project which taught me about WebGL and how to upload games online.
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        asd
+                        </p>
+                    </div>
+                    <div id='project2' className="popup2 hideFast popupContent">
                     
                     </div>
-                    <div id='project2' className="project2 hideFast">
+                    <div id='project3' className="popup3 hideFast popupContent">
                     
                     </div>
-                    <div id='project3' className="project3 hideFast">
+                    <div id='project4' className="popup4 hideFast popupContent">
                     
                     </div>
-                    <div id='project4' className="project4 hideFast">
-                    
-                    </div>
-                    <div id='project5' className="project5 hideFast">
+                    <div id='project5' className="popup5 hideFast popupContent">
                     
                     </div>
                 </m.div>

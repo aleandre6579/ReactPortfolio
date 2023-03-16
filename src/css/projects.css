@@ -40,15 +40,31 @@ html {
 }
 
 .project {
+    position: relative;
     width: 25%;
     height: 300px;
     background-color: var(--darkBlue);
     border: 2px var(--darkerBlue) solid;
     z-index: 1;
+    overflow: hidden;
 }
 .project:hover {
     background-color: var(--darkerBlue);
     cursor: pointer;
+}
+
+.projectImg {
+    position: absolute;
+    opacity: 0.8;
+    width: 200%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 500ms;
+}
+.project:hover > .projectImg {
+    opacity: 1;
+    width: 250%;
 }
 
 .project > .hoverIcon {
@@ -132,9 +148,22 @@ html {
     cursor: pointer;
 }
 
-.project1 {
-    background-color: blue;
+.popupContent {
+    background-color: var(--darkerBlue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
+
+.popupImg {
+    width: 100%;
+
+}
+
+
+
+
 
 .behind {
     z-index: -10;

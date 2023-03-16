@@ -9,26 +9,26 @@ import backArrowWhite from '../imgs/backArrowWhite.png';
 import backArrowBlack from '../imgs/backArrowBlack.png';
 
 /* Container images */
-import c from '../imgs/c.png';
-import cSharp from '../imgs/cSharp.png';
-import css from '../imgs/css.png';
-import html from '../imgs/html.png';
-import java from '../imgs/java.png';
-import js from '../imgs/js.png';
-import python from '../imgs/python.png';
+import c from '../imgs/skills/c.png';
+import cSharp from '../imgs/skills/cSharp.png';
+import css from '../imgs/skills/css.png';
+import html from '../imgs/skills/html.png';
+import java from '../imgs/skills/java.png';
+import js from '../imgs/skills/js.png';
+import python from '../imgs/skills/python.png';
 
-import react from '../imgs/react.png';
-import unity from '../imgs/unity.png';
+import react from '../imgs/skills/react.png';
+import unity from '../imgs/skills/unity.png';
 
-import ambitious from '../imgs/ambitious.png';
-import creative from '../imgs/creative.png';
-import determined from '../imgs/determined.png';
-import solver from '../imgs/solver.png';
-import worker from '../imgs/worker.png';
+import ambitious from '../imgs/skills/ambitious.png';
+import creative from '../imgs/skills/creative.png';
+import determined from '../imgs/skills/determined.png';
+import solver from '../imgs/skills/solver.png';
+import worker from '../imgs/skills/worker.png';
 
-import team from '../imgs/team.png';
-import listener from '../imgs/listener.png';
-import communication from '../imgs/communication.png';
+import team from '../imgs/skills/team.png';
+import listener from '../imgs/skills/listener.png';
+import communication from '../imgs/skills/communication.png';
 
 class About extends Component {
     componentDidMount() {
