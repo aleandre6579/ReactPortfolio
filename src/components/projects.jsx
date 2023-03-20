@@ -13,7 +13,7 @@ import freebotMenu from '../imgs/projects/freebotMenu.png';
 
 class About extends Component {
     componentDidMount() {
-        document.documentElement.style.overflow = "hidden";
+        document.body.style.overflow = 'visible';
         window.scrollTo(0,0);
 }
 
@@ -137,7 +137,7 @@ class About extends Component {
         }
         
         return (
-            <m.div>
+            <m.div className='realPage'>
                 <m.div className="page"
                     initial={{backgroundPosition: '0% 0%'}}
                     animate={{backgroundPosition: '0% 60%'}}

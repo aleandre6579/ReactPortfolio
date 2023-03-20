@@ -12,9 +12,7 @@ import linkedinLogo from '../imgs/linkedinLogo.png';
 
 class Intro extends Component {
     componentDidMount() {
-        document.documentElement.style.overflow = "hidden";
-        document.documentElement.style.overflowX = "hidden";
-
+        window.scrollTo(0,0);
         const btnsAnimating = document.getElementsByClassName('btnAnimating');
         btnsAnimating[0].addEventListener("animationend", () => {
             for (let i = 0; i < btnsAnimating.length; i++) {
@@ -73,11 +71,10 @@ class Intro extends Component {
             }     
         }
         const contactTxt = {
-            hidden: { y: 50, opacity: 0, fontSize: '0rem' },
+            hidden: { y: 50, opacity: 0 },
             visible: {
               y: 0,
               opacity: 1,
-              fontSize: '1.5rem',
               transition: {
                 duration: 1,
                 ease: 'backInOut',
@@ -86,6 +83,7 @@ class Intro extends Component {
         }
 
         function circleBtnClicked(btnName) {
+            document.body.style.overflow = 'hidden';
             var btn_panel = document.getElementById(btnName);
             btn_panel.classList.add("click-anim");
 
@@ -130,7 +128,7 @@ class Intro extends Component {
                                     variants={pathAppear} initial="hidden" animate="show"
                                     x="5"
                                     y="6"
-                                    rx='50' ry='50' width='5em' height='1.48em'
+                                    rx='.75em' ry='.75em' width='5em' height='1.5em'
                                 ></m.rect>
                             </m.svg>
                         </div>
@@ -140,7 +138,7 @@ class Intro extends Component {
                                     variants={pathAppear} initial="hidden" animate="show"
                                     x="5"
                                     y="6"
-                                    rx='50' ry='50' width='5em' height='1.47em'
+                                    rx='.75em' ry='.75em' width='5em' height='1.5em'
                                 ></m.rect>
                             </m.svg>
                         </m.div>
@@ -150,24 +148,24 @@ class Intro extends Component {
                                     variants={pathAppear} initial="hidden" animate="show"
                                     x="5"
                                     y="6"
-                                    rx='50' ry='50' width='5em' height='1.47em'
+                                    rx='.75em' ry='.75em' width='5em' height='1.5em'
                                 ></m.rect>
                             </m.svg>
                         </m.div>
                     </m.div>
-
-                    <m.div className='contactBar'
-                        variants={contactBar}
-                        initial="hidden" animate="visible"
-                    >
-                        <m.div variants={contactTxt} className="contactTxt">Contact me here</m.div>
-                        <a href='https://github.com/aleandre6579?tab=repositories' target="_blank"><m.img id='gitBtn' variants={contactBtn} className='contactBtn' src={gitLogo}/></a>
-                        <a href='https://linkedin.com/in/alexandre-simon-dev' target="_blank"><m.img id='gitBtn' variants={contactBtn} className='contactBtn ' src={linkedinLogo}/></a>
-                        <m.div variants={contactTxt} className="contactInfoTxt">aleandre6579.simon@gmail.com</m.div>
-                        <m.div variants={contactTxt} className="contactInfoTxt">+66 626060299</m.div>
-                    </m.div>
-
                 </div>
+
+                <m.div className='contactBar'
+                    variants={contactBar}
+                    initial="hidden" animate="visible"
+                >
+                    <m.div variants={contactTxt} className="contactTxt">Contact me here</m.div>
+                    <a href='https://github.com/aleandre6579?tab=repositories' target="_blank"><m.img id='gitBtn' variants={contactBtn} className='contactBtn' src={gitLogo}/></a>
+                    <a href='https://linkedin.com/in/alexandre-simon-dev' target="_blank"><m.img id='gitBtn' variants={contactBtn} className='contactBtn ' src={linkedinLogo}/></a>
+                    <m.div variants={contactTxt} className="contactInfoTxt">aleandre6579.simon@gmail.com</m.div>
+                    <m.div variants={contactTxt} className="contactInfoTxt">+66 626060299</m.div>
+                </m.div>
+
             </m.div>
         );
     }
