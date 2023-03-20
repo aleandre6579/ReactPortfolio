@@ -7,8 +7,8 @@ html {
 
 @keyframes openPopup {
     0% {
-        width: 30%;
-        height: 40%;
+        width: 20%;
+        height: 20%;
     }
     100% {
         width: 70%;
@@ -60,7 +60,7 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: 500ms;
+    transition: 300ms;
 }
 .project:hover > .projectImg {
     opacity: 1;
@@ -113,6 +113,7 @@ html {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--darkerBlue);
+    overflow: auto;
     animation: openPopup 500ms ease forwards;
 }
 .projectPopupClose {
@@ -128,7 +129,7 @@ html {
 
 .closeBtn {
     z-index: 1;
-    position: absolute;
+    position: fixed;
     top: 12px;
     right: 15px;
     font-size: 30px;
@@ -146,6 +147,15 @@ html {
 .closeBtn:hover {
     background-color: rgb(150, 150, 150);
     cursor: pointer;
+}
+
+.backPanel {
+    position: fixed;
+    top: 0px;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
 }
 
 .popupContent {

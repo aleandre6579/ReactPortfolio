@@ -8,14 +8,51 @@ import '../css/w3.css';
 import backArrowWhite from '../imgs/backArrowWhite.png';
 import backArrowBlack from '../imgs/backArrowBlack.png';
 
-// Project imgs
-import freebotMenu from '../imgs/projects/freebotMenu.png';
+// Freebot imgs
+import freebotMenu from '../imgs/projects/freebot/freebotMenu.png';
+import freebotEnemy from '../imgs/projects/freebot/freebotEnemy.PNG';
+import freebotKill from '../imgs/projects/freebot/freebotKill.PNG';
+import freebotOpen from '../imgs/projects/freebot/freebotOpen.PNG';
+import freebotPuzzle from '../imgs/projects/freebot/freebotPuzzle.PNG';
+import freebotShoot from '../imgs/projects/freebot/freebotShoot.PNG';
+import freebotSolved from '../imgs/projects/freebot/freebotSolved.PNG';
+
+// Fantasia imgs
+import fantasiaMenu from '../imgs/projects/fantasia/fantasiaMenu.png';
+import fantasiaStart from '../imgs/projects/fantasia/fantasiaStart.png';
+import fantasiaDead from '../imgs/projects/fantasia/fantasiaDead.png';
+
+// Plight imgs
+import plightMenu from '../imgs/projects/plightflight/plightMenu.png';
+import plightStart from '../imgs/projects/plightflight/plightStart.png';
+import plightAim from '../imgs/projects/plightflight/plightAim.png';
+import plightSonar from '../imgs/projects/plightflight/plightSonar.png';
+import plightMissile from '../imgs/projects/plightflight/plightMissile.png';
+import plightBoss from '../imgs/projects/plightflight/plightBoss.png';
+import plightBoss2 from '../imgs/projects/plightflight/plightBoss2.png';
+import plightDestroyed from '../imgs/projects/plightflight/plightDestroyed.png';
+import plightDestroyed2 from '../imgs/projects/plightflight/plightDestroyed2.png';
+import plightQuests from '../imgs/projects/plightflight/plightQuests.png';
+import plightPuzzle from '../imgs/projects/plightflight/plightPuzzle.png';
+
+// swarmbots imgs
+import swarmMenu from '../imgs/projects/swarmbots/swarmMenu.png';
+import swarmStart from '../imgs/projects/swarmbots/swarmStart.png';
+import swarmDying from '../imgs/projects/swarmbots/swarmDying.png';
+import swarmRanged from '../imgs/projects/swarmbots/swarmRanged.png';
+import swarmBoss from '../imgs/projects/swarmbots/swarmBoss.png';
+import swarmLost from '../imgs/projects/swarmbots/swarmLost.png';
+
+// warboats imgs
+import warboatsMenu from '../imgs/projects/warboats/warboatsMenu.png';
 
 class About extends Component {
+
     componentDidMount() {
         document.body.style.overflow = 'visible';
         window.scrollTo(0,0);
-}
+
+    }
 
     render() { 
         const navbar = {
@@ -97,7 +134,6 @@ class About extends Component {
             },
         };
 
-
         let activePopupId = 0;
 
         function changeArrowToBlack() {
@@ -123,19 +159,38 @@ class About extends Component {
                 
             var project = document.getElementById(projectId);
             project.classList.remove("hideFast");
+
+            // Show back panel
+            var backPanel = document.getElementById('backPanel');
+            backPanel.classList.add('backPanel');
         }
 
         function hideProjectPopup() {
             // Close popup
             var popup = document.getElementById('projectPopup');
             popup.classList.add("projectPopupClose");
- 
+    
             // Hide the active popup content
             var project = document.getElementById(activePopupId);
             project.classList.add("hideFast");
             activePopupId = 0;
+    
+            // Remove back panel
+            var backPanel = document.getElementById('backPanel');
+            backPanel.classList.remove('backPanel');
+    
         }
+        // if popup is opened and user clicked outside the popup; hide the popup
+        document.addEventListener('click', function handleClickOutsidePopup(event) {          
+            const popup = document.getElementById('projectPopup');
+          
+            if (!popup.contains(event.target) && !(activePopupId === 0) && window.getComputedStyle(popup).width.split("px")[0] > 200) {
+                console.log(activePopupId);
+                hideProjectPopup();
+            }
+        });
         
+
         return (
             <m.div className='realPage'>
                 <m.div className="page"
@@ -156,7 +211,7 @@ class About extends Component {
                 </div>
 
                 <m.div variants={content} initial="hidden" animate="show" exit="exit" className="projectsContent">
-                    <div onClick={() => showProjectPopup('project1')} className="project project1">
+                    <div id="project" onClick={() => showProjectPopup('project1')} className="project project1">
                         <img src={freebotMenu} className='projectImg'></img>
                         <div className="hoverIcon">View Project</div>
                     </div>
@@ -174,50 +229,21 @@ class About extends Component {
                     </div>
                 </m.div>
 
+                <m.div id="backPanel"></m.div>
                 <m.div id='projectPopup' style={{opacity: 0}} className="projectPopup behind"
                 
                 >
                     <div onClick={hideProjectPopup} className="closeBtn">x</div>
                     <div id='project1' className="popup1 hideFast popupContent">
                         <img className='popupImg' src={freebotMenu}/>
+                        <img className='popupImg' src={freebotOpen}/>
+                        <img className='popupImg' src={freebotShoot}/>
+                        <img className='popupImg' src={freebotEnemy}/>
+                        <img className='popupImg' src={freebotKill}/>
+                        <img className='popupImg' src={freebotPuzzle}/>
+                        <img className='popupImg' src={freebotSolved}/>
                         <h2>Freebot: Escape the Factory!</h2>
                         <p>A 2D platformer game I made as a university project which taught me about WebGL and how to upload games online.
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        asd
                         </p>
                     </div>
                     <div id='project2' className="popup2 hideFast popupContent">
