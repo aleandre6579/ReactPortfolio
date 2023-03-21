@@ -64,10 +64,10 @@ class About extends Component {
                 },
             },
             exit: {
-                opacity: 1,
+                opacity: 0,
                 y: -150,
                 transition: {
-                    duration: 0.2,
+                    duration: 0.4,
                 },
             },
         };
@@ -99,6 +99,13 @@ class About extends Component {
         function changeArrowToWhite() {
             document.getElementById('backArrow').src = backArrowWhite;
         }
+
+        function realPageDisappear() {
+            var realPage = document.getElementById("realPage");
+            realPage.classList.remove("realPage");
+            realPage.classList.add("realPageDisappear");
+        }
+
         
         return (
             <div>
@@ -109,15 +116,15 @@ class About extends Component {
                     exit={{backgroundPosition: '0% 0%'}}
                 />
 
-                <m.div className='realPage'> 
+                <m.div id="realPage" className='realPage'> 
                     <div className="navbar">
                         <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} className='arrow-btn' variants={navArrow} initial="hidden" animate="show" exit="exit" >
                             <Link to='/'><img id='backArrow' className='arrowBack' src={backArrowBlack} alt=''></img></Link>
                         </m.div>
                         <m.div variants={navbar} initial="hidden" animate="show" exit="exit" className="sections-navbar">
-                            <m.div className='navbar-btn' variants={navItem} ><Link style={{"text-decoration": "none"}} to='/about'><div>About</div></Link></m.div>
-                            <m.div className='navbar-btn' variants={navItem} ><Link style={{"text-decoration": "none"}} to='/skills'><div>Skills</div></Link></m.div>
-                            <m.div className='navbar-btn' variants={navItem} ><Link style={{"text-decoration": "none"}} to='/projects'><div>Projects</div></Link></m.div>
+                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link style={{"text-decoration": "none"}} to='/about'><div>About</div></Link></m.div>
+                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link style={{"text-decoration": "none"}} to='/skills'><div>Skills</div></Link></m.div>
+                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link style={{"text-decoration": "none"}} to='/projects'><div>Projects</div></Link></m.div>
                         </m.div>
                     </div>
 

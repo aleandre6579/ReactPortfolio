@@ -105,10 +105,10 @@ class About extends Component {
                 },
             },
             exit: {
-                opacity: 1,
+                opacity: 0,
                 y: -150,
                 transition: {
-                    duration: 0.2,
+                    duration: 0.4,
                 },
             },
         };
@@ -190,78 +190,113 @@ class About extends Component {
             }
         });
         
+        function realPageDisappear() {
+            var realPage = document.getElementById("realPage");
+            realPage.classList.remove("realPage");
+            realPage.classList.add("realPageDisappear");
+        }
 
         return (
-            <m.div className='realPage'>
+            <div>
                 <m.div className="page"
-                    initial={{backgroundPosition: '0% 0%'}}
-                    animate={{backgroundPosition: '0% 60%'}}
-                    transition={{duration: 1}}
-                    exit={{backgroundPosition: '0% 0%'}}
-                />
-                <div className="navbar">
-                    <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} className='arrow-btn' variants={navArrow}initial="hidden" animate="show" exit="exit">
-                        <Link to='/'><img id='backArrow' className='arrowBack' src={backArrowBlack} alt=''></img></Link>
+                initial={{backgroundPosition: '0% 0%'}}
+                animate={{backgroundPosition: '0% 60%'}}
+                transition={{duration: 1}}
+                exit={{backgroundPosition: '0% 0%'}}
+                    />
+                <m.div id="realPage" className='realPage'>
+                    <div className="navbar">
+                        <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} className='arrow-btn' variants={navArrow}initial="hidden" animate="show" exit="exit">
+                            <Link to='/'><img id='backArrow' className='arrowBack' src={backArrowBlack} alt=''></img></Link>
+                        </m.div>
+                        <m.div variants={navbar} initial="hidden" animate="show" exit="exit" className="sections-navbar">
+                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link style={{"textDecoration": "none"}} to='/about'><div>About</div></Link></m.div>
+                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link style={{"textDecoration": "none"}} to='/skills'><div>Skills</div></Link></m.div>
+                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link style={{"textDecoration": "none"}} to='/projects'><div>Projects</div></Link></m.div>
+                        </m.div>
+                    </div>
+
+                    <m.div variants={content} initial="hidden" animate="show" exit="exit" className="projectsContent">
+                        <div id="project" onClick={() => showProjectPopup('project1')} className="project project1">
+                            <img alt="projectImg" src={freebotMenu} className='projectImg'></img>
+                            <div className="hoverIcon">View Project</div>
+                        </div>
+                        <div id="project" onClick={() => showProjectPopup('project2')} className="project project2">
+                            <img alt="popupImg" className='projectImg' src={plightMissile}/>
+                            <div className="hoverIcon">View Project</div>
+                        </div>
+                        <div onClick={() => showProjectPopup('project3')} className="project project3">
+                            <img alt="popupImg" className='projectImg' src={warboatsMenu}/>
+                            <div className="hoverIcon">View Project</div>
+                        </div>
+                        <div onClick={() => showProjectPopup('project4')} className="project project4">
+                            <img alt="popupImg" className='projectImg' src={swarmDying}/>
+                            <div className="hoverIcon">View Project</div>
+                        </div>
+                        <div onClick={() => showProjectPopup('project5')} className="project project5">
+                            <img alt="popupImg" className='projectImg' src={fantasiaDead}/>
+                            <div className="hoverIcon">View Project</div>
+                        </div>
                     </m.div>
-                    <m.div variants={navbar} initial="hidden" animate="show" exit="exit" className="sections-navbar">
-                        <m.div className='navbar-btn' variants={navItem} ><Link style={{"textDecoration": "none"}} to='/about'><div>About</div></Link></m.div>
-                        <m.div className='navbar-btn' variants={navItem} ><Link style={{"textDecoration": "none"}} to='/skills'><div>Skills</div></Link></m.div>
-                        <m.div className='navbar-btn' variants={navItem} ><Link style={{"textDecoration": "none"}} to='/projects'><div>Projects</div></Link></m.div>
+
+                    <m.div id="backPanel"></m.div>
+                    <m.div id='projectPopup' style={{opacity: 0}} className="projectPopup behind"
+                    
+                    >
+                        <div onClick={hideProjectPopup} className="closeBtn">x</div>
+                        <div id='project1' className="popup1 hideFast popupContent">
+                            <h2>Freebot: Escape the Factory!</h2>
+                            <p>A 2D platformer game I made as a university project which taught me about WebGL and how to upload games online.</p>
+                            <img alt="popupImg" className='popupImg' src={freebotMenu}/>
+                            <img alt="popupImg" className='popupImg' src={freebotOpen}/>
+                            <img alt="popupImg" className='popupImg' src={freebotShoot}/>
+                            <img alt="popupImg" className='popupImg' src={freebotEnemy}/>
+                            <img alt="popupImg" className='popupImg' src={freebotKill}/>
+                            <img alt="popupImg" className='popupImg' src={freebotPuzzle}/>
+                            <img alt="popupImg" className='popupImg' src={freebotSolved}/>
+                        </div>
+                        <div id='project2' className="popup2 hideFast popupContent">
+                            <h2>PlightFlight</h2>
+                            <p>A.</p>
+                            <img alt="popupImg" className='popupImg' src={plightMenu}/>
+                            <img alt="popupImg" className='popupImg' src={plightStart}/>
+                            <img alt="popupImg" className='popupImg' src={plightAim}/>
+                            <img alt="popupImg" className='popupImg' src={plightSonar}/>
+                            <img alt="popupImg" className='popupImg' src={plightMissile}/>
+                            <img alt="popupImg" className='popupImg' src={plightBoss}/>
+                            <img alt="popupImg" className='popupImg' src={plightBoss2}/>
+                            <img alt="popupImg" className='popupImg' src={plightDestroyed}/>
+                            <img alt="popupImg" className='popupImg' src={plightDestroyed2}/>
+                            <img alt="popupImg" className='popupImg' src={plightQuests}/>
+                            <img alt="popupImg" className='popupImg' src={plightPuzzle}/>
+                        </div>
+                        <div id='project3' className="popup3 hideFast popupContent">
+                            <h2>Warboats</h2>
+                            <p>.</p>
+                            <img alt="popupImg" className='popupImg' src={warboatsMenu}/>
+                        </div>
+                        <div id='project4' className="popup4 hideFast popupContent">
+                            <h2>Swarmboats</h2>
+                            <p>.</p>
+                            <img alt="popupImg" className='popupImg' src={swarmMenu}/>
+                            <img alt="popupImg" className='popupImg' src={swarmStart}/>
+                            <img alt="popupImg" className='popupImg' src={swarmDying}/>
+                            <img alt="popupImg" className='popupImg' src={swarmRanged}/>
+                            <img alt="popupImg" className='popupImg' src={swarmBoss}/>
+                            <img alt="popupImg" className='popupImg' src={swarmLost}/>
+                        </div>
+                        <div id='project5' className="popup5 hideFast popupContent">
+                            <h2>Fantasia</h2>
+                            <p>.</p>
+                            <img alt="popupImg" className='popupImg' src={fantasiaMenu}/>
+                            <img alt="popupImg" className='popupImg' src={fantasiaStart}/>
+                            <img alt="popupImg" className='popupImg' src={fantasiaDead}/>
+                        </div>
                     </m.div>
-                </div>
 
-                <m.div variants={content} initial="hidden" animate="show" exit="exit" className="projectsContent">
-                    <div id="project" onClick={() => showProjectPopup('project1')} className="project project1">
-                        <img src={freebotMenu} className='projectImg'></img>
-                        <div className="hoverIcon">View Project</div>
-                    </div>
-                    <div onClick={() => showProjectPopup('project2')} className="project project2">
-                        <div className="hoverIcon">View Project</div>
-                    </div>
-                    <div onClick={() => showProjectPopup('project3')} className="project project3">
-                        <div className="hoverIcon">View Project</div>
-                    </div>
-                    <div onClick={() => showProjectPopup('project4')} className="project project4">
-                        <div className="hoverIcon">View Project</div>
-                    </div>
-                    <div onClick={() => showProjectPopup('project5')} className="project project5">
-                        <div className="hoverIcon">View Project</div>
-                    </div>
+
                 </m.div>
-
-                <m.div id="backPanel"></m.div>
-                <m.div id='projectPopup' style={{opacity: 0}} className="projectPopup behind"
-                
-                >
-                    <div onClick={hideProjectPopup} className="closeBtn">x</div>
-                    <div id='project1' className="popup1 hideFast popupContent">
-                        <img className='popupImg' src={freebotMenu}/>
-                        <img className='popupImg' src={freebotOpen}/>
-                        <img className='popupImg' src={freebotShoot}/>
-                        <img className='popupImg' src={freebotEnemy}/>
-                        <img className='popupImg' src={freebotKill}/>
-                        <img className='popupImg' src={freebotPuzzle}/>
-                        <img className='popupImg' src={freebotSolved}/>
-                        <h2>Freebot: Escape the Factory!</h2>
-                        <p>A 2D platformer game I made as a university project which taught me about WebGL and how to upload games online.
-                        </p>
-                    </div>
-                    <div id='project2' className="popup2 hideFast popupContent">
-                    
-                    </div>
-                    <div id='project3' className="popup3 hideFast popupContent">
-                    
-                    </div>
-                    <div id='project4' className="popup4 hideFast popupContent">
-                    
-                    </div>
-                    <div id='project5' className="popup5 hideFast popupContent">
-                    
-                    </div>
-                </m.div>
-
-
-            </m.div>
+            </div>
         );
     }
 }

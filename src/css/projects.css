@@ -7,8 +7,8 @@ html {
 
 @keyframes openPopup {
     0% {
-        width: 20%;
-        height: 20%;
+        width: 0%;
+        height: 0%;
     }
     100% {
         width: 70%;
@@ -114,6 +114,7 @@ html {
     transform: translate(-50%, -50%);
     background-color: var(--darkerBlue);
     overflow: auto;
+    width: 20%;
     animation: openPopup 500ms ease forwards;
 }
 .projectPopupClose {
@@ -181,6 +182,7 @@ html {
 
 .hideFast {
     opacity: 0;
+    display: none;
 }
 
 @media (max-width: 5000px) {

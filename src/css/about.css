@@ -33,6 +33,14 @@
         opacity: 1;
     }
 }
+@keyframes realPageDisappear {
+    0%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 
 .page {
     position: absolute;
@@ -48,6 +56,13 @@
     padding-bottom: 50px;
     opacity: 0;
     animation: realPageAppear 2s ease forwards;
+}
+.realPageDisappear {
+    background: linear-gradient(0deg, rgba(60,63,140,1) 0%, rgba(84,88,194,1) 55%);
+    min-height: 102vh;
+    padding-bottom: 50px;
+    opacity: 1;
+    animation: realPageDisappear 1s ease forwards;
 }
 
 .navbar {
