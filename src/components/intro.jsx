@@ -39,7 +39,10 @@ class Intro extends Component {
                     delay: 1,
                     duration: 2,
                     fill: {delay: 3, duration: 2}
-                }    
+                },
+                transitionEnd: {
+                    opacity: 0,
+                } 
             },
         }
 
@@ -79,7 +82,7 @@ class Intro extends Component {
                 duration: 1,
                 ease: 'backInOut',
               }
-            }     
+            }
         }
 
         function circleBtnClicked(btnName) {
@@ -113,46 +116,50 @@ class Intro extends Component {
                 exit={{opacity:1}}
           >
                 <div className="title-section">
-                    
-                    <div className="title title-pos">
-                        <div className="name">Alexandre Simon</div>
-                    </div>
-                    <div className="subtitle subtitle-pos">
-                        <div className="software-dev">Software Developer</div>
-                    </div>
+                    <div className='title-container'>
 
-                    <m.div className='btns'>
-                        <div id='btn1' onClick={() => circleBtnClicked('btn1')} className='btnAnimating about-btn' ><Link style={{"textDecoration": "none"}} to='/about'><div className="btn-txt">About</div></Link>
-                            <m.svg className='svg'>
-                                <m.rect
-                                    variants={pathAppear} initial="hidden" animate="show"
-                                    x="5"
-                                    y="6"
-                                    rx='.75em' ry='.75em' width='5em' height='1.5em'
-                                ></m.rect>
-                            </m.svg>
-                        </div>
-                        <m.div id='btn2' onClick={() => circleBtnClicked('btn2')} className='btnAnimating skills-btn'><Link style={{"textDecoration": "none"}} to='/skills'><div className="btn-txt">Skills</div></Link>
-                            <m.svg className='svg'>
-                                <m.rect
-                                    variants={pathAppear} initial="hidden" animate="show"
-                                    x="5"
-                                    y="6"
-                                    rx='.75em' ry='.75em' width='5em' height='1.5em'
-                                ></m.rect>
-                            </m.svg>
+                        <div>
+                            <div className="title title-pos">
+                                <div className="name">Alexandre Simon</div>
+                            </div>
+                            <div className="subtitle subtitle-pos">
+                                <div className="software-dev">Software Developer</div>
+                            </div>
+                        </div>    
+
+                        <m.div className='btns'>
+                            <div id='btn1' onClick={() => circleBtnClicked('btn1')} className='btnAnimating about-btn' ><Link style={{"textDecoration": "none"}} to='/about'><div className="btn-txt">About</div></Link>
+                                <m.svg className='svg'>
+                                    <m.rect
+                                        variants={pathAppear} initial="hidden" animate="show"
+                                        x="5"
+                                        y="6"
+                                        rx='.75em' ry='.75em' width='5em' height='1.5em'
+                                    ></m.rect>
+                                </m.svg>
+                            </div>
+                            <m.div id='btn2' onClick={() => circleBtnClicked('btn2')} className='btnAnimating skills-btn'><Link style={{"textDecoration": "none"}} to='/skills'><div className="btn-txt">Skills</div></Link>
+                                <m.svg className='svg'>
+                                    <m.rect
+                                        variants={pathAppear} initial="hidden" animate="show"
+                                        x="5"
+                                        y="6"
+                                        rx='.75em' ry='.75em' width='5em' height='1.5em'
+                                    ></m.rect>
+                                </m.svg>
+                            </m.div>
+                            <m.div id='btn3' onClick={() => circleBtnClicked('btn3')} className='btnAnimating projects-btn'><Link style={{"textDecoration": "none"}} to='/projects'><div className="btn-txt">Projects</div></Link>
+                                <m.svg className='svg'>
+                                    <m.rect
+                                        variants={pathAppear} initial="hidden" animate="show"
+                                        x="5"
+                                        y="6"
+                                        rx='.75em' ry='.75em' width='5em' height='1.5em'
+                                    ></m.rect>
+                                </m.svg>
+                            </m.div>
                         </m.div>
-                        <m.div id='btn3' onClick={() => circleBtnClicked('btn3')} className='btnAnimating projects-btn'><Link style={{"textDecoration": "none"}} to='/projects'><div className="btn-txt">Projects</div></Link>
-                            <m.svg className='svg'>
-                                <m.rect
-                                    variants={pathAppear} initial="hidden" animate="show"
-                                    x="5"
-                                    y="6"
-                                    rx='.75em' ry='.75em' width='5em' height='1.5em'
-                                ></m.rect>
-                            </m.svg>
-                        </m.div>
-                    </m.div>
+                    </div>
                 </div>
 
                 <m.div className='contactBar'
