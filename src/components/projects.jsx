@@ -291,6 +291,7 @@ class About extends Component {
                                 <img alt="popupImg" className='popupImg' src={fantasiaStart}/>
                                 <img alt="popupImg" className='popupImg' src={fantasiaDead}/>
                             </div>
+                            <div style={{height: '10px'}}/>
                         </div>
                     </m.div>
 

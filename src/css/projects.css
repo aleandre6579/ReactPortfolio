@@ -10,11 +10,13 @@ html {
         opacity: 0;
         width: 0%;
         height: 0%;
+        top: 50%;
     }
     100% {
+        top: 5%;
         opacity: 1;
         width: 70%;
-        height: 80%;
+        height: 90%;
     }
 }
 @keyframes closePopup {
@@ -109,16 +111,16 @@ html {
 
 .projectPopup {
     z-index: 10;
-    position: fixed;
+    position: absolute;
     display: block;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -0%);
     background-color: var(--darkerBlue);
     overflow: auto;
     width: 20%;
     border-radius: 10px;
     border: var(--blue) 3px solid;
+    padding-left: 15px;
     animation: openPopup 800ms ease forwards;
 }
 .projectPopupClose {

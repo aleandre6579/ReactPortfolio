@@ -113,16 +113,16 @@
 }
 @keyframes txtFloat {
     0% {
-        transform: translate(0px, 0px);
+        transform: translate(0px, 2px);
     }
     33% {
-        transform: translate(0px, 5px);
+        transform: translate(0px, 8px);
     }
     66% {
-        transform: translate(0px, -5px);
+        transform: translate(0px, -3px);
     }
     100% {
-        transform: translate(0px, 0px);
+        transform: translate(0px, 2px);
     }
 }
 
@@ -333,13 +333,14 @@
     height: clamp(10px, 5vh, 45px);
     border-radius: 15px;
     cursor: pointer;
-    padding: 5px;
+    padding: 3px;
     transition: 100ms;
 }
 .contactBtn:hover {
+    padding: 0px;
     width: clamp(10px, 5vh, 48px);
     height: clamp(10px, 5vh, 48px);
-    box-shadow: white 0px 0px 4px 0.4px;
+    box-shadow: white 0px 0px 4px 2px;
 }
 
 .contactInfo {
