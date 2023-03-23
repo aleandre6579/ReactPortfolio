@@ -149,7 +149,7 @@ class About extends Component {
 
             var popup = document.getElementById('projectPopup');
             popup.classList.remove("projectPopupClose");
-            popup.classList.remove("behind");
+            popup.classList.remove("hideFast");
             popup.style.opacity = 1;
 
             // Reset popup open animation
@@ -199,11 +199,11 @@ class About extends Component {
         return (
             <div>
                 <m.div className="page"
-                initial={{backgroundPosition: '0% 0%'}}
-                animate={{backgroundPosition: '0% 60%'}}
-                transition={{duration: 1}}
-                exit={{backgroundPosition: '0% 0%'}}
-                    />
+                    initial={{backgroundPosition: '0% 0%'}}
+                    animate={{backgroundPosition: '0% 60%'}}
+                    transition={{duration: 1}}
+                    exit={{backgroundPosition: '0% 0%'}}
+                />
                 <m.div id="realPage" className='realPage'>
                     <div className="navbar">
                         <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} className='arrow-btn' variants={navArrow}initial="hidden" animate="show" exit="exit">
@@ -240,57 +240,57 @@ class About extends Component {
                     </m.div>
 
                     <m.div id="backPanel"></m.div>
-                    <m.div id='projectPopup' style={{opacity: 0}} className="projectPopup behind"
-                    
-                    >
-                        <div onClick={hideProjectPopup} className="closeBtn">x</div>
-                        <div id='project1' className="popup1 hideFast popupContent">
-                            <h2>Freebot: Escape the Factory!</h2>
-                            <p>A 2D platformer game I made as a university project which taught me about WebGL and how to upload games online.</p>
-                            <img alt="popupImg" className='popupImg' src={freebotMenu}/>
-                            <img alt="popupImg" className='popupImg' src={freebotOpen}/>
-                            <img alt="popupImg" className='popupImg' src={freebotShoot}/>
-                            <img alt="popupImg" className='popupImg' src={freebotEnemy}/>
-                            <img alt="popupImg" className='popupImg' src={freebotKill}/>
-                            <img alt="popupImg" className='popupImg' src={freebotPuzzle}/>
-                            <img alt="popupImg" className='popupImg' src={freebotSolved}/>
-                        </div>
-                        <div id='project2' className="popup2 hideFast popupContent">
-                            <h2>PlightFlight</h2>
-                            <p>A.</p>
-                            <img alt="popupImg" className='popupImg' src={plightMenu}/>
-                            <img alt="popupImg" className='popupImg' src={plightStart}/>
-                            <img alt="popupImg" className='popupImg' src={plightAim}/>
-                            <img alt="popupImg" className='popupImg' src={plightSonar}/>
-                            <img alt="popupImg" className='popupImg' src={plightMissile}/>
-                            <img alt="popupImg" className='popupImg' src={plightBoss}/>
-                            <img alt="popupImg" className='popupImg' src={plightBoss2}/>
-                            <img alt="popupImg" className='popupImg' src={plightDestroyed}/>
-                            <img alt="popupImg" className='popupImg' src={plightDestroyed2}/>
-                            <img alt="popupImg" className='popupImg' src={plightQuests}/>
-                            <img alt="popupImg" className='popupImg' src={plightPuzzle}/>
-                        </div>
-                        <div id='project3' className="popup3 hideFast popupContent">
-                            <h2>Warboats</h2>
-                            <p>.</p>
-                            <img alt="popupImg" className='popupImg' src={warboatsMenu}/>
-                        </div>
-                        <div id='project4' className="popup4 hideFast popupContent">
-                            <h2>Swarmboats</h2>
-                            <p>.</p>
-                            <img alt="popupImg" className='popupImg' src={swarmMenu}/>
-                            <img alt="popupImg" className='popupImg' src={swarmStart}/>
-                            <img alt="popupImg" className='popupImg' src={swarmDying}/>
-                            <img alt="popupImg" className='popupImg' src={swarmRanged}/>
-                            <img alt="popupImg" className='popupImg' src={swarmBoss}/>
-                            <img alt="popupImg" className='popupImg' src={swarmLost}/>
-                        </div>
-                        <div id='project5' className="popup5 hideFast popupContent">
-                            <h2>Fantasia</h2>
-                            <p>.</p>
-                            <img alt="popupImg" className='popupImg' src={fantasiaMenu}/>
-                            <img alt="popupImg" className='popupImg' src={fantasiaStart}/>
-                            <img alt="popupImg" className='popupImg' src={fantasiaDead}/>
+                    <m.div id='projectPopup' style={{opacity: 0}} className="projectPopup hideFast">
+                        <div className="scrollbar">
+                            <div onClick={hideProjectPopup} className="closeBtn">x</div>
+                            <div id='project1' className="popup1 hideFast popupContent">
+                                <h2>Freebot: Escape the Factory!</h2>
+                                <p>A 2D platformer game I made as a university project which taught me about WebGL and how to upload games online.</p>
+                                <img alt="popupImg" className='popupImg' src={freebotMenu}/>
+                                <img alt="popupImg" className='popupImg' src={freebotOpen}/>
+                                <img alt="popupImg" className='popupImg' src={freebotShoot}/>
+                                <img alt="popupImg" className='popupImg' src={freebotEnemy}/>
+                                <img alt="popupImg" className='popupImg' src={freebotKill}/>
+                                <img alt="popupImg" className='popupImg' src={freebotPuzzle}/>
+                                <img alt="popupImg" className='popupImg' src={freebotSolved}/>
+                            </div>
+                            <div id='project2' className="popup2 hideFast popupContent">
+                                <h2>PlightFlight</h2>
+                                <p>A.</p>
+                                <img alt="popupImg" className='popupImg' src={plightMenu}/>
+                                <img alt="popupImg" className='popupImg' src={plightStart}/>
+                                <img alt="popupImg" className='popupImg' src={plightAim}/>
+                                <img alt="popupImg" className='popupImg' src={plightSonar}/>
+                                <img alt="popupImg" className='popupImg' src={plightMissile}/>
+                                <img alt="popupImg" className='popupImg' src={plightBoss}/>
+                                <img alt="popupImg" className='popupImg' src={plightBoss2}/>
+                                <img alt="popupImg" className='popupImg' src={plightDestroyed}/>
+                                <img alt="popupImg" className='popupImg' src={plightDestroyed2}/>
+                                <img alt="popupImg" className='popupImg' src={plightQuests}/>
+                                <img alt="popupImg" className='popupImg' src={plightPuzzle}/>
+                            </div>
+                            <div id='project3' className="popup3 hideFast popupContent">
+                                <h2>Warboats</h2>
+                                <p>.</p>
+                                <img alt="popupImg" className='popupImg' src={warboatsMenu}/>
+                            </div>
+                            <div id='project4' className="popup4 hideFast popupContent">
+                                <h2>Swarmboats</h2>
+                                <p>.</p>
+                                <img alt="popupImg" className='popupImg' src={swarmMenu}/>
+                                <img alt="popupImg" className='popupImg' src={swarmStart}/>
+                                <img alt="popupImg" className='popupImg' src={swarmDying}/>
+                                <img alt="popupImg" className='popupImg' src={swarmRanged}/>
+                                <img alt="popupImg" className='popupImg' src={swarmBoss}/>
+                                <img alt="popupImg" className='popupImg' src={swarmLost}/>
+                            </div>
+                            <div id='project5' className="popup5 hideFast popupContent">
+                                <h2>Fantasia</h2>
+                                <p>.</p>
+                                <img alt="popupImg" className='popupImg' src={fantasiaMenu}/>
+                                <img alt="popupImg" className='popupImg' src={fantasiaStart}/>
+                                <img alt="popupImg" className='popupImg' src={fantasiaDead}/>
+                            </div>
                         </div>
                     </m.div>
 
