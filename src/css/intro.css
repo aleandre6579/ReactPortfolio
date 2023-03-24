@@ -116,10 +116,10 @@
         transform: translate(0px, 2px);
     }
     33% {
-        transform: translate(0px, 8px);
+        transform: translate(0px, 9px);
     }
     66% {
-        transform: translate(0px, -3px);
+        transform: translate(0px, -5px);
     }
     100% {
         transform: translate(0px, 2px);
@@ -333,14 +333,14 @@
     height: clamp(10px, 5vh, 45px);
     border-radius: 15px;
     cursor: pointer;
-    padding: 3px;
+    padding: 2px;
     transition: 100ms;
 }
 .contactBtn:hover {
     padding: 0px;
     width: clamp(10px, 5vh, 48px);
     height: clamp(10px, 5vh, 48px);
-    box-shadow: white 0px 0px 4px 2px;
+    box-shadow: white 0px 0px 4px 1px;
 }
 
 .contactInfo {

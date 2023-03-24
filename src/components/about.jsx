@@ -55,10 +55,12 @@ class About extends Component {
             hidden: {
                 opacity: 0,
                 y: -50,
+                cursor: 'pointer',
             },
             show: {
                 opacity: 1,
                 y: 0,
+                cursor: 'pointer',
                 transition: {
                     duration: 0.5,
                 },
@@ -66,11 +68,24 @@ class About extends Component {
             exit: {
                 opacity: 0,
                 y: -150,
+                cursor: 'context-menu',
                 transition: {
                     duration: 0.4,
                 },
             },
         };
+
+        const link = {
+            hidden: {
+                cursor: 'pointer',
+            },
+            show: {
+                cursor: 'pointer',
+            },
+            exit: {
+                cursor: 'context-menu',
+            }
+        }
 
         const content = {
             hidden: {
@@ -115,54 +130,55 @@ class About extends Component {
                     transition={{duration: 1}}
                     exit={{backgroundPosition: '0% 0%'}}
                 />
+                    <m.div id="realPage" className='realPage'>
+                    <div className="scrollbar">
+                        <div className="navbar">
+                            <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} className='arrow-btn' variants={navArrow} initial="hidden" animate="show" exit="exit" >
+                                <Link to='/'><img id='backArrow' className='arrowBack' src={backArrowBlack} alt=''></img></Link>
+                            </m.div>
+                            <m.div variants={navbar} initial="hidden" animate="show" exit="exit" className="sections-navbar">
+                                <m.div className='navbar-btn' variants={navItem} ><Link style={{textDecoration: 'none'}} to='/about'><m.div variants={link} initial='hidden' animate='show' exit='exit'>About</m.div></Link></m.div>
+                                <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link style={{textDecoration: 'none'}} to='/skills'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Skills</m.div></Link></m.div>
+                                <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link style={{textDecoration: 'none'}} to='/projects'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Projects</m.div></Link></m.div>
+                            </m.div>
+                        </div>
 
-                <m.div id="realPage" className='realPage'> 
-                    <div className="navbar">
-                        <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} className='arrow-btn' variants={navArrow} initial="hidden" animate="show" exit="exit" >
-                            <Link to='/'><img id='backArrow' className='arrowBack' src={backArrowBlack} alt=''></img></Link>
-                        </m.div>
-                        <m.div variants={navbar} initial="hidden" animate="show" exit="exit" className="sections-navbar">
-                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link style={{"text-decoration": "none"}} to='/about'><div>About</div></Link></m.div>
-                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link style={{"text-decoration": "none"}} to='/skills'><div>Skills</div></Link></m.div>
-                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link style={{"text-decoration": "none"}} to='/projects'><div>Projects</div></Link></m.div>
-                        </m.div>
-                    </div>
+                        <m.div variants={content} initial="hidden" animate="show" exit="exit">
+                            <h1 className='aboutMainHead bigHead'><strong>Hey, I'm Alex!</strong></h1>
+                            <p className='aboutTxt'>
+                                A French <strong>Computer Science</strong> student currently in my 3rd year at
+                                MUIC ("Mahidol University International College") in Bangkok, Thailand.
+                            </p>
 
-                    <m.div variants={content} initial="hidden" animate="show" exit="exit">
-                        <h1 className='aboutMainHead bigHead'><strong>Hey, I'm Alex!</strong></h1>
-                        <p className='aboutTxt'>
-                            A French <strong>Computer Science</strong> student currently in my 3rd year at
-                            MUIC ("Mahidol University International College") in Bangkok, Thailand.
-                        </p>
+                            <h1 className='aboutHead bigHead'>My Accomplishments</h1>
+                            <p className='aboutTxt'>
+                                I graduated from LFIB ("Lycee Francais International de Bangkok"), a French highschool in Bangkok, with <strong>18.2/20</strong>. <br/>
+                                I taught myself <strong>Unity and C#</strong> at the age of 16 and I've been making small games with Unity since then.<br/>
+                                I am now working towards a Computer Science bachelors degree at MUIC ("Mahidol University International College"), one of the most
+                                prestigious universities in Thailand, with a current GPA of  <strong>3.78/4</strong>.<br/>
+                                I am also undertaking a <strong>Film Arts</strong> minor at MUIC.<br/>
+                            </p>
 
-                        <h1 className='aboutHead bigHead'>My Accomplishments</h1>
-                        <p className='aboutTxt'>
-                            I graduated from LFIB ("Lycee Francais International de Bangkok"), a French highschool in Bangkok, with <strong>18.2/20</strong>. <br/>
-                            I taught myself <strong>Unity and C#</strong> at the age of 16 and I've been making small games with Unity since then.<br/>
-                            I am now working towards a Computer Science bachelors degree at MUIC ("Mahidol University International College"), one of the most
-                            prestigious universities in Thailand, with a current GPA of  <strong>3.78/4</strong>.<br/>
-                            I am also undertaking a <strong>Film Arts</strong> minor at MUIC.<br/>
-                        </p>
+                            <h1 className='aboutHead smallHead'>My Goals</h1>
+                            <p className='aboutTxt'>
+                                When it comes to my career, the jobs I am interested in are <strong>video game developer</strong>, 
+                                <strong> software enginner</strong> and <strong>full-stack developer</strong>.
+                                However I am captivated by most things in computer science so I am open to many job opportunities.
+                            </p>
 
-                        <h1 className='aboutHead smallHead'>My Goals</h1>
-                        <p className='aboutTxt'>
-                            When it comes to my career, the jobs I am interested in are <strong>video game developer</strong>, 
-                            <strong> software enginner</strong> and <strong>full-stack developer</strong>.
-                            However I am captivated by most things in computer science so I am open to many job opportunities.
-                        </p>
+                            <h1 className='aboutHead smallHead'>My Hobbies</h1>
+                            <p className='aboutTxt'>
+                                I love anything that touches <strong>storytelling</strong> in any way, but I also love the thrill of <strong>solving complicated problems</strong>.
+                                <br/>
+                                I love to dive into impressive and creative works of art, especially well-written <strong>novels</strong> and <strong>video games</strong>, which I 
+                                am currently learning to make, with plans of making my own novels and games in the future.
+                            
+                            </p>
 
-                        <h1 className='aboutHead smallHead'>My Hobbies</h1>
-                        <p className='aboutTxt'>
-                            I love anything that touches <strong>storytelling</strong> in any way, but I also love the thrill of <strong>solving complicated problems</strong>.
-                            <br/>
-                            I love to dive into impressive and creative works of art, especially well-written <strong>novels</strong> and <strong>video games</strong>, which I 
-                            am currently learning to make, with plans of making my own novels and games in the future.
-                        
-                        </p>
-
-                    </m.div>            
-                </m.div>
-            </div>
+                        </m.div>  
+                        </div>
+                    </m.div>
+                </div>
         );
     }
 }
