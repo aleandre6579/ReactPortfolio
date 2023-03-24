@@ -257,7 +257,10 @@ class About extends Component {
                             <div onClick={hideProjectPopup} className="closeBtn">x</div>
                             <div id='project1' className="popup1 hideFast popupContent">
                                 <h2>Freebot: Escape the Factory!</h2>
-                                <p>A 2D platformer game I made as a university project which taught me about WebGL and how to upload games online.</p>
+                                <p>
+                                A 2D platformer game I made as a university project using Unity which taught me about WebGL and
+                                how to upload games online.
+                                </p>
                                 <img alt="popupImg" className='popupImg' src={freebotMenu}/>
                                 <img alt="popupImg" className='popupImg' src={freebotOpen}/>
                                 <img alt="popupImg" className='popupImg' src={freebotShoot}/>
@@ -268,7 +271,12 @@ class About extends Component {
                             </div>
                             <div id='project2' className="popup2 hideFast popupContent">
                                 <h2>PlightFlight</h2>
-                                <p>A.</p>
+                                <p>
+                                A game I made using Unity which taught me a lot about coding enemy AI and the merits
+                                of raycasting.<br/>
+                                I also learned more about shaders, how to deal with rotations and quaternions, the
+                                intricacies of Unity's particle system and how to set up difficulty levels in a game.  
+                                </p>
                                 <img alt="popupImg" className='popupImg' src={plightMenu}/>
                                 <img alt="popupImg" className='popupImg' src={plightStart}/>
                                 <img alt="popupImg" className='popupImg' src={plightAim}/>
@@ -283,12 +291,23 @@ class About extends Component {
                             </div>
                             <div id='project3' className="popup3 hideFast popupContent">
                                 <h2>Warboats</h2>
-                                <p>.</p>
+                                <p>
+                                A game I made using Unity for my family to play on Christmas.<br/>
+                                This game taught me a lot about getting assets online, about Unity's audio system, and
+                                gave me a better understanding of how to work in a 3D environment in Unity.<br/> 
+                                I also got to work with Unity's shadering and lighting systems for the first time.
+                                </p>
                                 <img alt="popupImg" className='popupImg' src={warboatsMenu}/>
                             </div>
                             <div id='project4' className="popup4 hideFast popupContent">
                                 <h2>Swarmboats</h2>
-                                <p>.</p>
+                                <p>
+                                A top-down shooter game I made using Unity by following a Udemy course by the acclaimed 
+                                youtuber Blackthornprod.<br/>
+                                This game, being the second game I every made in Unity, taught me practically all the 
+                                basics of making a 2D game in Unity. Although the art is quite simple, I take pride in the
+                                fact that all the sprites and assets were made on my own using Photoshop.
+                                </p>
                                 <img alt="popupImg" className='popupImg' src={swarmMenu}/>
                                 <img alt="popupImg" className='popupImg' src={swarmStart}/>
                                 <img alt="popupImg" className='popupImg' src={swarmDying}/>
@@ -298,7 +317,12 @@ class About extends Component {
                             </div>
                             <div id='project5' className="popup5 hideFast popupContent">
                                 <h2>Fantasia</h2>
-                                <p>.</p>
+                                <p>
+                                A Trivia game I made for my family to play on Christmas, which is also my first ever
+                                game made in Unity.<br/>
+                                I drew the sprites for the characters using Photoshop, and the design and animations
+                                of the characters are inspired by my family members.
+                                </p>
                                 <img alt="popupImg" className='popupImg' src={fantasiaMenu}/>
                                 <img alt="popupImg" className='popupImg' src={fantasiaStart}/>
                                 <img alt="popupImg" className='popupImg' src={fantasiaDead}/>

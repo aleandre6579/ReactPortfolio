@@ -222,7 +222,7 @@ html::-webkit-scrollbar {
 }
 .scrollbar::-webkit-scrollbar-track {
     border-radius: 8px;
-    background-color: blue;
+    background-color: transparent;
     border: 1px solid transparent;
 }
 .scrollbar::-webkit-scrollbar-thumb {

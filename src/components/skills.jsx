@@ -19,7 +19,10 @@ import python from '../imgs/skills/python.png';
 
 import react from '../imgs/skills/react.png';
 import unity from '../imgs/skills/unity.png';
-import gitFork from '../imgs/skills/gitforkIcon.png';
+import gitfork from '../imgs/skills/gitfork.png';
+import jupyter from '../imgs/skills/jupyter.png';
+import notion from '../imgs/skills/notion.png';
+import vscode from '../imgs/skills/vscode.png';
 
 import ambitious from '../imgs/skills/ambitious.png';
 import creative from '../imgs/skills/creative.png';
@@ -218,7 +221,7 @@ class About extends Component {
                         </div>
 
                         <div className="containerSpace">
-                            <div className="containerTitle">Frameworks</div>
+                            <div className="containerTitle">Software & Frameworks</div>
                             <div id='container2' onClick={() => openContainer('container2')} className="container container2">
                                 <div className="containerRow row22">  
                                     <img alt='unity' src={unity} className='containerImg'/>
@@ -226,6 +229,18 @@ class About extends Component {
                                 </div>
                                 <div className="containerRow row21">  
                                     <img alt='react' src={react} className='containerImg'/>
+                                    <div className="containerTxt">Competent</div>
+                                </div>
+                                <div className="containerRow row23">  
+                                    <img alt='jupyter' src={jupyter} className='containerImg'/>
+                                    <div className="containerTxt">Competent</div>
+                                </div>
+                                <div className="containerRow row24">  
+                                    <img alt='gitfork' src={gitfork} style={{width: '80px'}} className='containerImg'/>
+                                    <div className="containerTxt">Competent</div>
+                                </div>
+                                <div className="containerRow row25">  
+                                    <img alt='notion' src={notion} className='containerImg'/>
                                     <div className="containerTxt">Competent</div>
                                 </div>
                             </div>

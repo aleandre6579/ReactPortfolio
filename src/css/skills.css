@@ -5,9 +5,12 @@
 }
 
 .containerSpace {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family: 'JosefinSans';
     position: relative;
+    width: 30%; 
 }
 
 @media (max-width: 900px) {
@@ -39,7 +42,7 @@
     transition: 400ms;
 }
 .openContainer.container2 {
-    height: 210px;
+    height: 510px;
 }
 .openContainer.container3 {
     height: 310px;
@@ -62,6 +65,7 @@
     font-size: clamp(0rem, calc(2rem + 3vw), 3rem);
     position: relative;
     top: 80px;
+    white-space: nowrap;
 }
 
 .containerRow {
@@ -69,11 +73,12 @@
     top: 0px;
     left: 0px;
     display: flex;
-    justify-content: flex-start;
+    justify-content:center;
+    flex-direction: row;
     align-items: center;
     height: 100px;
-    padding-left: 50px;
-    gap: 20px;
+    gap: 30px;
+    text-align: center;
     transition: 500ms;
 }
 
@@ -104,75 +109,91 @@
 /* Container 1 */
 .container > .row11 {
     top: 5px;
-    left: 65px;
+    left: 115px;
 }
 .container > .row12 {
     top: -250px;
-    left: -10px;
+    left: 40px;
 }
 .container > .row13 {
     top: -350px;
-    left: 140px;
+    left: 190px;
 }
 .container > .row14 {
     top: -350px;
-    left: 145px;
+    left: 195px;
 }
 .container > .row15 {
     top: -65px;
-    left: -10px;
+    left: 40px;
 }
 .container > .row16 {
     top: -415px;
-    left: 65px;
+    left: 115px;
 }
 .container > .row17 {
     top: -5px;
-    left: 65px;
+    left: 115px;
 }
 
 /* Container 2 */
 .container > .row21 {
-    top: 40px;
+    top: 20px;
     left: 30px;
 }
 .container > .row22 {
+    top: 30px;
+    left: 170px;
+}
+.container > .row23 {
+    top: -180px;
+    left: 70px;
+}
+.container > .row24 {
+    top: -180px;
+    left: 185px;
+}
+.container > .row25 {
+    top: -220px;
+    left: 120px;
+}
+.container > .row26 {
     top: 40px;
-    left: 110px;
+    left: 180px;
 }
 
 /* Container 3 */
 .container > .row31 {
     top: 20px;
-    left: 55px;
+    left: 105px;
 }
 .container > .row32 {
     top: 30px;
-    left: 0px;
+    left: 50px;
 }
 .container > .row33 {
     top: -70px;
-    left: 110px;
+    left: 160px;
 }
 
 /* Container 4 */
 .container > .row41 {
     top: 5px;
-    left: 65px;
+    left: 115px;
 }
 .container > .row42 {
     top: -30px;
-    left: -20px;
+    left: 30px;
 }
 .container > .row43 {
     top: -30px;
-    left: 20px;
+    left: 80px;
 }
 .container > .row44 {
     top: -135px;
-    left: 115px;
+    left: 165px;
 }
 .container > .row45 {
     top: -335px;
-    left: 135px;
+    left: 185px;
 }
