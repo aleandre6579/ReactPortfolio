@@ -7,6 +7,8 @@ import '../css/projects.css';
 import '../css/w3.css';
 import backArrowWhite from '../imgs/backArrowWhite.png';
 import backArrowBlack from '../imgs/backArrowBlack.png';
+import englishFlag from '../imgs/englishFlag.png';
+import frenchFlag from '../imgs/frenchFlag.png';
 
 // Freebot imgs
 import freebotMenu from '../imgs/projects/freebot/freebotMenu.png';
@@ -52,6 +54,14 @@ class About extends Component {
         document.body.style.overflow = 'visible';
         window.scrollTo(0,0);
 
+        let default_language = 'french';
+        var allText = document.getElementsByClassName('txt');
+        for(let i = 0; i < allText.length; i++) {
+            if(!allText[i].classList.contains(default_language)) {
+                allText[i].classList.add('hideTxt');
+            }
+        }
+
     }
 
     render() { 
@@ -60,7 +70,7 @@ class About extends Component {
             show: { 
                 opacity: 1,
                 transition: {
-                    staggerChildren: 0.2,
+                    staggerChildren: .4,
                 },
             },
             exit: {
@@ -74,13 +84,13 @@ class About extends Component {
         const navArrow = {
             hidden: {
                 opacity: 0,
-                x: -50,
+                x: -100,
             },
             show: {
                 opacity: 1,
                 x: 0,
                 transition: {
-                    duration: 0.2,
+                    duration: 1,
                 },
             },
             exit: {
@@ -95,20 +105,23 @@ class About extends Component {
         const navItem = {
             hidden: {
                 opacity: 0,
-                y: -50,
+                y: -100,
+                cursor: 'pointer',
             },
             show: {
                 opacity: 1,
-                y: 0,
+                transform: 'translate(0, 0px)',
+                cursor: 'pointer',
                 transition: {
-                    duration: 0.5,
+                    duration: 1,
                 },
             },
             exit: {
                 opacity: 0,
-                y: -150,
+                transform: 'translate(0, -50px)',
+                cursor: 'context-menu',
                 transition: {
-                    duration: 0.4,
+                    duration: 0.2,
                 },
             },
         };
@@ -145,6 +158,46 @@ class About extends Component {
                 },
             },
         };
+
+        const flagsMotion = {
+            hidden: { opacity: 0 },
+            show: { 
+                opacity: 1,
+                transition: {
+                    staggerChildren: .25,
+                    delay: 1.5,
+                },
+            },
+            exit: {
+                opacity: 1,
+                transition: {
+                    staggerChildren: 0.2,
+                },
+            },
+        }
+        const flagMotion = {
+            hidden: {
+                opacity: 0,
+                y: -150,
+                cursor: 'pointer',
+            },
+            show: {
+                opacity: 1,
+                y: 0,
+                cursor: 'pointer',
+                transition: {
+                    duration: 2.5,
+                },
+            },
+            exit: {
+                opacity: 0,
+                y: -150,
+                cursor: 'context-menu',
+                transition: {
+                    duration: 0.4,
+                },
+            },
+        }
 
         let activePopupId = 0;
 
@@ -204,9 +257,12 @@ class About extends Component {
         
         function realPageDisappear(btn_num) {
             var navbar_btns = document.getElementsByClassName('navbar-btn');
-            while(navbar_btns.length > 0) {
-                navbar_btns[navbar_btns.length-1].classList.add('navbar-btn-clicked');
-                navbar_btns[navbar_btns.length-1].classList.remove('navbar-btn');
+            for(let i = 0; i < navbar_btns.length; i++) {
+                if(!navbar_btns[navbar_btns.length-1].classList.contains('hideTxt')) {
+                    navbar_btns[navbar_btns.length-1].classList.add('navbar-btn-clicked');
+                    navbar_btns[navbar_btns.length-1].classList.remove('navbar-btn');
+                    console.log(navbar_btns[navbar_btns.length-1].classList.toString())
+                }
             }
 
             var realPage = document.getElementById("realPage");
@@ -214,6 +270,18 @@ class About extends Component {
             realPage.classList.add("realPageDisappear");
         }
 
+        function change_language(language_name) {
+            var allText = document.getElementsByClassName('txt');
+            for(let i = 0; i < allText.length; i++) {
+                if(allText[i].classList.contains('hideTxt') && allText[i].classList.contains(language_name)) {
+                    allText[i].classList.remove('hideTxt');
+                }
+                else if (!allText[i].classList.contains('hideTxt') && !allText[i].classList.contains(language_name)) {
+                    allText[i].classList.add('hideTxt');
+                }
+            }
+        }
+        
         return (
             <div>
                 <m.div className="page"
@@ -227,33 +295,42 @@ class About extends Component {
                         <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} className='arrow-btn' variants={navArrow}initial="hidden" animate="show" exit="exit">
                             <Link to='/'><img id='backArrow' className='arrowBack' src={backArrowBlack} alt=''></img></Link>
                         </m.div>
-                        <m.div variants={navbar} initial="hidden" animate="show" exit="exit" className="sections-navbar">
-                            <m.div onClick={() => realPageDisappear('1')} className='navbar-btn' variants={navItem} ><Link style={{"textDecoration": "none"}} to='/about'><m.div variants={link} initial='hidden' animate='show' exit='exit'>About</m.div></Link></m.div>
-                            <m.div onClick={() => realPageDisappear('2')} className='navbar-btn' variants={navItem} ><Link style={{"textDecoration": "none"}} to='/skills'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Skills</m.div></Link></m.div>
-                            <m.div className='navbar-btn' variants={navItem} ><Link style={{"textDecoration": "none"}} to='/projects'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Projects</m.div></Link></m.div>
+                        <m.div variants={navbar} initial="hidden" animate="show" exit="exit" className="sections-navbar english txt">
+                            <m.div className='navbar-btn' variants={navItem} ><Link style={{textDecoration: 'none'}} to='/about'><m.div variants={link} initial='hidden' animate='show' exit='exit'>About</m.div></Link></m.div>
+                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link style={{textDecoration: 'none'}} to='/skills'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Skills</m.div></Link></m.div>
+                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link style={{textDecoration: 'none'}} to='/projects'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Projects</m.div></Link></m.div>
+                        </m.div>    
+                        <m.div variants={navbar} initial="hidden" animate="show" exit="exit" className="sections-navbar french txt">
+                            <m.div className='navbar-btn' variants={navItem} ><Link style={{textDecoration: 'none'}} to='/about'><m.div variants={link} initial='hidden' animate='show' exit='exit'>A propos</m.div></Link></m.div>
+                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link style={{textDecoration: 'none'}} to='/skills'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Compétences</m.div></Link></m.div>
+                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link style={{textDecoration: 'none'}} to='/projects'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Projets</m.div></Link></m.div>
+                        </m.div>
+                        <m.div className='flags' variants={flagsMotion} initial="hidden" animate="show" exit="exit" >
+                            <m.div variants={flagMotion} to='/'><img onClick={() => change_language('french')} id='frenchFlag' className='flag' src={frenchFlag} alt=''></img></m.div>
+                            <m.div variants={flagMotion} to='/'><img onClick={() => change_language('english')} id='englishFlag' className='flag' src={englishFlag} alt=''></img></m.div>
                         </m.div>
                     </div>
 
                     <m.div variants={content} initial="hidden" animate="show" exit="exit" className="projectsContent">
                         <div id="project" onClick={() => showProjectPopup('project1')} className="project project1">
                             <img alt="projectImg" src={freebotMenu} className='projectImg'></img>
-                            <div className="hoverIcon">View Project</div>
+                            <div className="txt english hoverIcon">View Project</div>
                         </div>
                         <div id="project" onClick={() => showProjectPopup('project2')} className="project project2">
                             <img alt="popupImg" className='projectImg' src={plightMissile}/>
-                            <div className="hoverIcon">View Project</div>
+                            <div className="txt english hoverIcon">View Project</div>
                         </div>
                         <div onClick={() => showProjectPopup('project3')} className="project project3">
                             <img alt="popupImg" className='projectImg' src={warboatsMenu}/>
-                            <div className="hoverIcon">View Project</div>
+                            <div className="txt english hoverIcon">View Project</div>
                         </div>
                         <div onClick={() => showProjectPopup('project4')} className="project project4">
                             <img alt="popupImg" className='projectImg' src={swarmDying}/>
-                            <div className="hoverIcon">View Project</div>
+                            <div className="txt english hoverIcon">View Project</div>
                         </div>
                         <div onClick={() => showProjectPopup('project5')} className="project project5">
                             <img alt="popupImg" className='projectImg' src={fantasiaDead}/>
-                            <div className="hoverIcon">View Project</div>
+                            <div className="txt english hoverIcon">View Project</div>
                         </div>
                     </m.div>
 
@@ -262,8 +339,8 @@ class About extends Component {
                         <div className="scrollbar">
                             <div onClick={hideProjectPopup} className="closeBtn">x</div>
                             <div id='project1' className="popup1 hideFast popupContent">
-                                <h2>Freebot: Escape the Factory!</h2>
-                                <p>
+                                <h2 className='english txt'>Freebot: Escape the Factory!</h2>
+                                <p className='english txt'>
                                 A 2D platformer game I made as a university project using Unity which taught me about WebGL and
                                 how to upload games online.
                                 </p>
@@ -276,8 +353,8 @@ class About extends Component {
                                 <img alt="popupImg" className='popupImg' src={freebotSolved}/>
                             </div>
                             <div id='project2' className="popup2 hideFast popupContent">
-                                <h2>PlightFlight</h2>
-                                <p>
+                                <h2 className='english txt'>PlightFlight</h2>
+                                <p className='english txt'>
                                 A game I made using Unity which taught me a lot about coding enemy AI and the merits
                                 of raycasting.<br/>
                                 I also learned more about shaders, how to deal with rotations and quaternions, the
@@ -296,8 +373,8 @@ class About extends Component {
                                 <img alt="popupImg" className='popupImg' src={plightPuzzle}/>
                             </div>
                             <div id='project3' className="popup3 hideFast popupContent">
-                                <h2>Warboats</h2>
-                                <p>
+                                <h2 className='english txt'>Warboats</h2>
+                                <p className='english txt'>
                                 A game I made using Unity for my family to play on Christmas.<br/>
                                 This game taught me a lot about getting assets online, about Unity's audio system, and
                                 gave me a better understanding of how to work in a 3D environment in Unity.<br/> 
@@ -306,8 +383,8 @@ class About extends Component {
                                 <img alt="popupImg" className='popupImg' src={warboatsMenu}/>
                             </div>
                             <div id='project4' className="popup4 hideFast popupContent">
-                                <h2>Swarmboats</h2>
-                                <p>
+                                <h2 className='english txt'>Swarmboats</h2>
+                                <p className='english txt'>
                                 A top-down shooter game I made using Unity by following a Udemy course by the acclaimed 
                                 youtuber Blackthornprod.<br/>
                                 This game, being the second game I every made in Unity, taught me practically all the 
@@ -322,8 +399,8 @@ class About extends Component {
                                 <img alt="popupImg" className='popupImg' src={swarmLost}/>
                             </div>
                             <div id='project5' className="popup5 hideFast popupContent">
-                                <h2>Fantasia</h2>
-                                <p>
+                                <h2 className='english txt'>Fantasia</h2>
+                                <p className='english txt'>
                                 A Trivia game I made for my family to play on Christmas, which is also my first ever
                                 game made in Unity.<br/>
                                 I drew the sprites for the characters using Photoshop, and the design and animations
