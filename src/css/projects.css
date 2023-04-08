@@ -35,6 +35,25 @@ html {
     }
 }
 
+.navbar-btn-clicked {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-family: "NavBtnTxt";
+    font-size: clamp(0rem, calc(1rem + 3vw), 5rem);
+    text-decoration: none;
+    z-index: 5;
+    transition: 200ms;
+}
+.navbar-btn-clicked::before {
+    content: "";
+    position: relative;
+    left: 50%;
+    top: -3%;
+    width: 10px;
+}
+
 .projectsContent {
     margin-top: 100px;
     display: flex;

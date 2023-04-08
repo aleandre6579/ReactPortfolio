@@ -158,6 +158,12 @@ class About extends Component {
         }
 
         function realPageDisappear() {
+            var navbar_btns = document.getElementsByClassName('navbar-btn');
+            while(navbar_btns.length > 0) {
+                navbar_btns[navbar_btns.length-1].classList.add('navbar-btn-clicked');
+                navbar_btns[navbar_btns.length-1].classList.remove('navbar-btn');
+            }
+            
             var realPage = document.getElementById("realPage");
             realPage.classList.remove("realPage");
             realPage.classList.add("realPageDisappear");

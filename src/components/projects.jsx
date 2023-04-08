@@ -202,7 +202,13 @@ class About extends Component {
             }
         });
         
-        function realPageDisappear() {
+        function realPageDisappear(btn_num) {
+            var navbar_btns = document.getElementsByClassName('navbar-btn');
+            while(navbar_btns.length > 0) {
+                navbar_btns[navbar_btns.length-1].classList.add('navbar-btn-clicked');
+                navbar_btns[navbar_btns.length-1].classList.remove('navbar-btn');
+            }
+
             var realPage = document.getElementById("realPage");
             realPage.classList.remove("realPage");
             realPage.classList.add("realPageDisappear");
@@ -222,8 +228,8 @@ class About extends Component {
                             <Link to='/'><img id='backArrow' className='arrowBack' src={backArrowBlack} alt=''></img></Link>
                         </m.div>
                         <m.div variants={navbar} initial="hidden" animate="show" exit="exit" className="sections-navbar">
-                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link style={{"textDecoration": "none"}} to='/about'><m.div variants={link} initial='hidden' animate='show' exit='exit'>About</m.div></Link></m.div>
-                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link style={{"textDecoration": "none"}} to='/skills'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Skills</m.div></Link></m.div>
+                            <m.div onClick={() => realPageDisappear('1')} className='navbar-btn' variants={navItem} ><Link style={{"textDecoration": "none"}} to='/about'><m.div variants={link} initial='hidden' animate='show' exit='exit'>About</m.div></Link></m.div>
+                            <m.div onClick={() => realPageDisappear('2')} className='navbar-btn' variants={navItem} ><Link style={{"textDecoration": "none"}} to='/skills'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Skills</m.div></Link></m.div>
                             <m.div className='navbar-btn' variants={navItem} ><Link style={{"textDecoration": "none"}} to='/projects'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Projects</m.div></Link></m.div>
                         </m.div>
                     </div>
