@@ -147,14 +147,16 @@ class About extends Component {
                             <h1 className='aboutMainHead bigHead'><strong>Hey, I'm Alex!</strong></h1>
                             <p className='aboutTxt'>
                                 A French <strong>Computer Science</strong> student currently in my 3rd year at
-                                MUIC ("Mahidol University International College") in Bangkok, Thailand.
+                                the univeristy known as <strong>MUIC</strong> ("Mahidol University International College") in 
+                                Bangkok, Thailand.
                             </p>
 
                             <h1 className='aboutHead bigHead'>My Accomplishments</h1>
                             <p className='aboutTxt'>
-                                I graduated from LFIB ("Lycee Francais International de Bangkok"), a French highschool in Bangkok, with <strong>18.2/20</strong>. <br/>
+                                I graduated from the French school known as <strong>LFIB</strong> ("Lycee Francais International de Bangkok"), located in Bangkok, Thailand, 
+                                with an overall grade of <strong>18.2/20</strong> (not comparable to a GPA from the American education system). <br/>
                                 I taught myself <strong>Unity and C#</strong> at the age of 16 and I've been making small games with Unity since then.<br/>
-                                I am now working towards a Computer Science bachelors degree at MUIC ("Mahidol University International College"), one of the most
+                                I am now working towards a Computer Science bachelor's degree at <strong>MUIC</strong>, one of the most
                                 prestigious universities in Thailand, with a current GPA of  <strong>3.78/4</strong>.<br/>
                                 I am also undertaking a <strong>Film Arts</strong> minor at MUIC.<br/>
                             </p>
@@ -163,16 +165,18 @@ class About extends Component {
                             <p className='aboutTxt'>
                                 When it comes to my career, the jobs I am interested in are <strong>video game developer</strong>, 
                                 <strong> software enginner</strong> and <strong>full-stack developer</strong>.
-                                However I am captivated by most things in computer science so I am open to many job opportunities.
+                                However I am captivated by most things in computer science so I am open to other job opportunities.
                             </p>
 
                             <h1 className='aboutHead smallHead'>My Hobbies</h1>
                             <p className='aboutTxt'>
-                                I love anything that touches <strong>storytelling</strong> in any way, but I also love the thrill of <strong>solving complicated problems</strong>.
-                                <br/>
-                                I love to dive into impressive and creative works of art, especially well-written <strong>novels</strong> and <strong>video games</strong>, which I 
+                                Making video games with Unity was the <strong>initial excitement</strong> that made me love to code. I will
+                                always be making my own games as a hobby. <br/>
+                                I then learned that I loved to try understand and solve <strong>any kind of programming problem</strong> and elaborating a <strong>well-written
+                                solution</strong> to them. <br/>
+                                I have also always loved anything that touches <strong>storytelling</strong> in any way.<br/>
+                                I love to dive into impressive and creative works of art, especially well-written <strong>novels</strong> and well-designed <strong>video games</strong>, which I 
                                 am currently learning to make, with plans of making my own novels and games in the future.
-                            
                             </p>
 
                         </m.div>  

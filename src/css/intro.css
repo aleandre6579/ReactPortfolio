@@ -340,7 +340,6 @@
     padding: 0px;
     width: clamp(10px, 5vh, 48px);
     height: clamp(10px, 5vh, 48px);
-    box-shadow: white 0px 0px 4px 1px;
 }
 
 .contactInfo {
