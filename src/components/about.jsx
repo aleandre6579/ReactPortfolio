@@ -241,8 +241,17 @@ class About extends Component {
                                 </div>
                             </p>
 
+                            <div className="flex-center">
+                            <div className='resumeTxt english txt'>
+                                    <Link style={{textDecoration: 'none'}} to='/cv'>Curriculum Vitae</Link>
+                                </div>
+                                <div className='resumeTxt french txt'>
+                                    <Link style={{textDecoration: 'none'}} to='/cv'>Curriculum Vitae</Link>
+                                </div>
+                            </div>
+
                             <h1 className='english txt aboutHead bigHead'>My Accomplishments</h1>
-                            <h1 className='french txt aboutHead bigHead'>Mes Accomplissements</h1>
+                            <h1 style={{width: "600px"}} className='french txt aboutHead bigHead'>Mes Accomplissements</h1>
                             <p className='aboutTxt'>
                                 <div className="english txt">
                                     I graduated from the French school known as <strong>LFIB</strong> ("French International School of Bangkok"), located in Bangkok, Thailand, 
@@ -290,10 +299,10 @@ class About extends Component {
                                 <div className="french txt">
                                     Créer des jeux vidéo avec Unity était l'enthousiasme initial qui m'a fait aimer le code. Mon passe-temps principal sera toujours de coder
                                     mes propres jeux. <br/>
-                                    J'ai ensuite découvert que j'adorais comprendre et résoudre toutes sortes de problèmes de code, et d'élaborer un algorithme de solution le plus simple et
-                                    concis possible.<br/>
-                                    J'ai aussi toujours aimé tout ce qui touche à la narration. J'aime plonger dans des œuvres d'art impressionnantes et originales, en particulier
-                                    des romans bien écrits et des jeux vidéo amusants, pour en apprendre plus sur la création de bons romans et jeux vidéo, avec l'intention d'en créer 
+                                    J'ai ensuite découvert que j'adorais comprendre et résoudre toutes sortes de problèmes de code puis d'élaborer un algorithme de solution simple et
+                                    concis pour y répondre.<br/>
+                                    De plus, j'ai toujours aimé tout ce qui touche à la narration. C'est une passion pour moi de plonger dans des œuvres d'art impressionnantes et originales, en particulier
+                                    des jeux vidéo amusants et des romans bien écrits, pour en apprendre plus sur leur création, avec l'intention d'en créer 
                                     mes propres à l'avenir.
                                 </div>
                             </p>

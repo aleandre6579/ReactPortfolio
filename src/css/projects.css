@@ -35,6 +35,26 @@ html {
     }
 }
 
+.projectScrollbar {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+.projectScrollbar::-webkit-scrollbar {
+    width: 16px;
+}
+.projectScrollbar::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+.projectScrollbar::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+    background-color: var(--blue);
+}
+
 .navbar-btn-clicked {
     display: flex;
     justify-content: center;

@@ -32,6 +32,17 @@
         opacity: 0.2;
     }
 }
+@keyframes cvBtnHoverGlow {
+    0% {
+        box-shadow: 0 0 0px 0px white;
+        opacity: 0;
+    }
+    100% {
+        box-shadow: 0 0 100px 80px white;
+        opacity: 0.2;
+    }
+}
+
 @keyframes realPageAppear {
     0%{
         opacity: 0;
@@ -55,9 +66,22 @@
 html {
     overflow-y: scroll;
 }
-html::-webkit-scrollbar {
-    display: none;
+
+::-webkit-scrollbar {
+    width: 16px;
 }
+::-webkit-scrollbar-track {
+    background-color: rgb(255, 255, 255, 0.1);
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+    background-color: var(--blue);
+}
+
+
+
 
 .page {
     position: absolute;
@@ -265,26 +289,6 @@ html::-webkit-scrollbar {
     text-align: justify;
 }
 
-.scrollbar {
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-}
-.scrollbar::-webkit-scrollbar {
-    width: 16px;
-}
-.scrollbar::-webkit-scrollbar-track {
-    border-radius: 8px;
-    background-color: transparent;
-    border: 1px solid transparent;
-}
-.scrollbar::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    border: 3px solid transparent;
-    background-clip: content-box;
-    background-color: var(--blue);
-}
-
 .txt {
 
 }
@@ -296,4 +300,37 @@ html::-webkit-scrollbar {
 }
 .hideTxt {
     display: none;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+.resumeTxt {
+    margin-top: 50px;
+    margin-bottom: -55px;
+    font-family: "NavBtnTxt";
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 50px;
+    transition: 200ms;
+}
+.resumeTxt::before {
+    content: "";
+    position: relative;
+    left: 40%;
+    width: 10px;
+}
+.resumeTxt:hover::before {
+}
+.resumeTxt:hover {
+    color: white;
+    text-shadow: 0 2px 2px rgba(255, 255, 255, 1), 
+      2px 5px 1px rgba(255, 255, 255, 0.4), 
+      4px 8px 0px rgba(255, 255, 255, 0.3), 
+      6px 11px 0px rgba(255, 255, 255, 0.2),
+      8px 14px 0px rgba(255, 255, 255, 0.1),
+      10px 17px 0px rgba(255, 255, 255, 0.05),
+      12px 20px 0px rgba(255, 255, 255, 0.02),
+      14px 23px 0px rgba(255, 255, 255, 0.01);
 }

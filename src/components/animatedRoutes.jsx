@@ -6,6 +6,7 @@ import Intro from './intro.jsx'
 import About from './about.jsx'
 import Skills from './skills.jsx'
 import Projects from './projects.jsx'
+import CV from './cv.jsx'
 
 function AnimatedRoutes() {
     const location = useLocation();
@@ -17,6 +18,7 @@ function AnimatedRoutes() {
                 <Route path="/about" element={<About/>} />
                 <Route path="/skills" element={<Skills/>} />
                 <Route path="/projects" element={<Projects/>} />
+                <Route path="/cv" element={<CV/>} />
             </Routes>
         </AnimatePresence>
     );

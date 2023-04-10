@@ -336,7 +336,7 @@ class About extends Component {
 
                     <m.div id="backPanel"></m.div>
                     <m.div id='projectPopup' style={{opacity: 0}} className="projectPopup hideFast">
-                        <div className="scrollbar">
+                        <div className="projectScrollbar">
                             <div onClick={hideProjectPopup} className="closeBtn">x</div>
                             <div id='project1' className="popup1 hideFast popupContent">
                                 <h2 className='english txt'>Freebot: Escape the Factory!</h2>
