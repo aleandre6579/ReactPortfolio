@@ -132,9 +132,9 @@ class Intro extends Component {
                                 <m.svg className='svg'>
                                     <m.rect
                                         variants={pathAppear} initial="hidden" animate="show"
-                                        x="5"
+                                        x="6"
                                         y="6"
-                                        rx='.75em' ry='.75em' width='5em' height='1.5em'
+                                        rx='.75em' ry='.75em' width='4.9em' height='1.45em'
                                     ></m.rect>
                                 </m.svg>
                             </div>
@@ -142,9 +142,9 @@ class Intro extends Component {
                                 <m.svg className='svg'>
                                     <m.rect
                                         variants={pathAppear} initial="hidden" animate="show"
-                                        x="5"
+                                        x="6"
                                         y="6"
-                                        rx='.75em' ry='.75em' width='5em' height='1.5em'
+                                        rx='.75em' ry='.75em' width='4.9em' height='1.45em'
                                     ></m.rect>
                                 </m.svg>
                             </m.div>
@@ -152,9 +152,9 @@ class Intro extends Component {
                                 <m.svg className='svg'>
                                     <m.rect
                                         variants={pathAppear} initial="hidden" animate="show"
-                                        x="5"
+                                        x="6"
                                         y="6"
-                                        rx='.75em' ry='.75em' width='5em' height='1.5em'
+                                        rx='.75em' ry='.75em' width='4.9em' height='1.45em'
                                     ></m.rect>
                                 </m.svg>
                             </m.div>
