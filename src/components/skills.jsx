@@ -311,7 +311,8 @@ class About extends Component {
                         </div>
 
                         <div className="containerSpace">
-                            <div className="txt english containerTitle">Software & Frameworks</div>
+                        <div className="txt english containerTitle">Software & Frameworks</div>
+                        <div className="txt french containerTitle">Applications & Outils</div>
                             <div id='container2' onClick={() => openContainer('container2')} className="container container2">
                                 <div className="containerRow row22">  
                                     <img alt='unity' src={unity} className='containerImg'/>
@@ -344,7 +345,8 @@ class About extends Component {
 
                     <m.div variants={content} initial="hidden" animate="show" exit="exit" className="containersRow">
                         <div className="containerSpace">
-                            <div className="txt english containerTitle">Social</div>
+                        <div className="txt english containerTitle">Social Skills</div>
+                        <div className="txt french containerTitle">Compétences Sociales</div>
                             <div id='container3' onClick={() => openContainer('container3')} className="container container3">
                                 <div className="containerRow row31">
                                     <img alt='team' style={{width:'80px'}} src={team} className='containerImg'/>
@@ -365,7 +367,8 @@ class About extends Component {
                         </div>
 
                         <div className="containerSpace">
-                            <div className="txt english containerTitle">Personal</div>
+                            <div className="txt english containerTitle">Personal Skills</div>
+                            <div className="txt french containerTitle">Compétences Personnelles</div>
                             <div id='container4' onClick={() => openContainer('container4')} className="container container4">
                                 <div className="containerRow row41">
                                     <img alt='ambitious' style={{width:'70px'}} src={ambitious} className='containerImg'/>
