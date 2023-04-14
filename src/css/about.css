@@ -67,22 +67,6 @@ html {
     overflow-y: scroll;
 }
 
-::-webkit-scrollbar {
-    width: 16px;
-}
-::-webkit-scrollbar-track {
-    background-color: rgb(255, 255, 255, 0.1);
-}
-::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    border: 3px solid transparent;
-    background-clip: content-box;
-    background-color: var(--blue);
-}
-
-
-
-
 .page {
     position: absolute;
     width: 100%;
@@ -107,8 +91,8 @@ html {
 }
 
 .navbar {
-    margin-top: -20px;
     margin-bottom: -20px;
+    transition: 500ms;
 }
 
 .sections-navbar {
@@ -120,14 +104,12 @@ html {
 }
 
 .navbar-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    height: 40%;
     font-family: "NavBtnTxt";
     font-size: clamp(0rem, calc(1rem + 3vw), 5rem);
     text-decoration: none;
     z-index: 5;
+    margin-top: 30px;
     transition: 200ms;
 }
 .navbar-btn::before {
@@ -135,7 +117,7 @@ html {
     position: relative;
     left: 50%;
     top: -3%;
-    width: 10px;
+    width: 100%;
 }
 .navbar-btn:hover::before {
     animation: navBtnHoverGlow  0.25s ease forwards;
@@ -173,7 +155,7 @@ html {
 .arrow-btn {
     width: 50px;
     position: relative;
-    top: 95px;
+    top: 80px;
     left: 50px;
     transition: 200ms;
 }
@@ -211,7 +193,7 @@ html {
     .arrow-btn {
         width: 20px;
         position: relative;
-        top: 43px;
+        top: 33px;
         left: 30px;
         transition: 200ms;
     }
@@ -334,3 +316,11 @@ html {
       12px 20px 0px rgba(255, 255, 255, 0.02),
       14px 23px 0px rgba(255, 255, 255, 0.01);
 }
+
+.link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+

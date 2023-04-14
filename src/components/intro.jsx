@@ -128,7 +128,7 @@ class Intro extends Component {
                         </div>    
 
                         <m.div className='btns'>
-                            <div id='btn1' onClick={() => circleBtnClicked('btn1')} className='btnAnimating about-btn' ><Link style={{"textDecoration": "none"}} to='/about'><div className="btn-txt">About</div></Link>
+                            <div id='btn1' onClick={() => circleBtnClicked('btn1')} className='btnAnimating about-btn intro-btn' ><Link className='intro-link' to='/about'><div className="btn-txt">About</div></Link>
                                 <m.svg className='svg'>
                                     <m.rect
                                         variants={pathAppear} initial="hidden" animate="show"
@@ -138,7 +138,7 @@ class Intro extends Component {
                                     ></m.rect>
                                 </m.svg>
                             </div>
-                            <m.div id='btn2' onClick={() => circleBtnClicked('btn2')} className='btnAnimating skills-btn'><Link style={{"textDecoration": "none"}} to='/skills'><div className="btn-txt">Skills</div></Link>
+                            <m.div id='btn2' onClick={() => circleBtnClicked('btn2')} className='btnAnimating skills-btn intro-btn'><Link className='intro-link' to='/skills'><div className="btn-txt">Skills</div></Link>
                                 <m.svg className='svg'>
                                     <m.rect
                                         variants={pathAppear} initial="hidden" animate="show"
@@ -148,7 +148,7 @@ class Intro extends Component {
                                     ></m.rect>
                                 </m.svg>
                             </m.div>
-                            <m.div id='btn3' onClick={() => circleBtnClicked('btn3')} className='btnAnimating projects-btn'><Link style={{"textDecoration": "none"}} to='/projects'><div className="btn-txt">Projects</div></Link>
+                            <m.div id='btn3' onClick={() => circleBtnClicked('btn3')} className='btnAnimating projects-btn intro-btn'><Link className='intro-link' to='/projects'><div className="btn-txt">Projects</div></Link>
                                 <m.svg className='svg'>
                                     <m.rect
                                         variants={pathAppear} initial="hidden" animate="show"

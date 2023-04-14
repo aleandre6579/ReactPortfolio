@@ -296,14 +296,14 @@ class About extends Component {
                             <Link to='/'><img id='backArrow' className='arrowBack' src={backArrowBlack} alt=''></img></Link>
                         </m.div>
                         <m.div variants={navbar} initial="hidden" animate="show" exit="exit" className="sections-navbar english txt">
-                            <m.div className='navbar-btn' variants={navItem} ><Link style={{textDecoration: 'none'}} to='/about'><m.div variants={link} initial='hidden' animate='show' exit='exit'>About</m.div></Link></m.div>
-                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link style={{textDecoration: 'none'}} to='/skills'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Skills</m.div></Link></m.div>
-                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link style={{textDecoration: 'none'}} to='/projects'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Projects</m.div></Link></m.div>
+                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link className='link' to='/about'><m.div variants={link} initial='hidden' animate='show' exit='exit'>About</m.div></Link></m.div>
+                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link className='link' to='/skills'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Skills</m.div></Link></m.div>
+                            <m.div className='navbar-btn' variants={navItem} ><Link className='link' to='/projects'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Projects</m.div></Link></m.div>
                         </m.div>    
                         <m.div variants={navbar} initial="hidden" animate="show" exit="exit" className="sections-navbar french txt">
-                            <m.div className='navbar-btn' variants={navItem} ><Link style={{textDecoration: 'none'}} to='/about'><m.div variants={link} initial='hidden' animate='show' exit='exit'>A propos</m.div></Link></m.div>
-                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link style={{textDecoration: 'none'}} to='/skills'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Compétences</m.div></Link></m.div>
-                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link style={{textDecoration: 'none'}} to='/projects'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Projets</m.div></Link></m.div>
+                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link className='link' to='/about'><m.div variants={link} initial='hidden' animate='show' exit='exit'>A propos</m.div></Link></m.div>
+                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link className='link' to='/skills'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Compétences</m.div></Link></m.div>
+                            <m.div className='navbar-btn' variants={navItem} ><Link className='link' to='/projects'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Projets</m.div></Link></m.div>
                         </m.div>
                         <m.div className='flags' variants={flagsMotion} initial="hidden" animate="show" exit="exit" >
                             <m.div variants={flagMotion} to='/'><img onClick={() => change_language('french')} id='frenchFlag' className='flag' src={frenchFlag} alt=''></img></m.div>
