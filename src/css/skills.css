@@ -31,6 +31,7 @@
     border: 5px var(--blue) solid;
     margin-top: 100px;
     cursor: pointer;
+    overflow: hidden;
     transition: 400ms;
 }
 .container:hover {
