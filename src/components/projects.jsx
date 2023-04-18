@@ -374,7 +374,8 @@ class About extends Component {
                         </div>
 
                         <div className="newProjects">
-                            <div className='newProjectsTxt'>New projects cooking up as we speak!</div>
+                        <div className='newProjectsTxt english txt'>New projects cooking up as we speak!</div>
+                        <div className='newProjectsTxt french txt'>De nouveaux projets en préparation ce moment même !</div>
                         </div>
                     </m.div>
 
