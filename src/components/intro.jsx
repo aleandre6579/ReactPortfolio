@@ -13,12 +13,12 @@ import linkedinLogo from '../imgs/linkedinLogo.png';
 class Intro extends Component {
     componentDidMount() {
         window.scrollTo(0,0);
-        const btnsAnimating = document.getElementsByClassName('btnAnimating');
+        let btnsAnimating = document.getElementsByClassName('btnAnimating');
         btnsAnimating[0].addEventListener("animationend", () => {
-            for (let i = 0; i < btnsAnimating.length; i++) {
-                console.log(i);
-                btnsAnimating[i].classList.add("btn");
-                btnsAnimating[i].classList.remove("btnAnimating");
+            while(btnsAnimating.length > 0) {
+                btnsAnimating[0].classList.add("btn");
+                btnsAnimating[0].classList.remove("btnAnimating");
+                btnsAnimating = document.getElementsByClassName('btnAnimating');
             }
         });       
     }
@@ -128,24 +128,24 @@ class Intro extends Component {
                         </div>    
 
                         <m.div className='btns'>
-                            <div id='btn1' onClick={() => circleBtnClicked('btn1')} className='btnAnimating about-btn intro-btn' ><Link className='intro-link' to='/about'><div className="btn-txt">About</div></Link>
+                            <m.div id='btn1' onClick={() => circleBtnClicked('btn1')} className='btnAnimating about-btn intro-btn' ><Link className='intro-link' to='/about'><div className="btn-txt">About</div></Link>
                                 <m.svg className='svg'>
                                     <m.rect
                                         variants={pathAppear} initial="hidden" animate="show"
                                         x="6"
                                         y="6"
-                                        rx='.75em' ry='.75em' width='4.9em' height='1.45em'
-                                    ></m.rect>
+                                        rx='.75em' ry='.75em' width='4.9em' height='1.45em'>                                           
+                                    </m.rect>
                                 </m.svg>
-                            </div>
+                            </m.div>
                             <m.div id='btn2' onClick={() => circleBtnClicked('btn2')} className='btnAnimating skills-btn intro-btn'><Link className='intro-link' to='/skills'><div className="btn-txt">Skills</div></Link>
                                 <m.svg className='svg'>
                                     <m.rect
                                         variants={pathAppear} initial="hidden" animate="show"
                                         x="6"
                                         y="6"
-                                        rx='.75em' ry='.75em' width='4.9em' height='1.45em'
-                                    ></m.rect>
+                                        rx='.75em' ry='.75em' width='4.9em' height='1.45em'>    
+                                    </m.rect>
                                 </m.svg>
                             </m.div>
                             <m.div id='btn3' onClick={() => circleBtnClicked('btn3')} className='btnAnimating projects-btn intro-btn'><Link className='intro-link' to='/projects'><div className="btn-txt">Projects</div></Link>
@@ -154,11 +154,12 @@ class Intro extends Component {
                                         variants={pathAppear} initial="hidden" animate="show"
                                         x="6"
                                         y="6"
-                                        rx='.75em' ry='.75em' width='4.9em' height='1.45em'
-                                    ></m.rect>
+                                        rx='.75em' ry='.75em' width='4.9em' height='1.45em'>                                            
+                                    </m.rect>
                                 </m.svg>
                             </m.div>
                         </m.div>
+
                     </div>
                 </div>
 
