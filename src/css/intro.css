@@ -260,7 +260,7 @@
 .btnAnimating {
     font-size: calc(0rem + 5vw/3.5 + 4vh);
     position: relative;
-    width: 4.9em;
+    width: 6em;
     height: 1.5em;
     text-align: center;
     border-radius: 80px;
@@ -274,7 +274,7 @@
 .btn {
     font-size: calc(0rem + 5vw/3.5 + 4vh);
     position: relative;
-    width: 4.9em;
+    width: 6em;
     height: 1.5em;
     text-align: center;
     border-radius: 80px;

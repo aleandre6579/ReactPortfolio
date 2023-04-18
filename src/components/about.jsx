@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { motion as m } from "framer-motion";
 import { Link } from "react-router-dom";
 import { AnimatePresence } from 'framer-motion';
+import selectedLanguage from './selectedLanguage.js'
 import '../css/about.css';
 import '../css/w3.css';
+
 import backArrowWhite from '../imgs/backArrowWhite.png';
 import backArrowBlack from '../imgs/backArrowBlack.png';
 import englishFlag from '../imgs/englishFlag.png';
@@ -15,10 +17,9 @@ class About extends Component {
         document.body.style.overflow = 'visible';
         window.scrollTo(0,0);
 
-        let default_language = 'french';
         var allText = document.getElementsByClassName('txt');
         for(let i = 0; i < allText.length; i++) {
-            if(!allText[i].classList.contains(default_language)) {
+            if(!allText[i].classList.contains(selectedLanguage.selectedLanguage)) {
                 allText[i].classList.add('hideTxt');
             }
         }
@@ -182,6 +183,7 @@ class About extends Component {
         }
 
         function change_language(language_name) {
+            selectedLanguage.selectedLanguage = language_name;
             var allText = document.getElementsByClassName('txt');
             for(let i = 0; i < allText.length; i++) {
                 if(allText[i].classList.contains('hideTxt') && allText[i].classList.contains(language_name)) {

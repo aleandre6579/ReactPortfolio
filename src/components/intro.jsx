@@ -2,7 +2,7 @@ import React, { Component, useEffect } from 'react';
 import { backInOut, easeInOut, motion as m } from "framer-motion";
 import { Link } from "react-router-dom";
 import { App } from "../App.js"
-
+import selectedLanguage from './selectedLanguage.js'
 import '../css/intro.css'
 import '../css/w3.css'
 
@@ -25,10 +25,9 @@ class Intro extends Component {
             }
         });       
 
-        let default_language = 'french';
         var allText = document.getElementsByClassName('txt');
         for(let i = 0; i < allText.length; i++) {
-            if(!allText[i].classList.contains(default_language)) {
+            if(!allText[i].classList.contains(selectedLanguage.selectedLanguage)) {
                 allText[i].classList.add('hideTxt');
             }
         }
@@ -160,6 +159,8 @@ class Intro extends Component {
         }
 
         function change_language(language_name) {
+            selectedLanguage.selectedLanguage = language_name;
+            console.log(selectedLanguage.selectedLanguage);
             var allText = document.getElementsByClassName('txt');
             for(let i = 0; i < allText.length; i++) {
                 if(allText[i].classList.contains('hideTxt') && allText[i].classList.contains(language_name)) {
@@ -200,33 +201,45 @@ class Intro extends Component {
                         </div>    
 
                         <m.div className='btns'>
-                            <m.div id='btn1' onClick={() => circleBtnClicked('btn1')} className='btnAnimating about-btn intro-btn' ><Link className='intro-link' to='/about'><div className="btn-txt">About</div></Link>
+                            <m.div id='btn1' onClick={() => circleBtnClicked('btn1')} className='btnAnimating about-btn intro-btn' >
+                                <Link className='intro-link' to='/about'>
+                                    <div className="btn-txt english txt">About</div>
+                                    <div className="btn-txt french txt">A propos</div>
+                                </Link>
                                 <m.svg className='svg'>
                                     <m.rect
                                         variants={pathAppear} initial="hidden" animate="show"
                                         x="6"
                                         y="6"
-                                        rx='.75em' ry='.75em' width='4.9em' height='1.45em'>                                           
+                                        rx='.75em' ry='.75em' width='6em' height='1.45em'>                                           
                                     </m.rect>
                                 </m.svg>
                             </m.div>
-                            <m.div id='btn2' onClick={() => circleBtnClicked('btn2')} className='btnAnimating skills-btn intro-btn'><Link className='intro-link' to='/skills'><div className="btn-txt">Skills</div></Link>
+                            <m.div id='btn2' onClick={() => circleBtnClicked('btn2')} className='btnAnimating skills-btn intro-btn'>
+                                <Link className='intro-link' to='/skills'>
+                                    <div className="btn-txt english txt">Skills</div>
+                                    <div className="btn-txt french txt">Compétences</div>
+                                </Link>
                                 <m.svg className='svg'>
                                     <m.rect
                                         variants={pathAppear} initial="hidden" animate="show"
                                         x="6"
                                         y="6"
-                                        rx='.75em' ry='.75em' width='4.9em' height='1.45em'>    
+                                        rx='.75em' ry='.75em' width='6em' height='1.45em'>    
                                     </m.rect>
                                 </m.svg>
                             </m.div>
-                            <m.div id='btn3' onClick={() => circleBtnClicked('btn3')} className='btnAnimating projects-btn intro-btn'><Link className='intro-link' to='/projects'><div className="btn-txt">Projects</div></Link>
+                            <m.div id='btn3' onClick={() => circleBtnClicked('btn3')} className='btnAnimating projects-btn intro-btn'>
+                                <Link className='intro-link' to='/projects'>
+                                    <div className="btn-txt english txt">Projects</div>
+                                    <div className="btn-txt french txt">Projets</div>
+                                </Link>
                                 <m.svg className='svg'>
                                     <m.rect
                                         variants={pathAppear} initial="hidden" animate="show"
                                         x="6"
                                         y="6"
-                                        rx='.75em' ry='.75em' width='4.9em' height='1.45em'>                                            
+                                        rx='.75em' ry='.75em' width='6em' height='1.45em'>                                            
                                     </m.rect>
                                 </m.svg>
                             </m.div>
@@ -239,10 +252,12 @@ class Intro extends Component {
                     variants={contactBar}
                     initial="hidden" animate="visible"
                 >
-                    <m.div variants={contactTxt} className="contactTxt">Contact me here</m.div>
+                    <m.div variants={contactTxt} className="contactTxt english txt">Contact me here</m.div>
+                    <m.div variants={contactTxt} className="contactTxt french txt">Contactez-moi ici</m.div>
+
                     <a href='https://github.com/aleandre6579?tab=repositories' target="_blank"><m.img id='gitBtn' variants={contactBtn} className='contactBtn' src={gitLogo}/></a>
                     <a href='https://linkedin.com/in/alexandre-simon-dev' target="_blank"><m.img id='gitBtn' variants={contactBtn} className='contactBtn ' src={linkedinLogo}/></a>
-                    <m.div variants={contactTxt} className="contactInfoTxt">aleandre6579.simon@gmail.com</m.div>
+                    <m.div variants={contactTxt} className="contactInfoTxt">alexsimon.code@gmail.com</m.div>
                     <m.div variants={contactTxt} className="contactInfoTxt">+66 626060299</m.div>
                 </m.div>
 
