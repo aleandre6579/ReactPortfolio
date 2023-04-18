@@ -6,6 +6,9 @@ import { App } from "../App.js"
 import '../css/intro.css'
 import '../css/w3.css'
 
+import englishFlag from '../imgs/englishFlag.png';
+import frenchFlag from '../imgs/frenchFlag.png';
+
 import gitLogo from '../imgs/gitLogo.png';
 import gmailLogo from '../imgs/gmailLogo.png';
 import linkedinLogo from '../imgs/linkedinLogo.png';
@@ -21,6 +24,14 @@ class Intro extends Component {
                 btnsAnimating = document.getElementsByClassName('btnAnimating');
             }
         });       
+
+        let default_language = 'french';
+        var allText = document.getElementsByClassName('txt');
+        for(let i = 0; i < allText.length; i++) {
+            if(!allText[i].classList.contains(default_language)) {
+                allText[i].classList.add('hideTxt');
+            }
+        }
     }
 
     render() { 
@@ -85,6 +96,46 @@ class Intro extends Component {
             }
         }
 
+        const flagsMotion = {
+            hidden: { opacity: 0 },
+            show: { 
+                opacity: 1,
+                transition: {
+                    staggerChildren: .25,
+                    delay: 1.5,
+                },
+            },
+            exit: {
+                opacity: 1,
+                transition: {
+                    staggerChildren: 0.2,
+                },
+            },
+        }
+        const flagMotion = {
+            hidden: {
+                opacity: 0,
+                y: -150,
+                cursor: 'pointer',
+            },
+            show: {
+                opacity: 1,
+                y: 0,
+                cursor: 'pointer',
+                transition: {
+                    duration: 2.5,
+                },
+            },
+            exit: {
+                opacity: 0,
+                y: -150,
+                cursor: 'context-menu',
+                transition: {
+                    duration: 0.4,
+                },
+            },
+        }
+
         function circleBtnClicked(btnName) {
             document.body.style.overflow = 'hidden';
             var btn_panel = document.getElementById(btnName);
@@ -108,6 +159,19 @@ class Intro extends Component {
             target.style.setProperty("--mouse-y", y + 'px');
         }
 
+        function change_language(language_name) {
+            var allText = document.getElementsByClassName('txt');
+            for(let i = 0; i < allText.length; i++) {
+                if(allText[i].classList.contains('hideTxt') && allText[i].classList.contains(language_name)) {
+                    allText[i].classList.remove('hideTxt');
+                }
+                else if (!allText[i].classList.contains('hideTxt') && !allText[i].classList.contains(language_name)) {
+                    allText[i].classList.add('hideTxt');
+                }
+            }
+        }
+
+
         return (
             <m.div id='root2'
                 initial={{opacity: 1}}
@@ -118,12 +182,20 @@ class Intro extends Component {
                 <div className="title-section">
                     <div className='title-container'>
 
+                        <m.div className='flags' variants={flagsMotion} initial="hidden" animate="show" exit="exit" >
+                            <m.div variants={flagMotion} to='/'><img onClick={() => change_language('french')} id='frenchFlag' className='flag' src={frenchFlag} alt=''></img></m.div>
+                            <m.div variants={flagMotion} to='/'><img onClick={() => change_language('english')} id='englishFlag' className='flag' src={englishFlag} alt=''></img></m.div>
+                        </m.div>
+
+
                         <div>
                             <div className="title title-pos">
-                                <div className="name">Alexandre Simon</div>
+                                <div className="name english txt">Alexander Simon</div>
+                                <div className="name french txt">Alexandre Simon</div>
                             </div>
                             <div className="subtitle subtitle-pos">
-                                <div className="software-dev">Software Developer</div>
+                                <div className="software-dev english txt">Software Developer</div>
+                                <div className="software-dev french txt">Développeur de logiciels</div>
                             </div>
                         </div>    
 

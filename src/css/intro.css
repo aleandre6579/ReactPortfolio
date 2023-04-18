@@ -240,11 +240,11 @@
 }
 
 .name {
-    font-size: clamp(0rem, calc(0rem + 4vw/1.5 + 3vh), 6rem);
+    font-size: clamp(0rem, calc(0rem + 4vw/1.5 + 3vh), 7rem);
     font-weight: 1000;
 }
 .software-dev {
-    font-size: clamp(0rem, calc(-0.5rem + 3vw/1.5 + 3vh), 4rem);
+    font-size: clamp(0rem, calc(-1.2em + 4vw/1.5 + 3vh), 4rem);
 }
 
 .btns {
@@ -258,7 +258,7 @@
     top: -15px;
 }
 .btnAnimating {
-    font-size: calc(0rem + 5vw/3.5 + 5vh);
+    font-size: calc(0rem + 5vw/3.5 + 4vh);
     position: relative;
     width: 4.9em;
     height: 1.5em;
@@ -272,7 +272,7 @@
     animation: btnDisable 3.75s linear;
 }
 .btn {
-    font-size: calc(0rem + 5vw/3.5 + 5vh);
+    font-size: calc(0rem + 5vw/3.5 + 4vh);
     position: relative;
     width: 4.9em;
     height: 1.5em;
