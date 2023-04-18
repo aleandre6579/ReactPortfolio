@@ -224,7 +224,7 @@ class About extends Component {
 
                         </div>
 
-                        <m.div variants={content} initial="hidden" animate="show" exit="exit">
+                        <m.div className='about-content' variants={content} initial="hidden" animate="show" exit="exit">
                             <h1 className='aboutMainHead bigHead'>
                                 <strong className='english txt'>Hey, I'm Alex!</strong>
                                 <strong className='french txt'>Salut, moi c'est Alex!</strong>                            
@@ -242,7 +242,7 @@ class About extends Component {
                             </p>
 
                             <div className="flex-center">
-                            <div className='resumeTxt english txt'>
+                                <div className='resumeTxt english txt'>
                                     <Link style={{textDecoration: 'none'}} to='/cv'>Curriculum Vitae</Link>
                                 </div>
                                 <div className='resumeTxt french txt'>
@@ -308,9 +308,9 @@ class About extends Component {
                             </p>
 
                         </m.div>  
-                        </div>
-                    </m.div>
-                </div>
+                    </div>
+                </m.div>
+            </div>
         );
     }
 }

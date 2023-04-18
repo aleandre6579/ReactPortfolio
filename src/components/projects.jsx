@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { motion as m } from "framer-motion";
 import { Link } from "react-router-dom";
 import { AnimatePresence } from 'framer-motion';
+import $ from "jquery";
+
 import '../css/about.css';
 import '../css/projects.css';
 import '../css/w3.css';
@@ -10,7 +12,21 @@ import backArrowBlack from '../imgs/backArrowBlack.png';
 import englishFlag from '../imgs/englishFlag.png';
 import frenchFlag from '../imgs/frenchFlag.png';
 
-// Freebot imgs
+// Tool Icons
+import unity from '../imgs/skills/unity.png';
+import c from '../imgs/skills/c.png';
+
+// Escape media
+import escapeVid from '../vids/escapeVid.mp4';
+import escapeCoco from '../imgs/projects/escape/escapeCoco.png';
+import escapeCrab from '../imgs/projects/escape/escapeCrab.png';
+import escapeCraft from '../imgs/projects/escape/escapeCraft.png';
+import escapeMenu from '../imgs/projects/escape/escapeMenu.png';
+import escapeMissions from '../imgs/projects/escape/escapeMissions.png';
+import escapeOrb from '../imgs/projects/escape/escapeOrb.png';
+
+// Freebot media
+import freebotVid from '../vids/freebotVid.mp4';
 import freebotMenu from '../imgs/projects/freebot/freebotMenu.png';
 import freebotEnemy from '../imgs/projects/freebot/freebotEnemy.PNG';
 import freebotKill from '../imgs/projects/freebot/freebotKill.PNG';
@@ -19,12 +35,15 @@ import freebotPuzzle from '../imgs/projects/freebot/freebotPuzzle.PNG';
 import freebotShoot from '../imgs/projects/freebot/freebotShoot.PNG';
 import freebotSolved from '../imgs/projects/freebot/freebotSolved.PNG';
 
-// Fantasia imgs
+// Fantasia media
 import fantasiaMenu from '../imgs/projects/fantasia/fantasiaMenu.png';
 import fantasiaStart from '../imgs/projects/fantasia/fantasiaStart.png';
 import fantasiaDead from '../imgs/projects/fantasia/fantasiaDead.png';
+import fantasiaDialogue from '../imgs/projects/fantasia/fantasiaDialogue.png';
+import fantasiaQuestion from '../imgs/projects/fantasia/fantasiaQuestion.png';
 
-// Plight imgs
+// Plight media
+import plightVid from '../vids/plightVid.mp4';
 import plightMenu from '../imgs/projects/plightflight/plightMenu.png';
 import plightStart from '../imgs/projects/plightflight/plightStart.png';
 import plightAim from '../imgs/projects/plightflight/plightAim.png';
@@ -37,7 +56,8 @@ import plightDestroyed2 from '../imgs/projects/plightflight/plightDestroyed2.png
 import plightQuests from '../imgs/projects/plightflight/plightQuests.png';
 import plightPuzzle from '../imgs/projects/plightflight/plightPuzzle.png';
 
-// swarmbots imgs
+// swarmbots media
+import swarmVid from '../vids/swarmVid.mp4';
 import swarmMenu from '../imgs/projects/swarmbots/swarmMenu.png';
 import swarmStart from '../imgs/projects/swarmbots/swarmStart.png';
 import swarmDying from '../imgs/projects/swarmbots/swarmDying.png';
@@ -45,8 +65,13 @@ import swarmRanged from '../imgs/projects/swarmbots/swarmRanged.png';
 import swarmBoss from '../imgs/projects/swarmbots/swarmBoss.png';
 import swarmLost from '../imgs/projects/swarmbots/swarmLost.png';
 
-// warboats imgs
+// warboats media
 import warboatsMenu from '../imgs/projects/warboats/warboatsMenu.png';
+
+// sorting media
+import quickSort from '../imgs/projects/sorting/quickSort.png';
+import sampleSort from '../imgs/projects/sorting/sampleSort.png';
+import insertionSort from '../imgs/projects/sorting/insertionSort.png';
 
 class About extends Component {
 
@@ -290,7 +315,7 @@ class About extends Component {
                     transition={{duration: 1}}
                     exit={{backgroundPosition: '0% 0%'}}
                 />
-                <m.div id="realPage" className='realPage'>
+                <m.div id="realPage" className='realPage scrollbar'>
                     <div className="navbar">
                         <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} className='arrow-btn' variants={navArrow}initial="hidden" animate="show" exit="exit">
                             <Link to='/'><img id='backArrow' className='arrowBack' src={backArrowBlack} alt=''></img></Link>
@@ -312,38 +337,70 @@ class About extends Component {
                     </div>
 
                     <m.div variants={content} initial="hidden" animate="show" exit="exit" className="projectsContent">
+                        <div id="project" onClick={() => showProjectPopup('project7')} className="project project7">
+                            <img alt="projectImg" src={escapeOrb} className='projectImg'></img>
+                            <div className="txt english hoverIcon">View Project</div>
+                            <div className='projectIcon'><img className='projectIconImg' alt="unityIcon" src={unity}></img></div>
+                        </div>
                         <div id="project" onClick={() => showProjectPopup('project1')} className="project project1">
                             <img alt="projectImg" src={freebotMenu} className='projectImg'></img>
                             <div className="txt english hoverIcon">View Project</div>
+                            <div className='projectIcon'><img className='projectIconImg' alt="unityIcon" src={unity}></img></div>
                         </div>
                         <div id="project" onClick={() => showProjectPopup('project2')} className="project project2">
                             <img alt="popupImg" className='projectImg' src={plightMissile}/>
                             <div className="txt english hoverIcon">View Project</div>
+                            <div className='projectIcon'><img className='projectIconImg' alt="unityIcon" src={unity}></img></div>
                         </div>
                         <div onClick={() => showProjectPopup('project3')} className="project project3">
                             <img alt="popupImg" className='projectImg' src={warboatsMenu}/>
                             <div className="txt english hoverIcon">View Project</div>
+                            <div className='projectIcon'><img className='projectIconImg' alt="unityIcon" src={unity}></img></div>
                         </div>
                         <div onClick={() => showProjectPopup('project4')} className="project project4">
                             <img alt="popupImg" className='projectImg' src={swarmDying}/>
                             <div className="txt english hoverIcon">View Project</div>
+                            <div className='projectIcon'><img className='projectIconImg' alt="unityIcon" src={unity}></img></div>
                         </div>
                         <div onClick={() => showProjectPopup('project5')} className="project project5">
                             <img alt="popupImg" className='projectImg' src={fantasiaDead}/>
                             <div className="txt english hoverIcon">View Project</div>
+                            <div className='projectIcon'><img className='projectIconImg' alt="unityIcon" src={unity}></img></div>
+                        </div>
+                        <div onClick={() => showProjectPopup('project6')} className="project project6">
+                            <img alt="popupImg" className='projectImg' src={quickSort}/>
+                            <div className="txt english hoverIcon">View Project</div>
+                            <div className='projectIcon'><img className='projectIconImg' alt="cIcon" src={c}></img></div>
+                        </div>
+
+                        <div className="newProjects">
+                            <div className='newProjectsTxt'>New projects cooking up as we speak!</div>
                         </div>
                     </m.div>
 
+
                     <m.div id="backPanel"></m.div>
-                    <m.div id='projectPopup' style={{opacity: 0}} className="projectPopup hideFast">
+                    <m.div id='projectPopup' style={{opacity: 0}} className="projectPopup projectPopupClose hideFast">
                         <div className="projectScrollbar">
                             <div onClick={hideProjectPopup} className="closeBtn">x</div>
                             <div id='project1' className="popup1 hideFast popupContent">
-                                <h2 className='english txt'>Freebot: Escape the Factory!</h2>
+                                <h2>Freebot: Escape the Factory!</h2>
                                 <p className='english txt'>
-                                A 2D platformer game I made as a university project using Unity which taught me about WebGL and
-                                how to upload games online.
+                                    A 2D platformer game I made as a university project using Unity which taught me about WebGL and
+                                    how to upload games online.
                                 </p>
+                                <p className='french txt'>
+                                    Un jeu de plateforme 2D que j'ai créé avec Unity dans le cadre d'un projet universitaire qui m'a appris WebGL et
+                                    comment télécharger des jeux en ligne.
+                                </p>
+                                <video controls className='projectVid'>
+                                    <source src={freebotVid} type="video/mp4"/>
+
+                                    Download the
+                                    <a href={freebotVid}>MP4</a>
+                                    video.
+                                </video>
+
                                 <img alt="popupImg" className='popupImg' src={freebotMenu}/>
                                 <img alt="popupImg" className='popupImg' src={freebotOpen}/>
                                 <img alt="popupImg" className='popupImg' src={freebotShoot}/>
@@ -353,13 +410,27 @@ class About extends Component {
                                 <img alt="popupImg" className='popupImg' src={freebotSolved}/>
                             </div>
                             <div id='project2' className="popup2 hideFast popupContent">
-                                <h2 className='english txt'>PlightFlight</h2>
+                                <h2>Plight Flight</h2>
                                 <p className='english txt'>
-                                A game I made using Unity which taught me a lot about coding enemy AI and the merits
-                                of raycasting.<br/>
-                                I also learned more about shaders, how to deal with rotations and quaternions, the
-                                intricacies of Unity's particle system and how to set up difficulty levels in a game.  
+                                    A game I made using Unity which taught me a lot about coding enemy AI and the merits
+                                    of raycasting.<br/><br/>
+                                    I also learned more about shaders, how to deal with rotations and quaternions, the
+                                    intricacies of Unity's particle system and how to set up and design difficulty levels.  
                                 </p>
+                                <p className='french txt'>
+                                    Un jeu que j'ai créé avec Unity qui m'a beaucoup appris sur le codage d'intelligence artificielle pour des ennemies 
+                                    et les mérites de la technique de raycasting.<br/><br/>
+                                    J'ai également appris davantage sur les shaders, sur comment gérer les rotations et les quaternions,
+                                    sur les subtilités du système de particules d'Unity et comment configurer et concevoir des niveaux de difficulté.
+                                </p>
+                                <video controls className='projectVid'>
+                                    <source src={plightVid} type="video/mp4"/>
+
+                                    Download the
+                                    <a href={plightVid}>MP4</a>
+                                    video.
+                                </video>
+
                                 <img alt="popupImg" className='popupImg' src={plightMenu}/>
                                 <img alt="popupImg" className='popupImg' src={plightStart}/>
                                 <img alt="popupImg" className='popupImg' src={plightAim}/>
@@ -373,24 +444,45 @@ class About extends Component {
                                 <img alt="popupImg" className='popupImg' src={plightPuzzle}/>
                             </div>
                             <div id='project3' className="popup3 hideFast popupContent">
-                                <h2 className='english txt'>Warboats</h2>
+                                <h2>Warboats</h2>
                                 <p className='english txt'>
-                                A game I made using Unity for my family to play on Christmas.<br/>
-                                This game taught me a lot about getting assets online, about Unity's audio system, and
-                                gave me a better understanding of how to work in a 3D environment in Unity.<br/> 
-                                I also got to work with Unity's shadering and lighting systems for the first time.
+                                    A game I made using Unity for my family to play on Christmas.<br/>
+                                    This game taught me a lot about getting assets online, about Unity's audio system, and
+                                    gave me a better understanding of how to work in a 3D environment in Unity.<br/> 
+                                    I also got to work with Unity's shadering and lighting systems for the first time.
                                 </p>
+                                <p className='french txt'>
+                                    Un jeu que j'ai créé avec Unity pour ma famille à Noël.<br/><br/>
+                                    Ce jeu m'a beaucoup appris sur l'utilisations de ressources en ligne, sur le système audio d'Unity et
+                                    m'a permis de mieux comprendre comment travailler dans un environnement 3D sur Unity.<br/><br/>
+                                    J'ai également pu travailler avec des shaders et le system de luminosité de Unity plus en détails.                                </p>
                                 <img alt="popupImg" className='popupImg' src={warboatsMenu}/>
                             </div>
                             <div id='project4' className="popup4 hideFast popupContent">
-                                <h2 className='english txt'>Swarmboats</h2>
+                                <h2>Swarmbot</h2>
                                 <p className='english txt'>
-                                A top-down shooter game I made using Unity by following a Udemy course by the acclaimed 
-                                youtuber Blackthornprod.<br/>
-                                This game, being the second game I every made in Unity, taught me practically all the 
-                                basics of making a 2D game in Unity. Although the art is quite simple, I take pride in the
-                                fact that all the sprites and assets were made on my own using Photoshop.
+                                    A top-down shooter game I made using Unity by following a Udemy course by the acclaimed 
+                                    youtuber Blackthornprod.<br/>
+                                    This game, being the second game I every made in Unity, taught me practically all the 
+                                    basics of making a 2D game in Unity. Although the art is quite simple, I take pride in the
+                                    fact that all the sprites and assets were made on my own using Photoshop.
                                 </p>
+                                <p className='french txt'>
+                                    Un jeu de tir avec vu de haut que j'ai créé avec Unity en suivant un cours sur Udemy enseigné par le célèbre
+                                    youtubeur anglophone Blackthornprod.<br/><br/>
+                                    Ce jeu, étant le deuxième que j'ai créé avec Unity, m'a appris pratiquement toutes les
+                                    bases de la création d'un jeu 2D. Bien que les dessins soient assez simple et enfantins,
+                                    je suis tout de même fier du fait que tous les sprites et assets ont été créés par moi-même à l'aide de Photoshop, logiciel 
+                                    que je venais aussi tout juste de prendre en main.    
+                                </p>
+                                <video controls className='projectVid'>
+                                    <source src={swarmVid} type="video/mp4"/>
+
+                                    Download the
+                                    <a href={swarmVid}>MP4</a>
+                                    video.
+                                </video>
+
                                 <img alt="popupImg" className='popupImg' src={swarmMenu}/>
                                 <img alt="popupImg" className='popupImg' src={swarmStart}/>
                                 <img alt="popupImg" className='popupImg' src={swarmDying}/>
@@ -399,16 +491,64 @@ class About extends Component {
                                 <img alt="popupImg" className='popupImg' src={swarmLost}/>
                             </div>
                             <div id='project5' className="popup5 hideFast popupContent">
-                                <h2 className='english txt'>Fantasia</h2>
+                                <h2>Fantasia</h2>
                                 <p className='english txt'>
-                                A Trivia game I made for my family to play on Christmas, which is also my first ever
-                                game made in Unity.<br/>
-                                I drew the sprites for the characters using Photoshop, and the design and animations
-                                of the characters are inspired by my family members.
+                                    A Trivia game I made for my family to play on Christmas, which is also my first ever
+                                    game made in Unity.<br/><br/>
+                                    I drew the sprites for the characters using Photoshop, and the design and animations
+                                    of the characters are inspired by my family members.
+                                </p>
+                                <p className='french txt'>
+                                    Un jeu de questions réponses que j'ai créé pour ma famille à Noël, qui est aussi mon tout premier
+                                    jeu créé avec Unity.<br/><br/>
+                                    J'ai dessiné les sprites des personnages avec Photoshop, logiciel que je venais tout juste de prendre en main.
+                                    Le design et les animations des personnages sont inspirés par les membres de ma famille.                                
                                 </p>
                                 <img alt="popupImg" className='popupImg' src={fantasiaMenu}/>
                                 <img alt="popupImg" className='popupImg' src={fantasiaStart}/>
+                                <img alt="popupImg" className='popupImg' src={fantasiaDialogue}/>
+                                <img alt="popupImg" className='popupImg' src={fantasiaQuestion}/>
                                 <img alt="popupImg" className='popupImg' src={fantasiaDead}/>
+                            </div>
+                            <div id='project6' className="popup6 hideFast popupContent">
+                                <h2 className='english txt'>Parallel Sorting Algorithms</h2>
+                                <h2 className='french txt'>Algorithmes de tri en parallèle</h2>
+                                <p className='english txt'>
+                                    For a university project I wanted to try improving 5 commonly used sorting algorithms by
+                                    implementing them with some parallelization technique.<br/><br/>
+                                    However, for some of the algorithms, the parallelization did not manage to make them faster.
+                                </p>
+                                <p className='french txt'>
+                                    Pour un projet universitaire, je voulais essayer d'améliorer 5 algorithmes de tri couramment utilisés en
+                                    introduisant de la parallelization au sein des algorithmes.<br/><br/>
+                                    Cependant, pour certains de ces algorithmes, la parallélisation n'a pas réussi à les rendre plus rapides.
+                                </p>
+                                <img alt="popupImg" className='popupImg' src={quickSort}/>
+                                <img alt="popupImg" className='popupImg' src={sampleSort}/>
+                                <img alt="popupImg" className='popupImg' src={insertionSort}/>
+                            </div>
+                            <div id='project7' className="popup7 hideFast popupContent">
+                                <h2>Escape From The Island</h2>
+                                <p className='english txt'>
+                                    A 3D survival story game I made as a university project using Unity.
+                                </p>
+                                <p className='french txt'>
+                                    Un jeu de survie 3D que j'ai créé avec Unity dans le cadre d'un projet universitaire.
+                                </p>
+                                <video controls className='projectVid'>
+                                    <source src={escapeVid} type="video/mp4"/>
+
+                                    Download the
+                                    <a href={escapeVid}>MP4</a>
+                                    video.
+                                </video>
+
+                                <img alt="popupImg" className='popupImg' src={escapeMenu}/>
+                                <img alt="popupImg" className='popupImg' src={escapeCoco}/>
+                                <img alt="popupImg" className='popupImg' src={escapeMissions}/>
+                                <img alt="popupImg" className='popupImg' src={escapeCraft}/>
+                                <img alt="popupImg" className='popupImg' src={escapeCrab}/>
+                                <img alt="popupImg" className='popupImg' src={escapeOrb}/>
                             </div>
                             <div style={{height: '10px'}}/>
                         </div>

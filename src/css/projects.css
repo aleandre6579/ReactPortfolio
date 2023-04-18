@@ -10,10 +10,14 @@ html {
         opacity: 0;
         width: 0%;
         height: 0%;
-        top: 50%;
+        top: 120vh;
+    }
+    1% {
+        width: 70%;
+        height: 90%;
     }
     100% {
-        top: 5%;
+        top: 5vh;
         opacity: 1;
         width: 70%;
         height: 90%;
@@ -32,6 +36,17 @@ html {
         width: 0%;
         height: 0%;
         opacity: 0;
+    }
+}
+@keyframes imgBlurFade {
+    0% {
+        filter: blur(0px);
+    }
+    30% {
+        filter: blur(5px);
+    }
+    100% {
+        filter: blur(0px);
     }
 }
 
@@ -103,7 +118,11 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    filter: blur(0.5px);
     transition: 300ms;
+}
+.project:hover > .projectImg {
+    animation: imgBlurFade 600ms ease forwards;
 }
 .project:hover > .projectImg {
     opacity: 1;
@@ -148,9 +167,37 @@ html {
     line-height: 1;
 }
 
+.project > .projectIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    position: relative;
+    top: -90px;
+    left: 10px;
+    transition: 500ms;
+}
+.project:hover > .projectIcon {
+    transform: scale(110%);
+    background-color: rgba(255, 255, 255, 1);
+    transition: 200ms;
+
+}
+.projectIconImg {
+    width: 50px;
+    transition: 500ms;
+}
+.project:hover > .projectIcon > .projectIconImg {
+    transition: 200ms;
+}
+
+
 .projectPopup {
     z-index: 10;
-    position: absolute;
+    position: fixed;
     display: block;
     left: 50%;
     transform: translate(-50%, -0%);
@@ -159,7 +206,6 @@ html {
     width: 20%;
     border-radius: 10px;
     border: var(--blue) 3px solid;
-    padding-left: 15px;
     animation: openPopup 800ms ease forwards;
 }
 .projectPopupClose {
@@ -195,6 +241,14 @@ html {
     cursor: pointer;
 }
 
+@keyframes backPanelFade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 .backPanel {
     position: fixed;
     top: 0px;
@@ -202,6 +256,7 @@ html {
     width: 100%;
     height: 100%;
     z-index: 10;
+    animation: backPanelFade 200ms ease forwards;
 }
 
 .popupContent {
@@ -231,6 +286,41 @@ html {
     
 }
 
+@keyframes newProjectsAnim {
+    0% {
+        transform: translate(-10%, 0%) scale(110%);
+    }
+    25% {
+        transform: translate(0%, -100%) scale(130%);
+    }
+    50% {
+        transform: translate(10%, 0%) scale(110%);
+    }
+    75% {
+        transform: translate(0%, 100%) scale(130%);
+    }
+    100% {
+        transform: translate(-10%, 0%) scale(110%);
+
+    }
+}
+.newProjects {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 170px 50px 50px 50px;
+}
+.newProjectsTxt {
+    font-size: 2em;
+    font-family: 'VarelaRound';
+    color: var(--blue);
+    animation: newProjectsAnim 10s infinite linear;
+}
+
+.projectVid {
+    width: 100%;
+}
 
 .behind {
     z-index: -10;
@@ -241,9 +331,10 @@ html {
     display: none;
 }
 
+
 @media (max-width: 5000px) {
     .project {
-        width: 15%;
+        width: 16.666%;
     }
 }
 @media (max-width: 1820px) {

@@ -289,6 +289,7 @@ html {
     justify-content: center;
 }
 .resumeTxt {
+    position: relative;
     margin-top: 50px;
     padding: 0px 15px 0px 15px;
     font-family: "NavBtnTxt";
@@ -320,3 +321,11 @@ html {
     text-decoration: none;
 }
 
+.about-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-48%, 0%);
+    align-content: center;
+    width: clamp(0px, 80vw, 1400px);
+}
