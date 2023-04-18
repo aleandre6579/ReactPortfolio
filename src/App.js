@@ -9,7 +9,7 @@ import "./fonts/JosefinSans.ttf"
 function App() {
   return (
     <React.StrictMode>
-      <Router>
+      <Router basename='/ReactPortfolio'>
         <AnimatedRoutes/>
       </Router>
     </React.StrictMode>
