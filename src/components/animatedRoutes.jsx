@@ -24,13 +24,31 @@ function AnimatedRoutes() {
         const skillsImgs = importAll(
             require.context("../imgs/skills/", false, /\.(png|jpe?g|svg)$/)
         );
-        const projectsImgs = importAll(
-            require.context("../imgs/projects/", false, /\.(png|jpe?g|svg)$/)
+        const escapeImgs = importAll(
+            require.context("../imgs/projects/escape/", false, /\.(png|jpe?g|svg)$/)
+        );
+        const fantasiaImgs = importAll(
+            require.context("../imgs/projects/fantasia/", false, /\.(png|jpe?g|svg)$/)
+        );
+        const freebotImgs = importAll(
+            require.context("../imgs/projects/freebot/", false, /\.(png|jpe?g|svg)$/)
+        );
+        const plightflightImgs = importAll(
+            require.context("../imgs/projects/plightflight/", false, /\.(png|jpe?g|svg)$/)
+        );
+        const sortingImgs = importAll(
+            require.context("../imgs/projects/sorting/", false, /\.(png|jpe?g|svg)$/)
+        );
+        const swarmboatsImgs = importAll(
+            require.context("../imgs/projects/swarmbots/", false, /\.(png|jpe?g|svg)$/)
+        );
+        const warboatsImgs = importAll(
+            require.context("../imgs/projects/warboats/", false, /\.(png|jpe?g|svg)$/)
         );
         const otherImgs = importAll(
             require.context("../imgs/", false, /\.(png|jpe?g|svg)$/)
         );
-        const allImgs = skillsImgs + projectsImgs + otherImgs;
+        const allImgs = skillsImgs + escapeImgs + fantasiaImgs + freebotImgs + plightflightImgs + sortingImgs + swarmboatsImgs + warboatsImgs + otherImgs;
 
         Object.values(allImgs).forEach((image) => {
             const img = new Image();

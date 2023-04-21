@@ -239,11 +239,11 @@ class About extends Component {
                                     prestigious universities in Thailand.
                                 </div>
                                 <div className="txt french">
-                                    Un étudiant français en troisième année d'étude en informatique a l'université connu sous le nom de "MUIC"
+                                    Un étudiant français en troisième année d'étude en informatique à l'université connue sous le nom de "MUIC" 
                                     ("Mahidol Univserity International College"), une des universités les plus prestigieuses de Thaïlande.
                                 </div>
                             </p>
-
+                            <br/><br/>
                             <div className="flex-center">
                                 <div className='resumeTxt english txt'>
                                     <Link style={{textDecoration: 'none'}} to='/cv'>Curriculum Vitae</Link>
@@ -253,8 +253,8 @@ class About extends Component {
                                 </div>
                             </div>
 
-                            <h1 className='english txt aboutHead bigHead'>My Accomplishments</h1>
-                            <h1 style={{width: "600px"}} className='french txt aboutHead bigHead'>Mes Accomplissements</h1>
+                            <h1 className='english txt aboutHead smallHead'>My Education</h1>
+                            <h1 style={{width: "600px"}} className='french txt aboutHead bigHead'>Parcours éducatif</h1>
                             <p className='aboutTxt'>
                                 <div className="english txt">
                                     I graduated from the French school known as <strong>LFIB</strong> ("French International School of Bangkok"), located in Bangkok, Thailand, 
@@ -264,31 +264,32 @@ class About extends Component {
                                     I am also undertaking a <strong>Film Arts</strong> minor at MUIC.<br/>
                                 </div>
                                 <div className="french txt">
-                                    J'ai passé mon baccalauréat scientifique au Lycée Français International de Bangkok (aussi appele "LFIB") en Thailand avec une note de 18,28/20 et
+                                    J'ai passé mon baccalauréat scientifique au Lycée Français International de Bangkok (aussi appelé "LFIB") en Thaïlande avec une note de 18,28/20 et
                                     une mention "Très Bien". <br/>
-                                    J'ai appris Unity et le C# à 16 ans grâce a des cours en ligne, et je continue encore aujourd'hui à créer des petits jeux pour approfondir mon savoir-faire.<br/>
-                                    En ce moment j'étudie dans l'université de MUIC pour obtenir un diplôme de bachelor avec, pour le moment, une note moyenne globale (appelé GPA en anglais)
+                                    J'ai appris Unity et le C# à 16 ans grâce à des cours en ligne, et je continue encore aujourd'hui à créer des petits jeux pour approfondir mon savoir-faire.<br/>
+                                    En ce moment j'étudie dans l'université de MUIC pour obtenir un diplôme de Bachelor avec, pour le moment, une note moyenne globale (appelée GPA en anglais)
                                     de 3.78/4. <br/>
-                                    Je travaille aussi, en parallèle de mon bachelor en Informatique, vers un sous-diplôme dans la cinématographie.
+                                    Je travaille aussi, en parallèle de mon Bachelor en Informatique, vers un sous-diplôme en psychologie.
                                 </div>
                             </p>
 
-                            <h1 className='aboutHead smallHead'>My Goals</h1>
+                            <h1 className='aboutHead smallHead english txt'>My Goals</h1>
+                            <h1 className='aboutHead smallHead french txt'>Mes objectifs</h1>
                             <p className='aboutTxt'>
-                            <div className="english txt">
-                                    When it comes to my career, the jobs I am interested in are <strong>video game developer</strong>, 
+                                <div className="english txt">
+                                    When it comes to my career, the jobs I am most interested in are <strong>video game developer</strong>, 
                                     <strong> software enginner</strong> and <strong>full-stack developer</strong>.
                                     However I am captivated by most things in computer science so I am open to other job opportunities.
                                 </div>
                                 <div className="french txt">
-                                    Si je devais choisir, voici les trois métiers qui m'intéressent le plus en ce moment: développeur de jeux vidéo,
-                                    ingénieur logiciel et développeur full-stack. 
-                                    En revanche, je suis intéressé par beaucoup de domaines dans l'informatique même si je ne voudrais pas forcément en faire mon métier.
-
+                                    En ce qui concerne ma carrière, les métiers qui me passionnent le plus sont <strong>développeur de jeux vidéo</strong>
+                                    et <strong>développeur full-stack</strong>.
+                                    Mais je reste interessé par toutes les activités dans le domaine de l'informatique, je suis donc ouvert à d'autres opportunités d'emploi.
                                 </div>
                             </p>
 
-                            <h1 className='aboutHead smallHead'>My Hobbies</h1>
+                            <h1 className='aboutHead smallHead english txt'>My Hobbies</h1>
+                            <h1 className='aboutHead smallHead french txt'>Mes passions</h1>
                             <p className='aboutTxt'>
                             <div className="english txt">
                                     Making video games with Unity was the <strong>initial excitement</strong> that made me love to code. I will
@@ -305,8 +306,8 @@ class About extends Component {
                                     J'ai ensuite découvert que j'adorais comprendre et résoudre toutes sortes de problèmes de code puis d'élaborer un algorithme de solution simple et
                                     concis pour y répondre.<br/>
                                     De plus, j'ai toujours aimé tout ce qui touche à la narration. C'est une passion pour moi de plonger dans des œuvres d'art impressionnantes et originales, en particulier
-                                    des jeux vidéo amusants et des romans bien écrits, pour en apprendre plus sur leur création, avec l'intention d'en créer 
-                                    mes propres à l'avenir.
+                                    des jeux vidéo amusants et des romans bien écrits, pour en apprendre plus sur leur création, et avec l'intention d'en créer moi-même
+                                    à l'avenir.
                                 </div>
                             </p>
 

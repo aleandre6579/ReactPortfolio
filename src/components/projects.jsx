@@ -273,7 +273,8 @@ class About extends Component {
         // if popup is opened and user clicked outside the popup; hide the popup
         document.addEventListener('click', function handleClickOutsidePopup(event) {          
             const popup = document.getElementById('projectPopup');
-          
+            if(popup == null) return;
+            
             if (!popup.contains(event.target) && !(activePopupId === 0) && window.getComputedStyle(popup).width.split("px")[0] > 200) {
                 console.log(activePopupId);
                 hideProjectPopup();
