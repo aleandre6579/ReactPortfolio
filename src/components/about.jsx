@@ -26,6 +26,7 @@ class About extends Component {
     }
 
     render() { 
+
         const navbar = {
             hidden: { opacity: 0 },
             show: { 

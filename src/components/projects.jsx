@@ -375,8 +375,8 @@ class About extends Component {
                         </div>
 
                         <div className="newProjects">
-                        <div className='newProjectsTxt english txt'>New projects cooking up as we speak!</div>
-                        <div className='newProjectsTxt french txt'>De nouveaux projets en préparation ce moment même !</div>
+                        <div className='newProjectsTxt english txt'>New projects cooking up !</div>
+                        <div className='newProjectsTxt french txt'>De nouveaux projets en préparation !</div>
                         </div>
                     </m.div>
 
@@ -420,7 +420,7 @@ class About extends Component {
                                     intricacies of Unity's particle system and how to set up and design difficulty levels.  
                                 </p>
                                 <p className='french txt'>
-                                    Un jeu que j'ai créé avec Unity qui m'a beaucoup appris sur le codage d'intelligence artificielle pour des ennemies 
+                                    Un jeu que j'ai créé avec Unity qui m'a beaucoup appris sur le codage d'intelligence artificielle 
                                     et les mérites de la technique de raycasting.<br/><br/>
                                     J'ai également appris davantage sur les shaders, sur comment gérer les rotations et les quaternions,
                                     sur les subtilités du système de particules d'Unity et comment configurer et concevoir des niveaux de difficulté.
@@ -455,7 +455,7 @@ class About extends Component {
                                 </p>
                                 <p className='french txt'>
                                     Un jeu que j'ai créé avec Unity pour ma famille à Noël.<br/><br/>
-                                    Ce jeu m'a beaucoup appris sur l'utilisations de ressources en ligne, sur le système audio d'Unity et
+                                    Ce jeu m'a beaucoup appris sur l'utilisation de ressources en ligne, sur le système audio d'Unity et
                                     m'a permis de mieux comprendre comment travailler dans un environnement 3D sur Unity.<br/><br/>
                                     J'ai également pu travailler avec des shaders et le system de luminosité de Unity plus en détails.                                </p>
                                 <img alt="popupImg" className='popupImg' src={warboatsMenu}/>
@@ -470,12 +470,11 @@ class About extends Component {
                                     fact that all the sprites and assets were made on my own using Photoshop.
                                 </p>
                                 <p className='french txt'>
-                                    Un jeu de tir avec vu de haut que j'ai créé avec Unity en suivant un cours sur Udemy enseigné par le célèbre
+                                    Un jeu de tir avec vue de haut que j'ai créé avec Unity en suivant un cours sur Udemy enseigné par le célèbre
                                     youtubeur anglophone Blackthornprod.<br/><br/>
                                     Ce jeu, étant le deuxième que j'ai créé avec Unity, m'a appris pratiquement toutes les
-                                    bases de la création d'un jeu 2D. Bien que les dessins soient assez simple et enfantins,
-                                    je suis tout de même fier du fait que tous les sprites et assets ont été créés par moi-même à l'aide de Photoshop, logiciel 
-                                    que je venais aussi tout juste de prendre en main.    
+                                    bases de la création d'un jeu 2D. Bien que les dessins soient assez simples et enfantins,
+                                    je suis content d'avoir pu créer tous les "sprites" et "assets" moi-même à l'aide de Photoshop.                     
                                 </p>
                                 <video controls className='projectVid'>
                                     <source src={swarmVid} type="video/mp4"/>
@@ -502,8 +501,8 @@ class About extends Component {
                                 </p>
                                 <p className='french txt'>
                                     Un jeu de questions réponses que j'ai créé pour ma famille à Noël, qui est aussi mon tout premier
-                                    jeu créé avec Unity.<br/><br/>
-                                    J'ai dessiné les sprites des personnages avec Photoshop, logiciel que je venais tout juste de prendre en main.
+                                    jeu utilisant Unity.<br/><br/>
+                                    J'ai dessiné moi-même les "sprites" des personnages avec Photoshop, logiciel que je venais tout juste de prendre en main.
                                     Le design et les animations des personnages sont inspirés par les membres de ma famille.                                
                                 </p>
                                 <img alt="popupImg" className='popupImg' src={fantasiaMenu}/>
@@ -522,8 +521,8 @@ class About extends Component {
                                 </p>
                                 <p className='french txt'>
                                     Pour un projet universitaire, je voulais essayer d'améliorer 5 algorithmes de tri couramment utilisés en
-                                    introduisant de la parallelization au sein des algorithmes.<br/><br/>
-                                    Cependant, pour certains de ces algorithmes, la parallélisation n'a pas réussi à les rendre plus rapides.
+                                    introduisant de la parallélisation au sein des algorithmes.<br/><br/>
+                                    Cependant, j'ai appris que certains algorithmes fonctionnent de manière séquentielle et ne bénéficient donc pas de la parallélisation.
                                 </p>
                                 <img alt="popupImg" className='popupImg' src={quickSort}/>
                                 <img alt="popupImg" className='popupImg' src={sampleSort}/>

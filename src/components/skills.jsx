@@ -17,15 +17,15 @@ import c from '../imgs/skills/c.png';
 import cSharp from '../imgs/skills/cSharp.png';
 import css from '../imgs/skills/css.png';
 import html from '../imgs/skills/html.png';
-import java from '../imgs/skills/java.png';
+import java from '../imgs/skills/javaLogo.png';
 import js from '../imgs/skills/js.png';
-import python from '../imgs/skills/python.png';
+import python from '../imgs/skills/pythonLogo.png';
 
-import react from '../imgs/skills/react.png';
-import unity from '../imgs/skills/unity.png';
+import react from '../imgs/skills/reactLogo.png';
+import unity from '../imgs/skills/unityLogo.png';
 import gitfork from '../imgs/skills/gitfork.png';
 import jupyter from '../imgs/skills/jupyter.png';
-import notion from '../imgs/skills/notion.png';
+import notion from '../imgs/skills/notionLogo.png';
 import vscode from '../imgs/skills/vscode.png';
 
 import ambitious from '../imgs/skills/ambitious.png';
@@ -277,37 +277,37 @@ class About extends Component {
                                 <div className="containerRow row11">
                                     <img alt='C' src={c} className='containerImg'/>
                                     <div className="txt english containerTxt">Very proficient</div>
-                                    <div className="txt french containerTxt">Très compétent</div>
+                                    <div className="txt french containerTxt">Expert</div>
                                 </div>
                                 <div className="containerRow row17">
                                     <img alt='python' src={python} className='containerImg'/>
                                     <div className="txt english containerTxt">Very proficient</div>
-                                    <div className="txt french containerTxt">Très compétent</div>
+                                    <div className="txt french containerTxt">Expert</div>
                                 </div>
                                 <div className="containerRow row15">
                                     <img alt='java' src={java} className='containerImg'/>
                                     <div className="txt english containerTxt">Proficient</div>
-                                    <div className="txt french containerTxt">Compétent</div>
+                                    <div className="txt french containerTxt">Intermédiaire</div>
                                 </div>
                                 <div className="containerRow row12">
                                     <img alt='cSharp' src={cSharp} className='containerImg'/>
                                     <div className="txt english containerTxt">Proficient</div>  
-                                    <div className="txt french containerTxt">Compétent</div>
+                                    <div className="txt french containerTxt">Avancé</div>
                                 </div>
                                 <div className="containerRow row14">
                                     <img alt='html' src={html} className='containerImg'/>
                                     <div className="txt english containerTxt">Competent</div>
-                                    <div className="txt french containerTxt">Capable</div>
+                                    <div className="txt french containerTxt">Intermédiaire</div>
                                 </div>
                                 <div className="containerRow row13">
                                     <img alt='css' src={css} className='containerImg'/>
                                     <div className="txt english containerTxt">Competent</div>
-                                    <div className="txt french containerTxt">Capable</div>
+                                    <div className="txt french containerTxt">Intermédiaire</div>
                                 </div>
                                 <div className="containerRow row16">
                                     <img alt='js' src={js} className='containerImg'/>
                                     <div className="txt english containerTxt">Competent</div>
-                                    <div className="txt french containerTxt">Capable</div>
+                                    <div className="txt french containerTxt">Intermédiaire</div>
                                 </div>
                             </div>
                         </div>
@@ -319,27 +319,27 @@ class About extends Component {
                                 <div className="containerRow row22">  
                                     <img alt='unity' src={unity} className='containerImg'/>
                                     <div className="txt english containerTxt">Very proficient</div>
-                                    <div className="txt french containerTxt">Très compétent</div>
+                                    <div className="txt french containerTxt">Expert</div>
                                 </div>
                                 <div className="containerRow row21">  
                                     <img alt='react' src={react} className='containerImg'/>
                                     <div className="txt english containerTxt">Competent</div>
-                                    <div className="txt french containerTxt">Capable</div>
+                                    <div className="txt french containerTxt">Intermédiaire</div>
                                 </div>
                                 <div className="containerRow row23">  
                                     <img alt='jupyter' src={jupyter} className='containerImg'/>
                                     <div className="txt english containerTxt">Competent</div>
-                                    <div className="txt french containerTxt">Capable</div>
+                                    <div className="txt french containerTxt">Intermédiaire</div>
                                 </div>
                                 <div className="containerRow row24">  
                                     <img alt='gitfork' src={gitfork} style={{width: '80px'}} className='containerImg'/>
                                     <div className="txt english containerTxt">Competent</div>
-                                    <div className="txt french containerTxt">Capable</div>
+                                    <div className="txt french containerTxt">Intermédiaire</div>
                                 </div>
                                 <div className="containerRow row25">  
                                     <img alt='notion' src={notion} className='containerImg'/>
                                     <div className="txt english containerTxt">Competent</div>
-                                    <div className="txt french containerTxt">Capable</div>
+                                    <div className="txt french containerTxt">Intermédiaire</div>
                                 </div>
                             </div>
                         </div>
