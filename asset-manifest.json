@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ReactPortfolio/static/css/main.e9b479ad.css",
-    "main.js": "/ReactPortfolio/static/js/main.8d7dc827.js",
+    "main.css": "/ReactPortfolio/static/css/main.5285f6ec.css",
+    "main.js": "/ReactPortfolio/static/js/main.7d6d74d6.js",
     "static/js/787.1ed0c42c.chunk.js": "/ReactPortfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/escapeVid.mp4": "/ReactPortfolio/static/media/escapeVid.6e0b702cb203df32c041.mp4",
     "static/media/plightVid.mp4": "/ReactPortfolio/static/media/plightVid.da17c2ba3b7d8ec01e0b.mp4",
@@ -40,7 +40,9 @@
     "static/media/team.png": "/ReactPortfolio/static/media/team.76aa09b8e511fca48879.png",
     "static/media/freebotMenu.png": "/ReactPortfolio/static/media/freebotMenu.eb8b6fb04e89c3bdb257.png",
     "static/media/freebotSolved.PNG": "/ReactPortfolio/static/media/freebotSolved.b0e0b21dae26bc0e0970.PNG",
+    "static/media/CV_French.jpg": "/ReactPortfolio/static/media/CV_French.e0a8864dc8fd01e0d3aa.jpg",
     "static/media/freebotPuzzle.PNG": "/ReactPortfolio/static/media/freebotPuzzle.49e3f5614178032e5d23.PNG",
+    "static/media/CV_English.jpg": "/ReactPortfolio/static/media/CV_English.e1aa1c50022385664c4d.jpg",
     "static/media/freebotEnemy.PNG": "/ReactPortfolio/static/media/freebotEnemy.e39410e0da887e4fba34.PNG",
     "static/media/freebotKill.PNG": "/ReactPortfolio/static/media/freebotKill.c4138fb1f2d79d97caf0.PNG",
     "static/media/sampleSort.png": "/ReactPortfolio/static/media/sampleSort.aa957f2e145a9e8a465f.png",
@@ -62,23 +64,26 @@
     "static/media/css.png": "/ReactPortfolio/static/media/css.4e67641bb68b658d9b2b.png",
     "static/media/creative.png": "/ReactPortfolio/static/media/creative.afe496bbe76c0c209fe9.png",
     "static/media/solver.png": "/ReactPortfolio/static/media/solver.f8440213590abce3dcfb.png",
+    "static/media/javaLogo.png": "/ReactPortfolio/static/media/javaLogo.1f952e46be1f3526ad2d.png",
     "static/media/listener.png": "/ReactPortfolio/static/media/listener.0b8e0e0ca8730ddae964.png",
     "static/media/react.png": "/ReactPortfolio/static/media/react.428839d4924b447d4d50.png",
     "static/media/worker.png": "/ReactPortfolio/static/media/worker.df4faee290b6a2874519.png",
     "static/media/gmailLogo.png": "/ReactPortfolio/static/media/gmailLogo.e170b0658befeeeee500.png",
     "static/media/ambitious.png": "/ReactPortfolio/static/media/ambitious.6a713ba7399950397fd4.png",
     "static/media/html.png": "/ReactPortfolio/static/media/html.62c818ad96d50183aa3c.png",
+    "static/media/pythonLogo.png": "/ReactPortfolio/static/media/pythonLogo.212de8d7278260fca353.png",
     "static/media/c.png": "/ReactPortfolio/static/media/c.bbbbbabc8c191bfb99bf.png",
     "static/media/backArrowWhite.png": "/ReactPortfolio/static/media/backArrowWhite.8e533915380dab4cdacc.png",
     "static/media/cSharp.png": "/ReactPortfolio/static/media/cSharp.0a9abee8c8c8e40f4df2.png",
     "static/media/determined.png": "/ReactPortfolio/static/media/determined.dfc4270f777c7303359b.png",
+    "static/media/notionLogo.png": "/ReactPortfolio/static/media/notionLogo.e62a60dd11b336b05af5.png",
     "index.html": "/ReactPortfolio/index.html",
-    "main.e9b479ad.css.map": "/ReactPortfolio/static/css/main.e9b479ad.css.map",
-    "main.8d7dc827.js.map": "/ReactPortfolio/static/js/main.8d7dc827.js.map",
+    "main.5285f6ec.css.map": "/ReactPortfolio/static/css/main.5285f6ec.css.map",
+    "main.7d6d74d6.js.map": "/ReactPortfolio/static/js/main.7d6d74d6.js.map",
     "787.1ed0c42c.chunk.js.map": "/ReactPortfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e9b479ad.css",
-    "static/js/main.8d7dc827.js"
+    "static/css/main.5285f6ec.css",
+    "static/js/main.7d6d74d6.js"
   ]
 }
