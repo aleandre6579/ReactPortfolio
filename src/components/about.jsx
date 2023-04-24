@@ -254,22 +254,22 @@ class About extends Component {
                             </div>
 
                             <h1 className='english txt aboutHead smallHead'>My Education</h1>
-                            <h1 style={{width: "600px"}} className='french txt aboutHead bigHead'>Parcours éducatif</h1>
+                            <h1 className='french txt aboutHead bigHead'>Parcours éducatif</h1>
                             <p className='aboutTxt'>
                                 <div className="english txt">
                                     I graduated from the French school known as <strong>LFIB</strong> ("French International School of Bangkok"), located in Bangkok, Thailand, 
-                                    with an overall grade of <strong>18.2/20</strong> (not comparable to a GPA from the American education system). <br/>
-                                    I taught myself <strong>Unity and C#</strong> at the age of 16 and I've been making small games with Unity since then.<br/>
+                                    with an overall grade of <strong>18.2/20</strong> (not comparable to a GPA from the American education system). <br/><br/>
+                                    I taught myself <strong>Unity and C#</strong> at the age of 16 and I've been making small games with Unity since then.<br/><br/>
                                     I am now working towards a Computer Science bachelor's degree at <strong>MUIC</strong> with a current GPA of  <strong>3.78/4</strong>.<br/>
-                                    I am also undertaking a <strong>Film Arts</strong> minor at MUIC.<br/>
+                                    I am also undertaking a <strong>Psychologie</strong> minor at MUIC.<br/>
                                 </div>
                                 <div className="french txt">
-                                    J'ai passé mon baccalauréat scientifique au Lycée Français International de Bangkok (aussi appelé "LFIB") en Thaïlande avec une note de 18,28/20 et
-                                    une mention "Très Bien". <br/>
-                                    J'ai appris Unity et le C# à 16 ans grâce à des cours en ligne, et je continue encore aujourd'hui à créer des petits jeux pour approfondir mon savoir-faire.<br/>
-                                    En ce moment j'étudie dans l'université de MUIC pour obtenir un diplôme de Bachelor avec, pour le moment, une note moyenne globale (appelée GPA en anglais)
-                                    de 3.78/4. <br/>
-                                    Je travaille aussi, en parallèle de mon Bachelor en Informatique, vers un sous-diplôme en psychologie.
+                                    J'ai passé mon baccalauréat scientifique au <strong>Lycée Français International de Bangkok</strong> (aussi appelé "LFIB") en Thaïlande avec une note de <strong>18,28/20</strong> et
+                                    une mention "Très Bien". <br/><br/>
+                                    J'ai appris <strong>Unity et le langage C#</strong> à 16 ans grâce à des cours en ligne, et je continue encore aujourd'hui à créer des petits jeux pour approfondir mon savoir-faire.<br/>
+                                    En ce moment j'étudie dans l'université de <strong>MUIC</strong> pour obtenir un diplôme de Bachelor avec, pour le moment, une note moyenne globale (appelée GPA en anglais)
+                                    de <strong>3.78/4</strong>. <br/><br/>
+                                    Je travaille aussi, en parallèle de mon Bachelor en Informatique, vers un sous-diplôme en <strong>psychologie</strong>.
                                 </div>
                             </p>
 
@@ -277,12 +277,12 @@ class About extends Component {
                             <h1 className='aboutHead smallHead french txt'>Mes objectifs</h1>
                             <p className='aboutTxt'>
                                 <div className="english txt">
-                                    When it comes to my career, the jobs I am most interested in are <strong>video game developer</strong>, 
-                                    <strong> software enginner</strong> and <strong>full-stack developer</strong>.
+                                    When it comes to my career, the jobs I am most interested in are <strong>video game developer</strong> 
+                                    and <strong>full-stack developer</strong>.
                                     However I am captivated by most things in computer science so I am open to other job opportunities.
                                 </div>
                                 <div className="french txt">
-                                    En ce qui concerne ma carrière, les métiers qui me passionnent le plus sont <strong>développeur de jeux vidéo</strong>
+                                    En ce qui concerne ma carrière, les métiers qui me passionnent le plus sont <strong>développeur de jeux vidéo </strong>
                                     et <strong>développeur full-stack</strong>.
                                     Mais je reste interessé par toutes les activités dans le domaine de l'informatique, je suis donc ouvert à d'autres opportunités d'emploi.
                                 </div>
@@ -293,20 +293,20 @@ class About extends Component {
                             <p className='aboutTxt'>
                             <div className="english txt">
                                     Making video games with Unity was the <strong>initial excitement</strong> that made me love to code. I will
-                                    always be making my own games as a hobby. <br/>
+                                    always be making my own games as a hobby. <br/><br/>
                                     I then learned that I loved to try understand and solve <strong>any kind of programming problem</strong> and elaborating a <strong>well-written
-                                    solution</strong> to them. <br/>
+                                    solution</strong> to them. <br/><br/>
                                     I have also always loved anything that touches <strong>storytelling</strong> in any way.<br/>
                                     I love to dive into impressive and creative works of art, especially well-written <strong>novels</strong> and well-designed <strong>video games</strong>, which I 
                                     am currently learning to make, with plans of making my own novels and games in the future.
                                 </div>
                                 <div className="french txt">
-                                    Créer des jeux vidéo avec Unity était l'enthousiasme initial qui m'a fait aimer le code. Mon passe-temps principal sera toujours de coder
-                                    mes propres jeux. <br/>
-                                    J'ai ensuite découvert que j'adorais comprendre et résoudre toutes sortes de problèmes de code puis d'élaborer un algorithme de solution simple et
-                                    concis pour y répondre.<br/>
-                                    De plus, j'ai toujours aimé tout ce qui touche à la narration. C'est une passion pour moi de plonger dans des œuvres d'art impressionnantes et originales, en particulier
-                                    des jeux vidéo amusants et des romans bien écrits, pour en apprendre plus sur leur création, et avec l'intention d'en créer moi-même
+                                    Créer des jeux vidéo avec Unity était <strong>l'enthousiasme initial</strong> qui m'a fait aimer le code. Mon passe-temps principal sera toujours de coder
+                                    mes propres jeux. <br/><br/>
+                                    J'ai ensuite découvert que j'adorais comprendre et résoudre <strong>toutes sortes de problèmes de code</strong> puis d'élaborer un algorithme de solution <strong>simple et
+                                    concis</strong> pour y répondre.<br/><br/>
+                                    De plus, j'ai toujours aimé tout ce qui touche à la <strong>narration</strong>. C'est une passion pour moi de plonger dans des œuvres d'art impressionnantes et originales, en particulier
+                                    des <strong>jeux vidéo</strong> amusants et des <strong>romans</strong> bien écrits, pour en apprendre plus sur leur création, et avec l'intention d'en créer moi-même
                                     à l'avenir.
                                 </div>
                             </p>

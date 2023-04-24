@@ -11,7 +11,6 @@ import CV from './cv.jsx'
 function AnimatedRoutes() {
 
     const importAll = (r) =>  {
-        console.log(r);
         const images = {};
         r.keys().forEach((item) => {
             images[item.replace("./", "")] = r(item);
@@ -20,7 +19,6 @@ function AnimatedRoutes() {
     };
 
     const preloadImages = () => {
-        console.log("preloading");
         const skillsImgs = importAll(
             require.context("../imgs/skills/", false, /\.(png|jpe?g|svg)$/)
         );

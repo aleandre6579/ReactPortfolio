@@ -72,7 +72,7 @@ class Intro extends Component {
           }
             
           const contactBtn = {
-            hidden: { y: 50, opacity: 0, rotate: 180 },
+            hidden: { y: 150, opacity: 0, rotate: 180 },
             visible: {
               y: 0,
               opacity: 1,
@@ -84,7 +84,7 @@ class Intro extends Component {
             }     
         }
         const contactTxt = {
-            hidden: { y: 50, opacity: 0 },
+            hidden: { y: 150, opacity: 0 },
             visible: {
               y: 0,
               opacity: 1,
@@ -160,7 +160,6 @@ class Intro extends Component {
 
         function change_language(language_name) {
             selectedLanguage.selectedLanguage = language_name;
-            console.log(selectedLanguage.selectedLanguage);
             var allText = document.getElementsByClassName('txt');
             for(let i = 0; i < allText.length; i++) {
                 if(allText[i].classList.contains('hideTxt') && allText[i].classList.contains(language_name)) {
@@ -170,6 +169,11 @@ class Intro extends Component {
                     allText[i].classList.add('hideTxt');
                 }
             }
+        }
+
+        function startContactTxtAnimation() {
+            document.getElementsByClassName('contactTxt')[0].classList.add('contactTxtAnim');
+            document.getElementsByClassName('contactTxt')[1].classList.add('contactTxtAnim');
         }
 
 
@@ -252,7 +256,7 @@ class Intro extends Component {
                     variants={contactBar}
                     initial="hidden" animate="visible"
                 >
-                    <m.div variants={contactTxt} className="contactTxt english txt">Contact me here</m.div>
+                    <m.div variants={contactTxt} onAnimationComplete={startContactTxtAnimation} className="contactTxt english txt">Contact me here</m.div>
                     <m.div variants={contactTxt} className="contactTxt french txt">Contactez-moi ici</m.div>
 
                     <a href='https://github.com/aleandre6579?tab=repositories' target="_blank"><m.img id='gitBtn' variants={contactBtn} className='contactBtn' src={gitLogo}/></a>

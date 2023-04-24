@@ -225,7 +225,7 @@ html {
     position: relative;
     margin-top: 5%;
     margin-left: 8%;
-    font-size: 50px;
+    font-size: clamp(10px, 7vw, 70px);
     font-family: 'VarelaRound';
     border-radius: 2px;
     animation: 
@@ -248,7 +248,7 @@ html {
     margin-top: 10%;
     margin-left: 8%;
     text-align: center;
-    font-size: 50px;
+    font-size: clamp(10px, 8vw, 70px);
     font-family: 'VarelaRound';
     padding: 5px;
     border-radius: 5px;
@@ -256,10 +256,10 @@ html {
     font-weight: 600;
 }
 .bigHead {
-    width: 11em;
+    width: clamp(10px, 75vw, 700px);
 }
 .smallHead {
-    width: 8em;
+    width: clamp(10px, 60vw, 500px);
 }
 
 .aboutTxt {
@@ -327,5 +327,5 @@ html {
     left: 50%;
     transform: translate(-48%, 0%);
     align-content: center;
-    width: clamp(0px, 80vw, 1400px);
+    width: clamp(0px, 90vw, 1800px);
 }

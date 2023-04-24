@@ -366,6 +366,8 @@
     color: white;
     font-family: 'VarelaRound';
     font-size: clamp(0.5rem, 2vw, 1.5rem);
+}
+.contactTxtAnim {
     animation: txtFloat 2s infinite;
 }
 
