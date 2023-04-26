@@ -13,7 +13,7 @@
     width: 30%; 
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
     .containersRow {
         display: flex;
         justify-content: space-evenly;
@@ -32,6 +32,7 @@
     margin-top: 100px;
     cursor: pointer;
     overflow: hidden;
+    z-index: 0;
     transition: 400ms;
 }
 .container:hover {
@@ -39,7 +40,7 @@
 }
 
 .openContainer.container1 {
-    height: 710px;
+    height: 810px;
     transition: 400ms;
 }
 .openContainer.container2 {
@@ -59,6 +60,7 @@
     border: 5px var(--blue) solid;
     margin-top: 100px;
     cursor: pointer;
+    z-index: 0;
     transition: 400ms;
 }
 
@@ -135,6 +137,12 @@
 .container > .row17 {
     top: -5px;
     left: 115px;
+}
+.container > .row18 {
+    top: -695px;
+    left: 60px;
+    opacity: .6;
+    z-index: -1;
 }
 
 /* Container 2 */

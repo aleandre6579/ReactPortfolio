@@ -15,7 +15,7 @@ import frenchFlag from '../imgs/frenchFlag.png';
 
 // Tool Icons
 import unity from '../imgs/skills/unity.png';
-import c from '../imgs/skills/c.png';
+import scala from '../imgs/skills/scala.png';
 
 // Escape media
 import escapeVid from '../vids/escapeVid.mp4';
@@ -372,7 +372,7 @@ class About extends Component {
                         <div onClick={() => showProjectPopup('project6')} className="project project6">
                             <img alt="popupImg" className='projectImg' src={quickSort}/>
                             <div className="txt english hoverIcon">View Project</div>
-                            <div className='projectIcon'><img className='projectIconImg' alt="cIcon" src={c}></img></div>
+                            <div className='projectIcon'><img className='projectIconImg' alt="cIcon" src={scala}></img></div>
                         </div>
 
                         <div className="newProjects">

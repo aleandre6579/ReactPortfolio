@@ -20,6 +20,7 @@ import html from '../imgs/skills/html.png';
 import java from '../imgs/skills/javaLogo.png';
 import js from '../imgs/skills/js.png';
 import python from '../imgs/skills/pythonLogo.png';
+import scala from '../imgs/skills/scalaLogo.png';
 
 import react from '../imgs/skills/reactLogo.png';
 import unity from '../imgs/skills/unityLogo.png';
@@ -306,6 +307,11 @@ class About extends Component {
                                 </div>
                                 <div className="containerRow row16">
                                     <img alt='js' src={js} className='containerImg'/>
+                                    <div className="txt english containerTxt">Competent</div>
+                                    <div className="txt french containerTxt">Intermédiaire</div>
+                                </div>
+                                <div className="containerRow row18">
+                                    <img alt='scala' src={scala} className='containerImg'/>
                                     <div className="txt english containerTxt">Competent</div>
                                     <div className="txt french containerTxt">Intermédiaire</div>
                                 </div>

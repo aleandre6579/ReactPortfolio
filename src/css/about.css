@@ -182,7 +182,7 @@ html {
     transform: scale(110%);
     background-color: white;
 }
-@media (max-width: 870px) {
+@media (max-width: 1100px) {
     .sections-navbar {
         display: flex;
         background-color: transparent;
