@@ -75,14 +75,18 @@ class About extends Component {
                 transform: 'translate(0, 0px)',
                 cursor: 'pointer',
                 transition: {
-                    duration: 1,
+                    duration: .7,
                 },
             },
             exit: {
                 opacity: 0,
                 transform: 'translate(0, -50px)',
                 cursor: 'context-menu',
+                fontSize: "clamp(0rem, calc(1rem + 3vw), 5rem)",
                 transition: {
+                    fontSize: {
+                        duration: 0,
+                    },
                     duration: 0.2,
                 },
             },
