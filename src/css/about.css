@@ -136,6 +136,7 @@ html {
     font-size: clamp(0rem, calc(1rem + 3vw), 5rem);
     text-decoration: none;
     z-index: 5;
+    color: black;
     transition: 200ms;
 }
 .navbar-btn-clicked::before {

@@ -218,12 +218,14 @@ class About extends Component {
 
         function realPageDisappear() {
             var navbar_btns = document.getElementsByClassName('navbar-btn');
-            for(let i = 0; i < navbar_btns.length; i++) {
-                if(!navbar_btns[navbar_btns.length-1].classList.contains('hideTxt')) {
-                    navbar_btns[navbar_btns.length-1].classList.add('navbar-btn-clicked');
-                    navbar_btns[navbar_btns.length-1].classList.remove('navbar-btn');
-                    console.log(navbar_btns[navbar_btns.length-1].classList.toString())
+            let i = 0;
+            while(navbar_btns.length > 3) {
+                if(navbar_btns[i].parentElement.classList.contains('hideTxt')) {
+                    i++;
+                    continue;
                 }
+                navbar_btns[i].classList.add('navbar-btn-clicked');
+                navbar_btns[i].classList.remove('navbar-btn');
             }
             
             var realPage = document.getElementById("realPage");

@@ -141,8 +141,12 @@ class Intro extends Component {
             btn_panel.classList.add("click-anim");
 
             for (let i = 1; i < 4; i++) {
-                if('btn' + i !== btnName)
+                if('btn' + i !== btnName) {
                     document.getElementById('btn' + i).classList.add("hide");
+                }
+                else {
+                    document.getElementById('btn' + i).classList.remove("intro-btn");
+                }
             }
         }
 
