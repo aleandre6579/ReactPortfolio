@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { AnimatePresence } from 'framer-motion';
 import $ from "jquery";
 import selectedLanguage from './selectedLanguage.js'
+import ProjectPopup from './projectPopup.jsx';
 
 import '../css/about.css';
 import '../css/projects.css';
@@ -16,6 +17,7 @@ import frenchFlag from '../imgs/frenchFlag.png';
 // Tool Icons
 import unity from '../imgs/skills/unity.png';
 import scala from '../imgs/skills/scala.png';
+import react from '../imgs/skills/react.png';
 
 // Escape media
 import escapeVid from '../vids/escapeVid.mp4';
@@ -74,7 +76,11 @@ import quickSort from '../imgs/projects/sorting/quickSort.png';
 import sampleSort from '../imgs/projects/sorting/sampleSort.png';
 import insertionSort from '../imgs/projects/sorting/insertionSort.png';
 import ProjectWidget from './projectWidget.jsx';
-import ProjectPopup from './projectPopup.jsx';
+
+// portfolio media
+import portMenu from "../imgs/projects/portfolio/portMenu.png";
+
+
 
 function Project() {
 
@@ -225,12 +231,13 @@ function Project() {
         useRef(null),
         useRef(null),
         useRef(null),
+        useRef(null),
     ];
 
     useEffect(() => {
         document.body.style.overflow = 'visible';
         window.scrollTo(0, 0);
-    
+
         var allText = document.getElementsByClassName('txt');
         for (let i = 0; i < allText.length; i++) {
             console.log(selectedLanguage.selectedLanguage);
@@ -335,7 +342,7 @@ function Project() {
             />
             <m.div id="realPage" className='realPage scrollbar'>
                 <div className="navbar">
-                    <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} className='arrow-btn' variants={navArrow} initial="hidden" animate="show" exit="exit">
+                    <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} onClick={realPageDisappear} className='arrow-btn' variants={navArrow} initial="hidden" animate="show" exit="exit">
                         <Link to='/'><img id='backArrow' className='arrowBack' src={backArrowBlack} alt=''></img></Link>
                     </m.div>
                     <m.div variants={navbar} initial="hidden" animate="show" exit="exit" className="sections-navbar english txt">
@@ -362,6 +369,7 @@ function Project() {
                     <ProjectWidget iconImg={unity} img={swarmDying} showPopupFunction={showProjectPopup} projectId={4} projectRef={projectsRef[4]} />
                     <ProjectWidget iconImg={unity} img={fantasiaDead} showPopupFunction={showProjectPopup} projectId={5} projectRef={projectsRef[5]} />
                     <ProjectWidget iconImg={scala} img={quickSort} showPopupFunction={showProjectPopup} projectId={6} projectRef={projectsRef[6]} />
+                    <ProjectWidget iconImg={react} img={portMenu} showPopupFunction={showProjectPopup} projectId={7} projectRef={projectsRef[7]} />
                 </m.div>
 
 
@@ -443,6 +451,15 @@ function Project() {
                             imgs={[quickSort, sampleSort, insertionSort]}
                             projectId={6}
                             ref={projectsRef[6]}
+                        />
+                        <ProjectPopup
+                            title="My React Portofolio"
+                            englishDescription="The website portfolio you are currently on was made by me using React."
+                            frenchDescription="Le site Web sur lequel vous vous trouvez a été créé par moi avec l'outil React."
+                            video={null}
+                            imgs={[portMenu]}
+                            projectId={7}
+                            ref={projectsRef[7]}
                         />
 
                     </div>

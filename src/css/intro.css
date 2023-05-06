@@ -12,6 +12,8 @@
     --translateAmt: -400;
     overflow: auto;
     overflow-x: hidden;
+    background-color: var(--purple);
+    
 }
 
 
@@ -99,27 +101,8 @@
         height: 0vw;
     }
     100% {
-        width: calc(200vb + 150vw);
-        height: calc(200vb + 150vw);
-    }
-}
-@keyframes pageTransitionTxt2 {
-    0% {
-        margin-top: 0px;
-        margin-left: 0px;
-        font-size: calc(-1rem + 1.5vw + 5vh);        
-    }
-    10% {
-        margin-top: 0px;
-        margin-left: 0px;
-        font-size: calc(-1rem + 1.5vw + 5vh);        
-        color: white;
-    }
-    100% {
-        margin-top: -30px;
-        margin-left: -12px;
-        font-size: calc(2rem + 1.5vw + 5vh);
-        color: var(--purple);
+        width: calc(2000vb + 1950vw);
+        height: calc(2000vb + 1950vw);
     }
 }
 @keyframes pageTransitionTxt {
@@ -133,7 +116,7 @@
         color: white;
     }
     100% {
-        color: var(--purple);
+        color: rgba(60,63,140,1);
         transform: translate(-50%, -45%) scale(200%, 200%); 
     }
 }
@@ -324,8 +307,8 @@
 .click-anim::before {
     content: "";
     position: absolute;
-    background-color: var(--purple);
-    border-radius: 50%;
+    background: radial-gradient(rgba(60,63,140,1) 0%, var(--purple) 50%);
+    border-radius: 100%;
     display: inline-block;
     width: 5vw;
     height: 5vw;
@@ -334,7 +317,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: pageTransition 3s ease forwards;
+    animation: pageTransition 1.25s cubic-bezier(.87,.03,1,-0.07) forwards;
 }
 
 .click-anim > .intro-link > .btn-txt {
