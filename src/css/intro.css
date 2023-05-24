@@ -1,6 +1,7 @@
 :root {
     --blue: #78c1fa;
-    --purple: rgb(84, 88, 194);
+    --purple: rgba(84, 88, 194);
+    --darkPurple: rgba(60,63,140);
     --violet: rgb(103, 58, 183);
     --pink: rgb(244, 143, 177);
     --gray: #36393F;
@@ -99,10 +100,12 @@
     0% {
         width: 0vw;
         height: 0vw;
+        background-color: var(--purple);
     }
     100% {
         width: calc(2000vb + 1950vw);
         height: calc(2000vb + 1950vw);
+        background-color: var(--darkPurple);
     }
 }
 @keyframes pageTransitionTxt {
@@ -114,10 +117,11 @@
     }
     20% {
         color: white;
+        opacity: 1;
     }
     100% {
-        color: rgba(60,63,140,1);
-        transform: translate(-50%, -45%) scale(200%, 200%); 
+        opacity: 0;
+        transform: translate(-50%, -45%) scale(200%, 200%);
     }
 }
 @keyframes pageTransitionHide {
@@ -307,7 +311,7 @@
 .click-anim::before {
     content: "";
     position: absolute;
-    background: radial-gradient(rgba(60,63,140,1) 0%, var(--purple) 50%);
+    background-color: var(--purple) 50%;
     border-radius: 100%;
     display: inline-block;
     width: 5vw;

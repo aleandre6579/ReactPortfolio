@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import { motion as m } from "framer-motion";
-import { Link } from "react-router-dom";
-import { AnimatePresence } from 'framer-motion';
+import Skill from './skill.jsx'
 import selectedLanguage from './selectedLanguage.js'
+import Navbar from './navbar.jsx'
 import '../css/about.css';
 import '../css/skills.css';
 import '../css/w3.css';
 
-import backArrowWhite from '../imgs/backArrowWhite.png';
-import backArrowBlack from '../imgs/backArrowBlack.png';
-import englishFlag from '../imgs/englishFlag.png';
-import frenchFlag from '../imgs/frenchFlag.png';
 
 /* Container images */
 import c from '../imgs/skills/c.png';
@@ -27,7 +23,6 @@ import unity from '../imgs/skills/unityLogo.png';
 import gitfork from '../imgs/skills/gitfork.png';
 import jupyter from '../imgs/skills/jupyter.png';
 import notion from '../imgs/skills/notionLogo.png';
-import vscode from '../imgs/skills/vscode.png';
 
 import ambitious from '../imgs/skills/ambitious.png';
 import creative from '../imgs/skills/creative.png';
@@ -54,82 +49,6 @@ class About extends Component {
     }
 
     render() {
-        const navbar = {
-            hidden: { opacity: 0 },
-            show: {
-                opacity: 1,
-                transition: {
-                    staggerChildren: .4,
-                },
-            },
-            exit: {
-                opacity: 1,
-                transition: {
-                    staggerChildren: 0.2,
-                },
-            },
-        };
-
-        const navArrow = {
-            hidden: {
-                opacity: 0,
-                x: -100,
-            },
-            show: {
-                opacity: 1,
-                x: 0,
-                transition: {
-                    duration: 1,
-                },
-            },
-            exit: {
-                opacity: 1,
-                x: -150,
-                transition: {
-                    duration: 0.2,
-                },
-            },
-        };
-
-        const navItem = {
-            hidden: {
-                opacity: 0,
-                y: -100,
-                cursor: 'pointer',
-            },
-            show: {
-                opacity: 1,
-                transform: 'translate(0, 0px)',
-                cursor: 'pointer',
-                transition: {
-                    duration: .7,
-                },
-            },
-            exit: {
-                opacity: 0,
-                transform: 'translate(0, -50px)',
-                cursor: 'context-menu',
-                fontSize: "clamp(0rem, calc(1rem + 3vw), 5rem)",
-                transition: {
-                    fontSize: {
-                        duration: 0,
-                    },
-                    duration: 0.2,
-                },
-            },
-        };
-
-        const link = {
-            hidden: {
-                cursor: 'pointer',
-            },
-            show: {
-                cursor: 'pointer',
-            },
-            exit: {
-                cursor: 'context-menu',
-            }
-        }
 
         const content = {
             hidden: {
@@ -152,52 +71,6 @@ class About extends Component {
             },
         };
 
-        const flagsMotion = {
-            hidden: { opacity: 0 },
-            show: {
-                opacity: 1,
-                transition: {
-                    staggerChildren: .25,
-                    delay: 1.5,
-                },
-            },
-            exit: {
-                opacity: 1,
-                transition: {
-                    staggerChildren: 0.2,
-                },
-            },
-        }
-        const flagMotion = {
-            hidden: {
-                opacity: 0,
-                y: -150,
-                cursor: 'pointer',
-            },
-            show: {
-                opacity: 1,
-                y: 0,
-                cursor: 'pointer',
-                transition: {
-                    duration: 2.5,
-                },
-            },
-            exit: {
-                opacity: 0,
-                y: -150,
-                cursor: 'context-menu',
-                transition: {
-                    duration: 0.4,
-                },
-            },
-        }
-
-        function changeArrowToBlack() {
-            document.getElementById('backArrow').src = backArrowBlack;
-        }
-        function changeArrowToWhite() {
-            document.getElementById('backArrow').src = backArrowWhite;
-        }
 
         function hasClass(element, className) {
             return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -1;
@@ -216,36 +89,6 @@ class About extends Component {
 
         }
 
-        function realPageDisappear() {
-            var navbar_btns = document.getElementsByClassName('navbar-btn');
-            let i = 0;
-            while (navbar_btns.length > 3) {
-                if (navbar_btns[i].parentElement.classList.contains('hideTxt')) {
-                    i++;
-                    continue;
-                }
-                navbar_btns[i].classList.add('navbar-btn-clicked');
-                navbar_btns[i].classList.remove('navbar-btn');
-            }
-
-            var realPage = document.getElementById("realPage");
-            realPage.classList.remove("realPage");
-            realPage.classList.add("realPageDisappear");
-        }
-
-        function change_language(language_name) {
-            selectedLanguage.selectedLanguage = language_name;
-            var allText = document.getElementsByClassName('txt');
-            for (let i = 0; i < allText.length; i++) {
-                if (allText[i].classList.contains('hideTxt') && allText[i].classList.contains(language_name)) {
-                    allText[i].classList.remove('hideTxt');
-                }
-                else if (!allText[i].classList.contains('hideTxt') && !allText[i].classList.contains(language_name)) {
-                    allText[i].classList.add('hideTxt');
-                }
-            }
-        }
-
         return (
             <div>
                 <m.div className="page"
@@ -256,71 +99,21 @@ class About extends Component {
                 />
 
                 <m.div id="realPage" className='realPage'>
-                    <div className="navbar">
-                        <m.div onMouseLeave={changeArrowToBlack} onMouseEnter={changeArrowToWhite} onClick={realPageDisappear} className='arrow-btn' variants={navArrow} initial="hidden" animate="show" exit="exit">
-                            <Link to='/'><img id='backArrow' className='arrowBack' src={backArrowBlack} alt=''></img></Link>
-                        </m.div>
-                        <m.div variants={navbar} initial="hidden" animate="show" exit="exit" className="sections-navbar english txt">
-                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link className='link' to='/about'><m.div variants={link} initial='hidden' animate='show' exit='exit'>About</m.div></Link></m.div>
-                            <m.div className='navbar-btn' variants={navItem} ><Link className='link' to='/skills'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Skills</m.div></Link></m.div>
-                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link className='link' to='/projects'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Projects</m.div></Link></m.div>
-                        </m.div>
-                        <m.div variants={navbar} initial="hidden" animate="show" exit="exit" className="sections-navbar french txt">
-                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link className='link' to='/about'><m.div variants={link} initial='hidden' animate='show' exit='exit'>A propos</m.div></Link></m.div>
-                            <m.div className='navbar-btn' variants={navItem} ><Link className='link' to='/skills'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Compétences</m.div></Link></m.div>
-                            <m.div onClick={realPageDisappear} className='navbar-btn' variants={navItem} ><Link className='link' to='/projects'><m.div variants={link} initial='hidden' animate='show' exit='exit'>Projets</m.div></Link></m.div>
-                        </m.div>
-                        <m.div className='flags' variants={flagsMotion} initial="hidden" animate="show" exit="exit" >
-                            <m.div variants={flagMotion} to='/'><img onClick={() => change_language('french')} id='frenchFlag' className='flag' src={frenchFlag} alt=''></img></m.div>
-                            <m.div variants={flagMotion} to='/'><img onClick={() => change_language('english')} id='englishFlag' className='flag' src={englishFlag} alt=''></img></m.div>
-                        </m.div>
-                    </div>
+                    <Navbar page="skills"/>
 
                     <m.div variants={content} initial="hidden" animate="show" exit="exit" className="containersRow" >
                         <div className="containerSpace">
                             <div className="txt english containerTitle">Languages</div>
                             <div className="txt french containerTitle">Langages</div>
                             <div id='container1' onClick={() => openContainer('container1')} className="container container1">
-                                <div className="containerRow row11">
-                                    <img alt='C' src={c} className='containerImg' />
-                                    <div className="txt english containerTxt">Very proficient</div>
-                                    <div className="txt french containerTxt">Expert</div>
-                                </div>
-                                <div className="containerRow row17">
-                                    <img alt='python' src={python} className='containerImg' />
-                                    <div className="txt english containerTxt">Very proficient</div>
-                                    <div className="txt french containerTxt">Expert</div>
-                                </div>
-                                <div className="containerRow row15">
-                                    <img alt='java' src={java} className='containerImg' />
-                                    <div className="txt english containerTxt">Proficient</div>
-                                    <div className="txt french containerTxt">Intermédiaire</div>
-                                </div>
-                                <div className="containerRow row12">
-                                    <img alt='cSharp' src={cSharp} className='containerImg' />
-                                    <div className="txt english containerTxt">Proficient</div>
-                                    <div className="txt french containerTxt">Avancé</div>
-                                </div>
-                                <div className="containerRow row14">
-                                    <img alt='html' src={html} className='containerImg' />
-                                    <div className="txt english containerTxt">Competent</div>
-                                    <div className="txt french containerTxt">Intermédiaire</div>
-                                </div>
-                                <div className="containerRow row13">
-                                    <img alt='css' src={css} className='containerImg' />
-                                    <div className="txt english containerTxt">Competent</div>
-                                    <div className="txt french containerTxt">Intermédiaire</div>
-                                </div>
-                                <div className="containerRow row16">
-                                    <img alt='js' src={js} className='containerImg' />
-                                    <div className="txt english containerTxt">Competent</div>
-                                    <div className="txt french containerTxt">Intermédiaire</div>
-                                </div>
-                                <div className="containerRow row18">
-                                    <img alt='scala' src={scala} className='containerImg' />
-                                    <div className="txt english containerTxt">Competent</div>
-                                    <div className="txt french containerTxt">Intermédiaire</div>
-                                </div>
+                                <Skill num={11} name="c" img={c} lvlEnglish="Expert" lvlFrench="Expert"/>
+                                <Skill num={17} name="python" img={python} lvlEnglish="Expert" lvlFrench="Expert"/>
+                                <Skill num={15} name="java" img={java} lvlEnglish="Expert" lvlFrench="Expert"/>
+                                <Skill num={12} name="cSharp" img={cSharp} lvlEnglish="Expert" lvlFrench="Expert"/>
+                                <Skill num={14} name="html" img={html} lvlEnglish="Advanced" lvlFrench="Avancé"/>
+                                <Skill num={13} name="css" img={css} lvlEnglish="Advanced" lvlFrench="Avancé"/>
+                                <Skill num={16} name="js" img={js} lvlEnglish="Intermediate" lvlFrench="Intermédiaire"/>
+                                <Skill num={18} name="scala" img={scala} lvlEnglish="Intermediate" lvlFrench="Intermédiaire"/>
                             </div>
                         </div>
 
@@ -328,31 +121,11 @@ class About extends Component {
                             <div className="txt english containerTitle">Software & Frameworks</div>
                             <div className="txt french containerTitle">Applications & Outils</div>
                             <div id='container2' onClick={() => openContainer('container2')} className="container container2">
-                                <div className="containerRow row22">
-                                    <img alt='unity' src={unity} className='containerImg' />
-                                    <div className="txt english containerTxt">Very proficient</div>
-                                    <div className="txt french containerTxt">Expert</div>
-                                </div>
-                                <div className="containerRow row21">
-                                    <img alt='react' src={react} className='containerImg' />
-                                    <div className="txt english containerTxt">Competent</div>
-                                    <div className="txt french containerTxt">Intermédiaire</div>
-                                </div>
-                                <div className="containerRow row23">
-                                    <img alt='jupyter' src={jupyter} className='containerImg' />
-                                    <div className="txt english containerTxt">Competent</div>
-                                    <div className="txt french containerTxt">Intermédiaire</div>
-                                </div>
-                                <div className="containerRow row24">
-                                    <img alt='gitfork' src={gitfork} style={{ width: '80px' }} className='containerImg' />
-                                    <div className="txt english containerTxt">Competent</div>
-                                    <div className="txt french containerTxt">Intermédiaire</div>
-                                </div>
-                                <div className="containerRow row25">
-                                    <img alt='notion' src={notion} className='containerImg' />
-                                    <div className="txt english containerTxt">Competent</div>
-                                    <div className="txt french containerTxt">Intermédiaire</div>
-                                </div>
+                                <Skill num={22} name="unity" img={unity} lvlEnglish="Expert" lvlFrench="Expert"/>
+                                <Skill num={21} name="react" img={react} lvlEnglish="Advanced" lvlFrench="Avancé"/>
+                                <Skill num={23} name="jupyter" img={jupyter} lvlEnglish="Advanced" lvlFrench="Avancé"/>
+                                <Skill num={24} name="gitFork" img={gitfork} lvlEnglish="Advanced" lvlFrench="Avancé"/>
+                                <Skill num={25} name="notion" img={notion} lvlEnglish="Advanced" lvlFrench="Avancé"/>
                             </div>
                         </div>
                     </m.div>
@@ -362,21 +135,9 @@ class About extends Component {
                             <div className="txt english containerTitle">Social Skills</div>
                             <div className="txt french containerTitle">Compétences Sociales</div>
                             <div id='container3' onClick={() => openContainer('container3')} className="container container3">
-                                <div className="containerRow row31">
-                                    <img alt='team' style={{ width: '80px' }} src={team} className='containerImg' />
-                                    <div className="txt english containerTxt">Good Teamwork</div>
-                                    <div className="txt french containerTxt">Bon travail d'équipe</div>
-                                </div>
-                                <div className="containerRow row32">
-                                    <img alt='listener' style={{ width: '80px' }} src={listener} className='containerImg' />
-                                    <div className="txt english containerTxt">Good Listener</div>
-                                    <div className="txt french containerTxt">Très à l'écoute</div>
-                                </div>
-                                <div className="containerRow row33">
-                                    <img alt='communication' style={{ width: '70px' }} src={communication} className='containerImg' />
-                                    <div className="txt english containerTxt">Good Communicator</div>
-                                    <div className="txt french containerTxt">Bon communicateur</div>
-                                </div>
+                                <Skill num={31} name="team" img={team} lvlEnglish="Good Teamwork" lvlFrench="Bon travail d'équipe"/>
+                                <Skill num={32} name="listener" img={listener} lvlEnglish="Good Listener" lvlFrench="Très à l'écoute"/>
+                                <Skill num={33} name="communication" img={communication} lvlEnglish="Good Communicator" lvlFrench="Bon communicant"/>
                             </div>
                         </div>
 
@@ -384,31 +145,11 @@ class About extends Component {
                             <div className="txt english containerTitle">Personal Skills</div>
                             <div className="txt french containerTitle">Compétences Personnelles</div>
                             <div id='container4' onClick={() => openContainer('container4')} className="container container4">
-                                <div className="containerRow row41">
-                                    <img alt='ambitious' style={{ width: '70px' }} src={ambitious} className='containerImg' />
-                                    <div className="txt english containerTxt">Ambitious</div>
-                                    <div className="txt french containerTxt">Ambitieux</div>
-                                </div>
-                                <div className="containerRow row42">
-                                    <img alt='creative' style={{ width: '70px' }} src={creative} className='containerImg' />
-                                    <div className="txt english containerTxt">Creative</div>
-                                    <div className="txt french containerTxt">créatif</div>
-                                </div>
-                                <div className="containerRow row43">
-                                    <img alt='determined' src={determined} className='containerImg' />
-                                    <div className="txt english containerTxt">Determined</div>
-                                    <div className="txt french containerTxt">Déterminé</div>
-                                </div>
-                                <div className="containerRow row44">
-                                    <img alt='solver' style={{ width: '70px' }} src={solver} className='containerImg' />
-                                    <div className="txt english containerTxt">Problem-solver</div>
-                                    <div className="txt french containerTxt">Résolveur de problèmes</div>
-                                </div>
-                                <div className="containerRow row45">
-                                    <img alt='worker' style={{ width: '80px' }} src={worker} className='containerImg' />
-                                    <div className="txt english containerTxt">Hardworking</div>
-                                    <div className="txt french containerTxt">Travailleur</div>
-                                </div>
+                                <Skill num={41} name="ambitious" img={ambitious} lvlEnglish="Ambitious" lvlFrench="Ambitieux"/>
+                                <Skill num={42} name="creative" img={creative} lvlEnglish="Creative" lvlFrench="Créatif"/>
+                                <Skill num={43} name="determined" img={determined} lvlEnglish="Determined" lvlFrench="Déterminé"/>
+                                <Skill num={44} name="solver" img={solver} lvlEnglish="Problem-solver" lvlFrench="Résolveur de problèmes"/>
+                                <Skill num={45} name="worker" img={worker} lvlEnglish="Hardworking" lvlFrench="Travailleur"/>
                             </div>
                         </div>
                     </m.div>
