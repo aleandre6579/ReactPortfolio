@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ReactPortfolio/static/css/main.38b6bfc9.css",
-    "main.js": "/ReactPortfolio/static/js/main.723b8778.js",
+    "main.css": "/ReactPortfolio/static/css/main.ef4541cc.css",
+    "main.js": "/ReactPortfolio/static/js/main.83a9a75e.js",
     "static/js/787.52838427.chunk.js": "/ReactPortfolio/static/js/787.52838427.chunk.js",
     "static/media/escapeVid.mp4": "/ReactPortfolio/static/media/escapeVid.6e0b702cb203df32c041.mp4",
     "static/media/plightVid.mp4": "/ReactPortfolio/static/media/plightVid.da17c2ba3b7d8ec01e0b.mp4",
@@ -81,12 +81,12 @@
     "static/media/scala.png": "/ReactPortfolio/static/media/scala.f60da3facdb61bf80843.png",
     "static/media/notionLogo.png": "/ReactPortfolio/static/media/notionLogo.e62a60dd11b336b05af5.png",
     "index.html": "/ReactPortfolio/index.html",
-    "main.38b6bfc9.css.map": "/ReactPortfolio/static/css/main.38b6bfc9.css.map",
-    "main.723b8778.js.map": "/ReactPortfolio/static/js/main.723b8778.js.map",
+    "main.ef4541cc.css.map": "/ReactPortfolio/static/css/main.ef4541cc.css.map",
+    "main.83a9a75e.js.map": "/ReactPortfolio/static/js/main.83a9a75e.js.map",
     "787.52838427.chunk.js.map": "/ReactPortfolio/static/js/787.52838427.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.38b6bfc9.css",
-    "static/js/main.723b8778.js"
+    "static/css/main.ef4541cc.css",
+    "static/js/main.83a9a75e.js"
   ]
 }
